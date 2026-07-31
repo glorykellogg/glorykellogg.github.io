@@ -1,16 +1,128 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "cd glorykellogg.github.io",
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Download my CV"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nIllinois Institute of Technology, Chicago, Illinois\nB.S. in Applied Mathematics, expected December 2028\nHonors Program · Minor in Computer Science\nGPA: 4.0/4.0\nTriton College, Melrose Park, Illinois\nGPA: 4.0/4.0\nPhi Theta Kappa Honor Society"
+  },
+  {
+    "objectID": "cv.html#research-interests",
+    "href": "cv.html#research-interests",
+    "title": "Curriculum Vitae",
+    "section": "Research Interests",
+    "text": "Research Interests\nMathematical biology, pattern formation, differential equations, graph theory, and computational modeling."
+  },
+  {
+    "objectID": "cv.html#research",
+    "href": "cv.html#research",
+    "title": "Curriculum Vitae",
+    "section": "Research",
+    "text": "Research\n\nGraph-Based Models of Morphogen Diffusion in Butterfly Wing Development\n\nInvestigating mathematical models of butterfly wing pattern formation through geometry, graph representations, and computational modeling.\nDeveloping computational methods to extract wing structure from photographs for comparison with mathematical models.\nRaising and documenting painted lady butterflies while studying developmental biology and pattern formation.\n\n\n\nNonlinear Preferential Attachment in Collaboration Networks\n\nDeveloping an agent-based model of collaboration networks to study the emergence of structural inequality through nonlinear preferential attachment.\nDesigned Monte Carlo experiments to investigate the effects of attachment bias on network growth and degree inequality."
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "Technical Skills",
+    "text": "Technical Skills\nPython · C++ · LaTeX · Java · C"
+  },
+  {
+    "objectID": "cv.html#leadership",
+    "href": "cv.html#leadership",
+    "title": "Curriculum Vitae",
+    "section": "Leadership",
+    "text": "Leadership\n\nSocial Media Manager, SIAM IIT Student Chapter\nMay 2026–Present\n\nLead social media, email communications, and outreach.\nDesign promotional materials and support seminars, workshops, and chapter events.\nRepresented Illinois Tech at the 2026 SIAM Annual Meeting."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Glory Kellogg",
     "section": "",
-    "text": "About this site"
+    "text": "Chicago, Illinois · gloryekellogg@gmail.com · GitHub · LinkedIn\nI am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science. My interests include graph theory, differential equations, mathematical biology, pattern formation, and computational modeling."
+  },
+  {
+    "objectID": "index.html#current-research",
+    "href": "index.html#current-research",
+    "title": "Glory Kellogg",
+    "section": "Current Research",
+    "text": "Current Research\n\nButterfly Wing Pattern Formation\nI am exploring mathematical models of butterfly wing development using image processing, graph representations, and reaction–diffusion systems.\nExplore →\n\n\nCollaboration Networks\nI am studying how nonlinear preferential attachment can produce structural inequality in evolving collaboration networks.\nExplore →"
+  },
+  {
+    "objectID": "collaboration-networks.html",
+    "href": "collaboration-networks.html",
+    "title": "Collaboration Networks",
+    "section": "",
+    "text": "I am developing an agent-based model of evolving collaboration networks with nonlinear preferential attachment.\nThe model examines how attachment bias affects network growth, degree inequality, and concentration around highly connected individuals."
+  },
+  {
+    "objectID": "collaboration-networks.html#model",
+    "href": "collaboration-networks.html#model",
+    "title": "Collaboration Networks",
+    "section": "Model",
+    "text": "Model\nIndividuals are represented as nodes, and collaborations are represented as edges. New collaborations form according to the attachment rule\n\\[\nP(i) \\propto (k_i + c)^\\alpha,\n\\]\nwhere:\n\n\\(k_i\\) is the degree of individual \\(i\\),\n\\(c\\) is the initial-attractiveness parameter, and\n\\(\\alpha\\) controls the strength of preferential attachment."
+  },
+  {
+    "objectID": "collaboration-networks.html#methods",
+    "href": "collaboration-networks.html#methods",
+    "title": "Collaboration Networks",
+    "section": "Methods",
+    "text": "Methods\n\nAgent-based simulation\nMonte Carlo experiments\nPreferential attachment\nNetwork inequality measurements\nParameter sweeps"
+  },
+  {
+    "objectID": "collaboration-networks.html#current-questions",
+    "href": "collaboration-networks.html#current-questions",
+    "title": "Collaboration Networks",
+    "section": "Current Questions",
+    "text": "Current Questions\n\nHow does attachment strength affect degree inequality?\nDoes the model exhibit threshold-like behavior?\nUnder what conditions does collaboration become concentrated around a small number of highly connected individuals?"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks and Posters",
+    "section": "",
+    "text": "Research presentations, posters, and seminar talks will be listed here."
+  },
+  {
+    "objectID": "talks.html#upcoming",
+    "href": "talks.html#upcoming",
+    "title": "Talks and Posters",
+    "section": "Upcoming",
+    "text": "Upcoming\nDetails coming soon."
+  },
+  {
+    "objectID": "butterfly-wings.html",
+    "href": "butterfly-wings.html",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "",
+    "text": "I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.\nThe project combines biological observation, image processing, graph-based representations, and mathematical models of pattern formation."
+  },
+  {
+    "objectID": "butterfly-wings.html#research-questions",
+    "href": "butterfly-wings.html#research-questions",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Research Questions",
+    "text": "Research Questions\n\nHow can wing geometry be represented as a graph?\nHow might signaling molecules diffuse across that structure?\nWhich simulated patterns can be meaningfully compared with observed wings?"
+  },
+  {
+    "objectID": "butterfly-wings.html#current-work",
+    "href": "butterfly-wings.html#current-work",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Current Work",
+    "text": "Current Work\n\nRaising and documenting painted lady butterflies\nDeveloping an image-processing pipeline\nConstructing graph representations of wing structure\nStudying reaction–diffusion and morphogen-based models"
+  },
+  {
+    "objectID": "butterfly-wings.html#project-direction",
+    "href": "butterfly-wings.html#project-direction",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Project Direction",
+    "text": "Project Direction\nThe long-term goal is to develop a computational framework for comparing mathematical pattern-formation models with observed butterfly wings."
   }
 ]
