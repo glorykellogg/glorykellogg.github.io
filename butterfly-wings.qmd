@@ -1,0 +1,25 @@
+---
+title: "Butterfly Wing Pattern Formation"
+subtitle: "Mathematical models of biological pattern development"
+---
+
+I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.
+
+The project combines biological observation, image processing, graph-based representations, and mathematical models of pattern formation.
+
+## Research Questions
+
+- How can wing geometry be represented as a graph?
+- How might signaling molecules diffuse across that structure?
+- Which simulated patterns can be meaningfully compared with observed wings?
+
+## Current Work
+
+- Raising and documenting painted lady butterflies
+- Developing an image-processing pipeline
+- Constructing graph representations of wing structure
+- Studying reaction–diffusion and morphogen-based models
+
+## Project Direction
+
+The long-term goal is to develop a computational framework for comparing mathematical pattern-formation models with observed butterfly wings.

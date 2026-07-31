@@ -1,1 +1,129 @@
-/* css styles */
+@import url("https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css");
+
+:root {
+    --background: #faf9f6;
+    --text: #000000;
+    --rule: #000000;
+}
+
+/* ---------- Global ---------- */
+
+html,
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Keep the content comfortably readable */
+main.content {
+    max-width: 850px;
+}
+
+/* ---------- Typography ---------- */
+
+body,
+p,
+li,
+td,
+th,
+blockquote,
+.navbar,
+.navbar *,
+.nav-footer,
+.btn,
+.quarto-title,
+.quarto-title *,
+.quarto-title-block,
+.quarto-title-block * {
+    font-family: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif !important;
+    color: var(--text);
+}
+
+.quarto-title h1,
+h1.title {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+    background: var(--background) !important;
+    border-bottom: 1px solid var(--rule);
+    box-shadow: none;
+}
+
+.navbar-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--text) !important;
+}
+
+/* ---------- Links ---------- */
+
+a,
+a:visited {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: .06em;
+    text-underline-offset: .15em;
+}
+
+a:hover {
+    color: var(--text);
+}
+
+/* ---------- Footer ---------- */
+
+.nav-footer {
+    background: var(--background);
+    border-top: 1px solid var(--rule);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-primary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 0;
+}
+
+.btn-primary:hover {
+    background: var(--text);
+    color: var(--background);
+}
+
+/* ---------- Lists ---------- */
+
+ul li {
+    margin-bottom: .35rem;
+}
+
+/* ---------- Hide heading anchors ---------- */
+
+.anchorjs-link {
+    display: none;
+}

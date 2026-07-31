@@ -1,0 +1,48 @@
+---
+title: "Curriculum Vitae"
+toc: false
+---
+
+[Download my CV](files/Glory-Kellogg-CV.pdf)
+
+## Education
+
+**Illinois Institute of Technology**, Chicago, Illinois  
+B.S. in Applied Mathematics, expected December 2028  
+Honors Program · Minor in Computer Science  
+GPA: 4.0/4.0
+
+**Triton College**, Melrose Park, Illinois  
+GPA: 4.0/4.0  
+Phi Theta Kappa Honor Society
+
+## Research Interests
+
+Mathematical biology, pattern formation, differential equations, graph theory, and computational modeling.
+
+## Research
+
+### Graph-Based Models of Morphogen Diffusion in Butterfly Wing Development
+
+- Investigating mathematical models of butterfly wing pattern formation through geometry, graph representations, and computational modeling.
+- Developing computational methods to extract wing structure from photographs for comparison with mathematical models.
+- Raising and documenting painted lady butterflies while studying developmental biology and pattern formation.
+
+### Nonlinear Preferential Attachment in Collaboration Networks
+
+- Developing an agent-based model of collaboration networks to study the emergence of structural inequality through nonlinear preferential attachment.
+- Designed Monte Carlo experiments to investigate the effects of attachment bias on network growth and degree inequality.
+
+## Technical Skills
+
+Python · C++ · LaTeX · Java · C
+
+## Leadership
+
+### Social Media Manager, SIAM IIT Student Chapter
+
+May 2026–Present
+
+- Lead social media, email communications, and outreach.
+- Design promotional materials and support seminars, workshops, and chapter events.
+- Represented Illinois Tech at the 2026 SIAM Annual Meeting.

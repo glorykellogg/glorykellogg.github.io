@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Talks and Posters – Glory Kellogg</title>
+<title>Collaboration Networks – Glory Kellogg</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -115,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./talks.html" aria-current="page"> 
+    <a class="nav-link" href="./talks.html"> 
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
@@ -151,7 +180,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Talks and Posters</h1>
+<h1 class="title">Collaboration Networks</h1>
+<p class="subtitle lead">Nonlinear preferential attachment in evolving networks</p>
 </div>
 
 
@@ -168,10 +198,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Research presentations, posters, and seminar talks will be listed here.</p>
-<section id="upcoming" class="level2">
-<h2 class="anchored" data-anchor-id="upcoming">Upcoming</h2>
-<p>Details coming soon.</p>
+<p>I am developing an agent-based model of evolving collaboration networks with nonlinear preferential attachment.</p>
+<p>The model examines how attachment bias affects network growth, degree inequality, and concentration around highly connected individuals.</p>
+<section id="model" class="level2">
+<h2 class="anchored" data-anchor-id="model">Model</h2>
+<p>Individuals are represented as nodes, and collaborations are represented as edges. New collaborations form according to the attachment rule</p>
+<p><span class="math display">\[
+P(i) \propto (k_i + c)^\alpha,
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(k_i\)</span> is the degree of individual <span class="math inline">\(i\)</span>,</li>
+<li><span class="math inline">\(c\)</span> is the initial-attractiveness parameter, and</li>
+<li><span class="math inline">\(\alpha\)</span> controls the strength of preferential attachment.</li>
+</ul>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<ul>
+<li>Agent-based simulation</li>
+<li>Monte Carlo experiments</li>
+<li>Preferential attachment</li>
+<li>Network inequality measurements</li>
+<li>Parameter sweeps</li>
+</ul>
+</section>
+<section id="current-questions" class="level2">
+<h2 class="anchored" data-anchor-id="current-questions">Current Questions</h2>
+<ul>
+<li>How does attachment strength affect degree inequality?</li>
+<li>Does the model exhibit threshold-like behavior?</li>
+<li>Under what conditions does collaboration become concentrated around a small number of highly connected individuals?</li>
+</ul>
 
 
 </section>

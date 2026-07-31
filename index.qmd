@@ -1,7 +1,32 @@
 ---
-title: "cd glorykellogg.github.io"
+title: "Glory Kellogg"
+subtitle: "Applied Mathematics Honors Student"
+page-layout: full
+toc: false
 ---
+::: {.resume-contact}
+Chicago, Illinois ·
+[gloryekellogg@gmail.com](mailto:gloryekellogg@gmail.com) ·
+[GitHub](https://github.com/glorykellogg) ·
+[LinkedIn](https://www.linkedin.com/in/glorykellogg)
+:::
 
-This is a Quarto website.
+I am an Applied Mathematics Honors student at the Illinois Institute of
+Technology pursuing a minor in Computer Science. My interests include graph
+theory, differential equations, mathematical biology, pattern formation, and
+computational modeling.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+## Current Research
+
+### Butterfly Wing Pattern Formation
+
+I am exploring mathematical models of butterfly wing development using image processing, graph representations, and reaction–diffusion systems.
+
+[Explore →](butterfly-wings.qmd)
+
+### Collaboration Networks
+
+I am studying how nonlinear preferential attachment can produce structural inequality in evolving collaboration networks.
+
+[Explore →](collaboration-networks.qmd)

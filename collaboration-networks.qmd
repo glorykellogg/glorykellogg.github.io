@@ -1,0 +1,36 @@
+---
+title: "Collaboration Networks"
+subtitle: "Nonlinear preferential attachment in evolving networks"
+---
+
+I am developing an agent-based model of evolving collaboration networks with nonlinear preferential attachment.
+
+The model examines how attachment bias affects network growth, degree inequality, and concentration around highly connected individuals.
+
+## Model
+
+Individuals are represented as nodes, and collaborations are represented as edges. New collaborations form according to the attachment rule
+
+$$
+P(i) \propto (k_i + c)^\alpha,
+$$
+
+where:
+
+- $k_i$ is the degree of individual $i$,
+- $c$ is the initial-attractiveness parameter, and
+- $\alpha$ controls the strength of preferential attachment.
+
+## Methods
+
+- Agent-based simulation
+- Monte Carlo experiments
+- Preferential attachment
+- Network inequality measurements
+- Parameter sweeps
+
+## Current Questions
+
+- How does attachment strength affect degree inequality?
+- Does the model exhibit threshold-like behavior?
+- Under what conditions does collaboration become concentrated around a small number of highly connected individuals?
