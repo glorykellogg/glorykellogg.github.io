@@ -1,6 +1,7 @@
 ---
 title: "Collaboration Networks"
 subtitle: "Nonlinear preferential attachment in evolving networks"
+page-layout: full
 ---
 
 I am developing an agent-based model of evolving collaboration networks with nonlinear preferential attachment.

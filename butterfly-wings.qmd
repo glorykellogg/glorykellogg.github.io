@@ -1,6 +1,7 @@
 ---
 title: "Butterfly Wing Pattern Formation"
 subtitle: "Mathematical models of biological pattern development"
+page-layout: full
 ---
 
 I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.

@@ -1,32 +1,48 @@
 ---
-title: "Glory Kellogg"
-subtitle: "Applied Mathematics Honors Student"
-page-layout: full
+title: ""
 toc: false
+title-block-banner: false
+page-layout: full
 ---
-::: {.resume-contact}
-Chicago, Illinois ·
-[gloryekellogg@gmail.com](mailto:gloryekellogg@gmail.com) ·
-[GitHub](https://github.com/glorykellogg) ·
-[LinkedIn](https://www.linkedin.com/in/glorykellogg)
-:::
 
-I am an Applied Mathematics Honors student at the Illinois Institute of
-Technology pursuing a minor in Computer Science. My interests include graph
-theory, differential equations, mathematical biology, pattern formation, and
-computational modeling.
+I am **Glory Kellogg**, an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.
 
+I'm drawn to the mathematical undercurrents of the natural world. I like building models that bring those hidden structures into view.
+
+Lately, I’ve been wondering how butterfly wings form their patterns and why some networks become unequal.
+
+Read my [curriculum vitae](curriculum-vitae.qmd), or [send me an email](mailto:gloryekellogg@gmail.com).
 
 ## Current Research
 
-### Butterfly Wing Pattern Formation
+<div class="project-grid">
+<a class="project-card" href="butterfly-wings.html">
+  <h3>Butterfly Wing Pattern Formation</h3>
+  <p>
+    Mathematical and computational models of butterfly wing development,
+    including image processing, graph representations, and reaction–diffusion systems.
+  </p>
+</a>
+<a class="project-card" href="collaboration-networks.html">
+  <h3>Collaboration Networks</h3>
+  <p>
+    An agent-based model examining how nonlinear preferential attachment
+    shapes network growth, inequality, and concentration.
+  </p>
+</a></div>
 
-I am exploring mathematical models of butterfly wing development using image processing, graph representations, and reaction–diffusion systems.
+<div class="contact-links">
 
-[Explore →](butterfly-wings.qmd)
+  <a href="https://github.com/glorykellogg" target="_blank" aria-label="GitHub">
+    <i class="bi bi-github"></i>
+  </a>
 
-### Collaboration Networks
+  <a href="https://www.linkedin.com/in/glorykellogg" target="_blank" aria-label="LinkedIn">
+    <i class="bi bi-linkedin"></i>
+  </a>
 
-I am studying how nonlinear preferential attachment can produce structural inequality in evolving collaboration networks.
+  <a href="mailto:gloryekellogg@gmail.com" aria-label="Email">
+    <i class="bi bi-envelope"></i>
+  </a>
 
-[Explore →](collaboration-networks.qmd)
+</div>

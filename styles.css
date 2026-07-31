@@ -1,25 +1,26 @@
 @import url("https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css");
 
 :root {
-    --background: #faf9f6;
-    --text: #000000;
-    --rule: #000000;
+  --background: #faf9f6;
+  --text: #000000;
+  --rule: #000000;
+  --font-serif: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
 }
 
 /* ---------- Global ---------- */
 
 html,
 body {
-    background: var(--background);
-    color: var(--text);
-    font-family: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
-    font-size: 17px;
-    line-height: 1.6;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-/* Keep the content comfortably readable */
 main.content {
-    max-width: 850px;
+  max-width: 850px;
 }
 
 /* ---------- Typography ---------- */
@@ -30,100 +31,209 @@ li,
 td,
 th,
 blockquote,
-.navbar,
-.navbar *,
 .nav-footer,
 .btn,
 .quarto-title,
 .quarto-title *,
 .quarto-title-block,
 .quarto-title-block * {
-    font-family: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif !important;
-    color: var(--text);
+  color: var(--text);
+  font-family: var(--font-serif) !important;
 }
 
 .quarto-title h1,
 h1.title {
-    font-size: 2.6rem;
-    font-weight: 500;
+  font-size: 2.6rem;
+  font-weight: 500;
 }
 
 h2 {
-    font-size: 1.35rem;
-    font-weight: 500;
-    margin-top: 2.5rem;
-    padding-bottom: .2rem;
-    border-bottom: 1px solid var(--rule);
+  margin-top: 2.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1.35rem;
+  font-weight: 500;
 }
 
 h3 {
-    font-size: 1.15rem;
-    font-weight: 500;
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
-/* ---------- Navbar ---------- */
+/* ---------- Clickable banner ---------- */
 
-.navbar {
-    background: var(--background) !important;
-    border-bottom: 1px solid var(--rule);
-    box-shadow: none;
+.site-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
 }
 
-.navbar-title {
-    font-size: 1.3rem;
-    font-weight: 600;
+.site-banner-link {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  text-decoration: none;
 }
 
-.navbar-nav .nav-link,
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-    color: var(--text) !important;
+.site-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
 }
 
 /* ---------- Links ---------- */
 
 a,
 a:visited {
-    color: var(--text);
-    text-decoration: underline;
-    text-decoration-thickness: .06em;
-    text-underline-offset: .15em;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.15em;
 }
 
 a:hover {
-    color: var(--text);
+  color: var(--text);
+}
+
+/* Prevent banner from showing an underline */
+.site-banner-link,
+.site-banner-link:visited,
+.site-banner-link:hover {
+  text-decoration: none;
 }
 
 /* ---------- Footer ---------- */
 
 .nav-footer {
-    background: var(--background);
-    border-top: 1px solid var(--rule);
+  background: var(--background);
+  border-top: 1px solid var(--rule);
 }
 
 /* ---------- Buttons ---------- */
 
 .btn-primary {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--text);
-    border-radius: 0;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--text);
+  border-radius: 0;
 }
 
 .btn-primary:hover {
-    background: var(--text);
-    color: var(--background);
+  color: var(--background);
+  background: var(--text);
+  border-color: var(--text);
 }
 
 /* ---------- Lists ---------- */
 
 ul li {
-    margin-bottom: .35rem;
+  margin-bottom: 0.35rem;
 }
 
-/* ---------- Hide heading anchors ---------- */
+/* ---------- Project tiles ---------- */
+
+.project-grid {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--rule);
+  text-decoration: none;
+  line-height: 1.55;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: inherit;
+}
+
+.project-card p {
+  margin-bottom: 0;
+  color: inherit;
+}
+
+.project-card:hover {
+  color: var(--background);
+  background: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ---------- Table of contents ---------- */
+
+#TOC {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.sidebar nav[role="doc-toc"] {
+  width: 240px;
+}
+
+/* ---------- Miscellaneous ---------- */
 
 .anchorjs-link {
-    display: none;
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .project-grid {
+    flex-direction: column;
+  }
+
+  .site-banner-link {
+    width: 100%;
+  }
+
+  .site-banner {
+    width: 100%;
+    max-height: 140px;
+    object-fit: contain;
+  }
+}
+
+/* ---------- Contact links ---------- */
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  transform: translateY(-1px);
+}
+
+.contact-links i {
+  font-size: 1.35rem;
 }

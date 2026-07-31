@@ -1,26 +1,14 @@
 {
   "index.qmd": {
-    "index.html": "2ebbedf7"
-  },
-  "about.qmd": {
-    "about.html": "f9628165"
-  },
-  "research.qmd": {
-    "research.html": "09ea3baa"
-  },
-  "talks.qmd": {
-    "talks.html": "c8ffa63f"
-  },
-  "writing.qmd": {
-    "writing.html": "fee09028"
-  },
-  "cv.qmd": {
-    "cv.html": "7adf7396"
+    "index.html": "19cb4e6e"
   },
   "butterfly-wings.qmd": {
-    "butterfly-wings.html": "23ed6310"
+    "butterfly-wings.html": "9c3a34ed"
   },
   "collaboration-networks.qmd": {
-    "collaboration-networks.html": "b59c1713"
+    "collaboration-networks.html": "e989c94e"
+  },
+  "curriculum-vitae.qmd": {
+    "curriculum-vitae.html": "10a99c8e"
   }
 }

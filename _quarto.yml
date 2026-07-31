@@ -1,38 +1,19 @@
 project:
   type: website
   output-dir: _site
-  execute-dir: project
+  render:
+    - index.qmd
+    - butterfly-wings.qmd
+    - collaboration-networks.qmd
+    - curriculum-vitae.qmd
   resources:
     - files/Glory-Kellogg-CV.pdf
 
 website:
   title: "Glory Kellogg"
-  description: "Applied mathematics, computational modeling, and mathematical biology"
   favicon: images/favicon.png
-
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-
-      - text: Research
-        menu:
-          - href: butterfly-wings.qmd
-            text: Butterfly Wing Patterns
-          - href: collaboration-networks.qmd
-            text: Collaboration Networks
-      - href: talks.qmd
-        text: Talks
-      - href: cv.qmd
-        text: CV
-
-    right:
-      - icon: github
-        href: https://github.com/glorykellogg
-        aria-label: GitHub
-      - icon: linkedin
-        href: https://www.linkedin.com/in/glorykellogg
-        aria-label: LinkedIn
+  search: false
+  navbar: false
 
   page-footer:
     left: "© 2026 Glory Kellogg"
@@ -42,6 +23,5 @@ format:
   html:
     theme: simplex
     css: styles.css
-
-execute:
-  freeze: auto
+    include-before-body: header.html
+    toc: false

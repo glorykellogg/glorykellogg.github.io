@@ -1,9 +1,11 @@
 ---
-title: "Curriculum Vitae"
+title: "Glory Kellogg"
+subtitle: "[gloryekellogg@gmail.com](mailto:gloryekellogg@gmail.com) · Chicago, Illinois · [linkedin.com/in/glorykellogg](https://www.linkedin.com/in/glorykellogg)"
 toc: false
+page-layout: full
 ---
 
-[Download my CV](files/Glory-Kellogg-CV.pdf)
+[Download my CV](files/Glory-Kellogg-CV.pdf).
 
 ## Education
 
@@ -35,12 +37,11 @@ Mathematical biology, pattern formation, differential equations, graph theory, a
 
 ## Technical Skills
 
-Python · C++ · LaTeX · Java · C
+Python, C++, LaTeX, Java, and C.
 
 ## Leadership
 
 ### Social Media Manager, SIAM IIT Student Chapter
-
 May 2026–Present
 
 - Lead social media, email communications, and outreach.
