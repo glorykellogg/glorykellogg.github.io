@@ -9,14 +9,16 @@
 
 /* ---------- Global ---------- */
 
-html,
+html {
+  font-size: clamp(17px, 0.6vw + 15px, 20px);
+}
+
 body {
-  margin: 0;
   background: var(--background);
   color: var(--text);
   font-family: var(--font-serif);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 main.content {
@@ -236,4 +238,39 @@ ul li {
 
 .contact-links i {
   font-size: 1.35rem;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 800px) {
+
+  main.content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  h1,
+  .quarto-title h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .project-card {
+    padding: 1.4rem;
+  }
+
+  .contact-links {
+    gap: 1rem;
+  }
+
+  .contact-links i {
+    font-size: 1.4rem;
+  }
 }
