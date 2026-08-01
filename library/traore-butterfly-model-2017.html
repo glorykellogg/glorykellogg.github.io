@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Reading notes by Glory Kellogg on Edwin Nongba Traore’s 2017 project report implementing J. D. Murray’s mathematical model for butterfly wing pattern formation.">
 
-<title>Collaboration Networks – Glory Kellogg</title>
+<title>A Mathematical Model for Butterfly Wing Patterns – Glory Kellogg</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,19 +30,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -88,7 +89,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="quarto-light">
@@ -98,9 +99,48 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-model" id="toc-the-model" class="nav-link" data-scroll-target="#the-model">The Model</a>
+  <ul class="collapse">
+  <li><a href="#morphogen-diffusion" id="toc-morphogen-diffusion" class="nav-link" data-scroll-target="#morphogen-diffusion">Morphogen Diffusion</a></li>
+  <li><a href="#gene-product-activation" id="toc-gene-product-activation" class="nav-link" data-scroll-target="#gene-product-activation">Gene-Product Activation</a></li>
+  <li><a href="#boundary-conditions" id="toc-boundary-conditions" class="nav-link" data-scroll-target="#boundary-conditions">Boundary Conditions</a></li>
+  </ul></li>
+  <li><a href="#numerical-method" id="toc-numerical-method" class="nav-link" data-scroll-target="#numerical-method">Numerical Method</a>
+  <ul class="collapse">
+  <li><a href="#finite-differences" id="toc-finite-differences" class="nav-link" data-scroll-target="#finite-differences">Finite Differences</a></li>
+  <li><a href="#ghost-nodes" id="toc-ghost-nodes" class="nav-link" data-scroll-target="#ghost-nodes">Ghost Nodes</a></li>
+  <li><a href="#time-integration" id="toc-time-integration" class="nav-link" data-scroll-target="#time-integration">Time Integration</a></li>
+  </ul></li>
+  <li><a href="#main-results" id="toc-main-results" class="nav-link" data-scroll-target="#main-results">Main Results</a>
+  <ul class="collapse">
+  <li><a href="#reproducing-cautery-experiments" id="toc-reproducing-cautery-experiments" class="nav-link" data-scroll-target="#reproducing-cautery-experiments">Reproducing Cautery Experiments</a></li>
+  <li><a href="#effect-of-scale" id="toc-effect-of-scale" class="nav-link" data-scroll-target="#effect-of-scale">Effect of Scale</a></li>
+  <li><a href="#constructing-a-wing-shaped-domain" id="toc-constructing-a-wing-shaped-domain" class="nav-link" data-scroll-target="#constructing-a-wing-shaped-domain">Constructing a Wing-Shaped Domain</a></li>
+  <li><a href="#multiple-morphogens" id="toc-multiple-morphogens" class="nav-link" data-scroll-target="#multiple-morphogens">Multiple Morphogens</a></li>
+  </ul></li>
+  <li><a href="#figure-analysis" id="toc-figure-analysis" class="nav-link" data-scroll-target="#figure-analysis">Figure Analysis</a>
+  <ul class="collapse">
+  <li><a href="#figures-12" id="toc-figures-12" class="nav-link" data-scroll-target="#figures-12">Figures 1–2</a></li>
+  <li><a href="#figure-3" id="toc-figure-3" class="nav-link" data-scroll-target="#figure-3">Figure 3</a></li>
+  <li><a href="#figure-4" id="toc-figure-4" class="nav-link" data-scroll-target="#figure-4">Figure 4</a></li>
+  <li><a href="#figure-5" id="toc-figure-5" class="nav-link" data-scroll-target="#figure-5">Figure 5</a></li>
+  </ul></li>
+  <li><a href="#strengths" id="toc-strengths" class="nav-link" data-scroll-target="#strengths">Strengths</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#influence-on-my-work" id="toc-influence-on-my-work" class="nav-link" data-scroll-target="#influence-on-my-work">Influence on My Work</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header class="site-header">
   <a href="index.html" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
@@ -129,13 +169,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Collaboration Networks</h1>
-<p class="subtitle lead">Nonlinear preferential attachment in evolving networks</p>
+<h1 class="title">A Mathematical Model for Butterfly Wing Patterns</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -147,37 +186,263 @@ window.Quarto = {
 </header>
 
 
-<p>I am developing an agent-based model of evolving collaboration networks with nonlinear preferential attachment.</p>
-<p>The model examines how attachment bias affects network growth, degree inequality, and concentration around highly connected individuals.</p>
-<section id="model" class="level2">
-<h2 class="anchored" data-anchor-id="model">Model</h2>
-<p>Individuals are represented as nodes, and collaborations are represented as edges. New collaborations form according to the attachment rule</p>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<p>Traore, E. N. (2017). <em>A Mathematical Model for Butterfly Wing Patterns</em>. Project report supervised by Filippo Remonato and Mats Ehrnstrøm.</p>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The report studies a mathematical model based on two interacting processes:</p>
+<ol type="1">
+<li>A morphogen diffuses across the wing and degrades over time.</li>
+<li>The local morphogen concentration activates a gene product that controls later pigmentation.</li>
+</ol>
+<p>The author implements the model numerically and investigates how changes in parameters, domain size, and initial morphogen placement affect the resulting wing pattern.</p>
+</section>
+<section id="the-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-model">The Model</h2>
+<section id="morphogen-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="morphogen-diffusion">Morphogen Diffusion</h3>
+<p>The morphogen concentration <span class="math inline">\(S\)</span> is governed by</p>
 <p><span class="math display">\[
-P(i) \propto (k_i + c)^\alpha,
+\frac{\partial S}{\partial t}
+=
+D\nabla^2S
+-
+K\gamma S.
 \]</span></p>
-<p>where:</p>
+<p>The equation combines two competing processes:</p>
 <ul>
-<li><span class="math inline">\(k_i\)</span> is the degree of individual <span class="math inline">\(i\)</span>,</li>
-<li><span class="math inline">\(c\)</span> is the initial-attractiveness parameter, and</li>
-<li><span class="math inline">\(\alpha\)</span> controls the strength of preferential attachment.</li>
+<li><strong>Diffusion</strong> (<span class="math inline">\(D\nabla^2S\)</span>), which spreads the morphogen across the wing.</li>
+<li><strong>Degradation</strong> (<span class="math inline">\(-K\gamma S\)</span>), which removes morphogen over time.</li>
+</ul>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(S\)</span> is the morphogen concentration.</li>
+<li><span class="math inline">\(\frac{\partial S}{\partial t}\)</span> is the rate of change of <span class="math inline">\(S\)</span> over time.</li>
+<li><span class="math inline">\(D\)</span> is the diffusion coefficient.</li>
+<li><span class="math inline">\(\nabla^2S\)</span> measures how the concentration differs from its surroundings.</li>
+<li><span class="math inline">\(K\)</span> controls the degradation rate.</li>
+<li><span class="math inline">\(\gamma\)</span> is a scaling parameter related to wing size.</li>
 </ul>
 </section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="gene-product-activation" class="level3">
+<h3 class="anchored" data-anchor-id="gene-product-activation">Gene-Product Activation</h3>
+<p>The gene product <span class="math inline">\(g\)</span> satisfies</p>
+<p><span class="math display">\[
+\frac{\partial g}{\partial t}
+=
+\gamma
+\left(
+k_1S
++
+\frac{k_2g^2}{1+g^2}
+-
+k_3g
+\right).
+\]</span></p>
+<p>The equation combines three competing processes:</p>
 <ul>
-<li>Agent-based simulation</li>
-<li>Monte Carlo experiments</li>
-<li>Preferential attachment</li>
-<li>Network inequality measurements</li>
-<li>Parameter sweeps</li>
+<li><strong>Activation by the morphogen</strong> (<span class="math inline">\(k_1S\)</span>), which increases <span class="math inline">\(g\)</span> when the local morphogen concentration is high.</li>
+<li><strong>Nonlinear self-activation</strong> <span class="math inline">\(\left(\frac{k_2g^2}{1+g^2}\right)\)</span>, in which existing gene product promotes the production of more gene product.</li>
+<li><strong>Degradation</strong> (<span class="math inline">\(-k_3g\)</span>), which removes gene product over time.</li>
+</ul>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(g\)</span> is the concentration of the gene product, the molecule that ultimately influences pigmentation.</li>
+<li><span class="math inline">\(\frac{\partial g}{\partial t}\)</span> is the rate at which the gene-product concentration changes over time.</li>
+<li><span class="math inline">\(S\)</span> is the local morphogen concentration.</li>
+<li><span class="math inline">\(k_1\)</span> controls how strongly the morphogen activates gene production.</li>
+<li><span class="math inline">\(k_2\)</span> controls the strength of self-activation.</li>
+<li><span class="math inline">\(k_3\)</span> controls the degradation rate.</li>
+<li><span class="math inline">\(\gamma\)</span> scales the overall speed of the system.</li>
+</ul>
+<p>The nonlinear self-activation term</p>
+<p><span class="math display">\[
+\frac{k_2g^2}{1+g^2}
+\]</span></p>
+<p>has three important properties:</p>
+<ul>
+<li><strong>Nonlinear</strong> means the rate of activation does not increase at a constant rate as <span class="math inline">\(g\)</span> increases.</li>
+<li><strong>Self-activation</strong> means that gene product already present encourages the production of more of itself.</li>
+<li>The denominator <span class="math inline">\(1+g^2\)</span> prevents the activation from increasing indefinitely, causing the term to level off at high concentrations.</li>
+</ul>
+<p>Together, self-activation and degradation create a <strong>biological switch</strong>:</p>
+<ul>
+<li>Below a critical morphogen concentration, gene production eventually stops and <span class="math inline">\(g\)</span> returns to zero.</li>
+<li>Above the threshold, the gene product can stabilize at a positive value.</li>
+<li>This stable “on” state corresponds to cells that later become pigmented.</li>
 </ul>
 </section>
-<section id="current-questions" class="level2">
-<h2 class="anchored" data-anchor-id="current-questions">Current Questions</h2>
+<section id="boundary-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="boundary-conditions">Boundary Conditions</h3>
+<p>The model assumes that morphogen cannot diffuse across</p>
 <ul>
-<li>How does attachment strength affect degree inequality?</li>
-<li>Does the model exhibit threshold-like behavior?</li>
-<li>Under what conditions does collaboration become concentrated around a small number of highly connected individuals?</li>
+<li>the outer edge of the wing;</li>
+<li>wing veins.</li>
+</ul>
+<p>This is expressed by the <strong>zero-flux boundary condition</strong></p>
+<p><span class="math display">\[
+\frac{\partial S}{\partial \mathbf{n}}
+=
+0
+\qquad
+\text{on } \partial\Omega.
+\]</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(S\)</span> is the morphogen concentration.</li>
+<li><span class="math inline">\(\frac{\partial S}{\partial \mathbf{n}}\)</span> is the rate at which the morphogen changes in the direction perpendicular to the boundary.</li>
+<li><span class="math inline">\(\mathbf{n}\)</span> is the outward <strong>normal vector</strong>, a vector pointing directly away from the boundary.</li>
+<li><span class="math inline">\(\partial\Omega\)</span> denotes the boundary of the computational domain.</li>
+</ul>
+</section>
+</section>
+<section id="numerical-method" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-method">Numerical Method</h2>
+<section id="finite-differences" class="level3">
+<h3 class="anchored" data-anchor-id="finite-differences">Finite Differences</h3>
+<ul>
+<li>The continuous wing is replaced by a finite grid.</li>
+<li>Spatial derivatives are approximated using finite differences.</li>
+<li>The Laplacian is computed with a second-order central-difference stencil.</li>
+</ul>
+</section>
+<section id="ghost-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="ghost-nodes">Ghost Nodes</h3>
+<ul>
+<li>Ghost nodes enforce the zero-flux boundary condition.</li>
+<li>Artificial boundary values are chosen so that the normal derivative is zero.</li>
+<li>This prevents morphogen from leaving the computational domain.</li>
+</ul>
+</section>
+<section id="time-integration" class="level3">
+<h3 class="anchored" data-anchor-id="time-integration">Time Integration</h3>
+<ul>
+<li>Time evolution is computed using the forward Euler method.</li>
+<li>The emphasis is on reproducing qualitative biological patterns rather than high numerical accuracy.</li>
+</ul>
+</section>
+</section>
+<section id="main-results" class="level2">
+<h2 class="anchored" data-anchor-id="main-results">Main Results</h2>
+<section id="reproducing-cautery-experiments" class="level3">
+<h3 class="anchored" data-anchor-id="reproducing-cautery-experiments">Reproducing Cautery Experiments</h3>
+<p>The simulations reproduce Murray’s cauterization experiments.</p>
+<ul>
+<li>Holes placed near the morphogen source interrupt pigment-band formation.</li>
+<li>Holes farther from the source allow pigment bands to develop before diffusion is disrupted.</li>
+</ul>
+</section>
+<section id="effect-of-scale" class="level3">
+<h3 class="anchored" data-anchor-id="effect-of-scale">Effect of Scale</h3>
+<p>The parameter ()</p>
+<ul>
+<li>changes wing size without changing the computational grid;</li>
+<li>alters the relative size of the pigmented region.</li>
+</ul>
+<p>As () increases, the activated region occupies a smaller portion of the wing.</p>
+</section>
+<section id="constructing-a-wing-shaped-domain" class="level3">
+<h3 class="anchored" data-anchor-id="constructing-a-wing-shaped-domain">Constructing a Wing-Shaped Domain</h3>
+<p>The computational wing is created by</p>
+<ul>
+<li>selecting boundary points;</li>
+<li>interpolating them with Lagrange polynomials;</li>
+<li>embedding the resulting outline in a square computational grid.</li>
+</ul>
+</section>
+<section id="multiple-morphogens" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-morphogens">Multiple Morphogens</h3>
+<p>The report also investigates multiple interacting morphogen systems.</p>
+<ul>
+<li>Two morphogen fields are simulated simultaneously.</li>
+<li>Different gene products produce separate pigment regions.</li>
+<li>The approach suggests a pathway toward more complex wing patterns.</li>
+</ul>
+</section>
+</section>
+<section id="figure-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="figure-analysis">Figure Analysis</h2>
+<section id="figures-12" class="level3">
+<h3 class="anchored" data-anchor-id="figures-12">Figures 1–2</h3>
+<ul>
+<li>Cauterization experiments.</li>
+<li>Demonstrate how obstruction location changes pigment-band formation.</li>
+</ul>
+</section>
+<section id="figure-3" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3">Figure 3</h3>
+<ul>
+<li>Compares several values of ().</li>
+<li>Shows how wing scale changes the resulting pattern.</li>
+</ul>
+</section>
+<section id="figure-4" class="level3">
+<h3 class="anchored" data-anchor-id="figure-4">Figure 4</h3>
+<ul>
+<li>Construction of a wing-shaped computational domain.</li>
+<li>Particularly relevant to extracting wing geometry from photographs.</li>
+</ul>
+</section>
+<section id="figure-5" class="level3">
+<h3 class="anchored" data-anchor-id="figure-5">Figure 5</h3>
+<ul>
+<li>Two morphogen systems on the same wing.</li>
+<li>Different colors correspond to different gene products.</li>
+</ul>
+</section>
+</section>
+<section id="strengths" class="level2">
+<h2 class="anchored" data-anchor-id="strengths">Strengths</h2>
+<ul>
+<li>Converts Murray’s theoretical model into a numerical simulation.</li>
+<li>Clearly explains the governing equations.</li>
+<li>Clearly explains the boundary conditions.</li>
+<li>Clearly explains the numerical implementation.</li>
+<li>Uses a wing-shaped computational domain rather than a simple rectangle.</li>
+<li>Demonstrates how parameter changes alter biological patterns.</li>
+<li>Bridges mathematical theory and computational experimentation.</li>
+</ul>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li>Treats the wing as a largely homogeneous domain.</li>
+<li>Does not explicitly model many structural features of real butterfly wings.</li>
+<li>Represents geometry indirectly through a finite-difference grid.</li>
+<li>A graph-based or irregular-mesh representation may better preserve wing veins and compartment boundaries.</li>
+</ul>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ul>
+<li>How sensitive are the simulated patterns to grid resolution?</li>
+<li>Would a higher-order or implicit time-stepping method change the results?</li>
+<li>Should diffusion coefficients vary across veins or wing compartments?</li>
+<li>Could wing boundaries be extracted directly from photographs?</li>
+<li>Could the graph Laplacian replace the finite-difference Laplacian?</li>
+<li>How should multiple morphogens be coupled?</li>
+<li>How can simulated gene-product fields be compared quantitatively with observed pigmentation?</li>
+</ul>
+</section>
+<section id="influence-on-my-work" class="level2">
+<h2 class="anchored" data-anchor-id="influence-on-my-work">Influence on My Work</h2>
+<p>This report makes the transition from theory to implementation concrete.</p>
+<p>It demonstrates that Murray’s model can be simulated on an idealized butterfly wing using finite differences.</p>
+<p>My project may instead</p>
+<ul>
+<li>extract wing geometry directly from photographs;</li>
+<li>represent the wing as a graph;</li>
+<li>simulate diffusion using the graph Laplacian;</li>
+<li>compare simulated fields with observed butterfly wing patterns.</li>
+</ul>
+<p>A graph-based approach may provide</p>
+<ul>
+<li>a more faithful representation of irregular geometry;</li>
+<li>explicit treatment of veins and wing compartments;</li>
+<li>a direct connection between measured wing structure and computation;</li>
+<li>quantitative comparison between simulations and real butterfly wings.</li>
 </ul>
 
 

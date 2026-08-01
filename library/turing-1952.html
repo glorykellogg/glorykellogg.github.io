@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Reading notes by Glory Kellogg on Alan Turing’s 1952 paper, The Chemical Basis of Morphogenesis, including morphogens, reaction-diffusion systems, instability, and biological pattern formation.">
 
-<title>Butterfly Wing Pattern Formation – Glory Kellogg</title>
+<title>The Chemical Basis of Morphogenesis (1952) – Glory Kellogg</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,19 +30,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -58,8 +59,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="quarto-light">
@@ -69,9 +99,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#main-ideas" id="toc-main-ideas" class="nav-link" data-scroll-target="#main-ideas">Main Ideas</a>
+  <ul class="collapse">
+  <li><a href="#morphogens" id="toc-morphogens" class="nav-link" data-scroll-target="#morphogens">Morphogens</a></li>
+  <li><a href="#reaction-and-diffusion" id="toc-reaction-and-diffusion" class="nav-link" data-scroll-target="#reaction-and-diffusion">Reaction and Diffusion</a></li>
+  <li><a href="#diffusion-driven-instability" id="toc-diffusion-driven-instability" class="nav-link" data-scroll-target="#diffusion-driven-instability">Diffusion-Driven Instability</a></li>
+  <li><a href="#pattern-formation" id="toc-pattern-formation" class="nav-link" data-scroll-target="#pattern-formation">Pattern Formation</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#connections-to-my-research" id="toc-connections-to-my-research" class="nav-link" data-scroll-target="#connections-to-my-research">Connections to My Research</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a>
+  <ul class="collapse">
+  <li><a href="#homogeneous-equilibrium" id="toc-homogeneous-equilibrium" class="nav-link" data-scroll-target="#homogeneous-equilibrium">Homogeneous Equilibrium</a></li>
+  <li><a href="#linear-stability" id="toc-linear-stability" class="nav-link" data-scroll-target="#linear-stability">Linear Stability</a></li>
+  <li><a href="#geometry" id="toc-geometry" class="nav-link" data-scroll-target="#geometry">Geometry</a></li>
+  </ul></li>
+  <li><a href="#vocabulary" id="toc-vocabulary" class="nav-link" data-scroll-target="#vocabulary">Vocabulary</a></li>
+  <li><a href="#related-pages" id="toc-related-pages" class="nav-link" data-scroll-target="#related-pages">Related Pages</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header class="site-header">
   <a href="index.html" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
@@ -100,13 +156,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Butterfly Wing Pattern Formation</h1>
-<p class="subtitle lead">Mathematical models of biological pattern development</p>
+<h1 class="title">The Chemical Basis of Morphogenesis (1952)</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -118,28 +173,183 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.</p>
-<p>The project combines biological observation, image processing, graph-based representations, and mathematical models of pattern formation.</p>
-<section id="research-questions" class="level2">
-<h2 class="anchored" data-anchor-id="research-questions">Research Questions</h2>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<p>Turing, A. M. (1952). <em>The Chemical Basis of Morphogenesis</em>. <em>Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences</em>, <strong>237</strong>(641), 37–72. https://doi.org/10.1098/rstb.1952.0012</p>
+<p><a href="https://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf">Read the paper</a>.</p>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Turing proposes that biological patterns can emerge from a system of interacting chemical substances, which he calls morphogens. These substances react with one another and diffuse through tissue.</p>
+<p>A spatially uniform state can become unstable under the right conditions. Small differences in morphogen concentration may then grow rather than disappear, producing nonuniform patterns.</p>
+</section>
+<section id="main-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="main-ideas">Main Ideas</h2>
+<section id="morphogens" class="level3">
+<h3 class="anchored" data-anchor-id="morphogens">Morphogens</h3>
 <ul>
-<li>How can wing geometry be represented as a graph?</li>
-<li>How might signaling molecules diffuse across that structure?</li>
-<li>Which simulated patterns can be meaningfully compared with observed wings?</li>
+<li>Morphogens are chemical substances involved in the development of biological form.</li>
+<li>Cells do not follow a fixed developmental blueprint.</li>
+<li>Instead, cells respond to local morphogen concentrations that change over time.</li>
 </ul>
 </section>
-<section id="current-work" class="level2">
-<h2 class="anchored" data-anchor-id="current-work">Current Work</h2>
+<section id="reaction-and-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="reaction-and-diffusion">Reaction and Diffusion</h3>
+<p>The model combines two processes:</p>
 <ul>
-<li>Raising and documenting painted lady butterflies</li>
-<li>Developing an image-processing pipeline</li>
-<li>Constructing graph representations of wing structure</li>
-<li>Studying reaction–diffusion and morphogen-based models</li>
+<li>local chemical reactions;</li>
+<li>diffusion across space.</li>
+</ul>
+<p>A simplified reaction–diffusion system is</p>
+<p><span class="math display">\[
+\frac{\partial u}{\partial t}
+=
+D_u \nabla^2 u + f(u,v),
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial v}{\partial t}
+=
+D_v \nabla^2 v + g(u,v).
+\]</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are morphogen concentrations.</li>
+<li><span class="math inline">\(D_u\)</span> and <span class="math inline">\(D_v\)</span> are diffusion coefficients.</li>
+<li><span class="math inline">\(f(u,v)\)</span> and <span class="math inline">\(g(u,v)\)</span> describe the local reaction terms.</li>
+<li><span class="math inline">\(\nabla^2\)</span> is the Laplacian operator.</li>
 </ul>
 </section>
-<section id="project-direction" class="level2">
-<h2 class="anchored" data-anchor-id="project-direction">Project Direction</h2>
-<p>The long-term goal is to develop a computational framework for comparing mathematical pattern-formation models with observed butterfly wings.</p>
+<section id="diffusion-driven-instability" class="level3">
+<h3 class="anchored" data-anchor-id="diffusion-driven-instability">Diffusion-Driven Instability</h3>
+<ul>
+<li>A spatially uniform equilibrium can become unstable when diffusion is added.</li>
+<li>Diffusion normally smooths differences in concentration.</li>
+<li>In a coupled reaction–diffusion system, unequal diffusion rates can instead amplify small perturbations.</li>
+<li>Those perturbations can develop into stable spatial patterns.</li>
+</ul>
+</section>
+<section id="pattern-formation" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-formation">Pattern Formation</h3>
+<p>Possible outcomes include</p>
+<ul>
+<li>spots;</li>
+<li>stripes;</li>
+<li>waves;</li>
+<li>repeated structures;</li>
+<li>other spatial arrangements.</li>
+</ul>
+<p>The resulting pattern depends on</p>
+<ul>
+<li>the reaction terms;</li>
+<li>the diffusion coefficients;</li>
+<li>the geometry of the domain;</li>
+<li>the initial perturbations.</li>
+</ul>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ul>
+<li>Why does diffusion stabilize some systems but destabilize others?</li>
+<li>What determines whether spots or stripes emerge?</li>
+<li>How does the geometry of the domain influence the final pattern?</li>
+<li>How should a reaction–diffusion model be adapted to an irregular butterfly wing?</li>
+<li>Can diffusion on a graph preserve meaningful geometric information?</li>
+<li>Which aspects of butterfly wing development are well described by Turing models, and which require additional biological mechanisms?</li>
+</ul>
+</section>
+<section id="connections-to-my-research" class="level2">
+<h2 class="anchored" data-anchor-id="connections-to-my-research">Connections to My Research</h2>
+<p>This paper provides the mathematical foundation for my butterfly wing project.</p>
+<p>I’m interested in</p>
+<ul>
+<li>representing wing structure as a graph;</li>
+<li>modeling morphogen diffusion across that graph;</li>
+<li>comparing simulated patterns with real butterfly wings.</li>
+</ul>
+<p>A graph-based analogue replaces the continuous Laplacian with a graph Laplacian.</p>
+<p>A simplified system becomes</p>
+<p><span class="math display">\[
+\frac{d\mathbf{u}}{dt}
+=
+-D_uL\mathbf{u}
++
+\mathbf{f}(\mathbf{u},\mathbf{v}),
+\]</span></p>
+<p><span class="math display">\[
+\frac{d\mathbf{v}}{dt}
+=
+-D_vL\mathbf{v}
++
+\mathbf{g}(\mathbf{u},\mathbf{v}),
+\]</span></p>
+<p>where</p>
+<ul>
+<li>(L) is the graph Laplacian;</li>
+<li>() and () are morphogen concentrations defined on the graph.</li>
+</ul>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<section id="homogeneous-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="homogeneous-equilibrium">Homogeneous Equilibrium</h3>
+<ul>
+<li>Morphogen concentrations are constant throughout the domain.</li>
+<li>Concentrations do not change over time.</li>
+<li>The reaction system must be stable before diffusion is introduced.</li>
+<li>Turing instability occurs when diffusion destabilizes this equilibrium.</li>
+</ul>
+</section>
+<section id="linear-stability" class="level3">
+<h3 class="anchored" data-anchor-id="linear-stability">Linear Stability</h3>
+<ul>
+<li>Small perturbations are analyzed by linearizing the reaction terms near an equilibrium.</li>
+<li>The Jacobian matrix is</li>
+</ul>
+<p><span class="math display">\[
+J =
+\begin{pmatrix}
+f_u &amp; f_v \\
+g_u &amp; g_v
+\end{pmatrix}.
+\]</span></p>
+<ul>
+<li>The entries of (J) determine the local stability of the reaction system.</li>
+<li>With diffusion, each spatial mode evolves independently.</li>
+<li>Some modes decay while others grow into observable patterns.</li>
+</ul>
+</section>
+<section id="geometry" class="level3">
+<h3 class="anchored" data-anchor-id="geometry">Geometry</h3>
+<ul>
+<li>Geometry determines which spatial modes are possible.</li>
+<li>Boundary conditions influence how morphogens behave near the edges of the domain.</li>
+<li>Domain shape affects the resulting biological pattern.</li>
+<li>Geometry is therefore a central component of models for butterfly wings, shells, and animal coat markings.</li>
+</ul>
+</section>
+</section>
+<section id="vocabulary" class="level2">
+<h2 class="anchored" data-anchor-id="vocabulary">Vocabulary</h2>
+<ul>
+<li><p><strong>Morphogen</strong> — A chemical signaling molecule whose concentration varies across tissue and provides positional information during development.</p></li>
+<li><p><strong>Homogeneous equilibrium</strong> — A steady state in which morphogen concentrations are the same everywhere in space and remain constant over time.</p></li>
+<li><p><strong>Perturbation</strong> — A small disturbance from an equilibrium state used to test whether the system returns to equilibrium or evolves into a new pattern.</p></li>
+<li><p><strong>Linear stability</strong> — A method of analyzing how small perturbations behave near an equilibrium by approximating the system with its linear terms.</p></li>
+<li><p><strong>Diffusion coefficient</strong> — A parameter that determines how quickly a morphogen spreads through space.</p></li>
+<li><p><strong>Laplacian</strong> — A differential operator, denoted (^2), that measures how a quantity diffuses by comparing its value to the surrounding region.</p></li>
+<li><p><strong>Eigenmode</strong> — A spatial pattern of variation that grows or decays independently during stability analysis. The dominant growing eigenmode determines the emerging biological pattern.</p></li>
+<li><p><strong>Boundary condition</strong> — A mathematical constraint imposed at the edges of the domain that influences how diffusion and reactions behave.</p></li>
+<li><p><strong>Diffusion-driven instability (Turing instability)</strong> — A phenomenon in which diffusion, rather than smoothing differences, destabilizes an otherwise stable homogeneous equilibrium and produces spatial patterns.</p></li>
+<li><p><strong>Graph Laplacian</strong> — The graph-theoretic analogue of the continuous Laplacian. It models diffusion on discrete structures such as networks or graph representations of butterfly wings.</p></li>
+</ul>
+</section>
+<section id="related-pages" class="level2">
+<h2 class="anchored" data-anchor-id="related-pages">Related Pages</h2>
+<ul>
+<li><a href="../butterfly-wings.html">Butterfly Wing Pattern Formation</a></li>
+<li><a href="../library.html">Library</a></li>
+</ul>
 
 
 </section>

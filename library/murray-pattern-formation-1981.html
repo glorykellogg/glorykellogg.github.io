@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Reading notes by Glory Kellogg on J. D. Murray’s 1981 paper introducing mathematical models for butterfly wing pattern formation and mammalian coat markings.">
 
-<title>Butterfly Wing Pattern Formation – Glory Kellogg</title>
+<title>On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981) – Glory Kellogg</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,19 +30,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -59,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="quarto-light">
@@ -69,9 +70,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
+  <li><a href="#why-im-reading-it" id="toc-why-im-reading-it" class="nav-link" data-scroll-target="#why-im-reading-it">Why I’m Reading It</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#main-ideas" id="toc-main-ideas" class="nav-link" data-scroll-target="#main-ideas">Main Ideas</a>
+  <ul class="collapse">
+  <li><a href="#pattern-formation-requires-a-mechanism" id="toc-pattern-formation-requires-a-mechanism" class="nav-link" data-scroll-target="#pattern-formation-requires-a-mechanism">Pattern Formation Requires a Mechanism</a></li>
+  <li><a href="#diffusing-morphogens" id="toc-diffusing-morphogens" class="nav-link" data-scroll-target="#diffusing-morphogens">Diffusing Morphogens</a></li>
+  <li><a href="#gene-activation-as-a-switch" id="toc-gene-activation-as-a-switch" class="nav-link" data-scroll-target="#gene-activation-as-a-switch">Gene Activation as a Switch</a></li>
+  <li><a href="#geometry-matters" id="toc-geometry-matters" class="nav-link" data-scroll-target="#geometry-matters">Geometry Matters</a></li>
+  </ul></li>
+  <li><a href="#figures-worth-revisiting" id="toc-figures-worth-revisiting" class="nav-link" data-scroll-target="#figures-worth-revisiting">Figures Worth Revisiting</a>
+  <ul class="collapse">
+  <li><a href="#figure-1" id="toc-figure-1" class="nav-link" data-scroll-target="#figure-1">Figure 1</a></li>
+  <li><a href="#figure-2" id="toc-figure-2" class="nav-link" data-scroll-target="#figure-2">Figure 2</a></li>
+  <li><a href="#figure-3" id="toc-figure-3" class="nav-link" data-scroll-target="#figure-3">Figure 3</a></li>
+  <li><a href="#figures-48" id="toc-figures-48" class="nav-link" data-scroll-target="#figures-48">Figures 4–8</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#vocabulary" id="toc-vocabulary" class="nav-link" data-scroll-target="#vocabulary">Vocabulary</a></li>
+  <li><a href="#related-pages" id="toc-related-pages" class="nav-link" data-scroll-target="#related-pages">Related Pages</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header class="site-header">
   <a href="index.html" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
@@ -100,13 +128,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Butterfly Wing Pattern Formation</h1>
-<p class="subtitle lead">Mathematical models of biological pattern development</p>
+<h1 class="title">On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -118,28 +145,129 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.</p>
-<p>The project combines biological observation, image processing, graph-based representations, and mathematical models of pattern formation.</p>
-<section id="research-questions" class="level2">
-<h2 class="anchored" data-anchor-id="research-questions">Research Questions</h2>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<p>Murray, J. D. (1981). <em>On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings</em>. <em>Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences</em>, <strong>295</strong>(1078), 473–496.</p>
+<p><a href="Murray-PatternFormationMechanisms-1981.pdf">Read the paper</a>.</p>
+</section>
+<section id="why-im-reading-it" class="level2">
+<h2 class="anchored" data-anchor-id="why-im-reading-it">Why I’m Reading It</h2>
+<p>This paper is especially relevant to my <a href="butterfly-wings.qmd">butterfly wing project</a> because it is one of the earliest mathematical attempts to explain wing pattern formation through diffusion and gene activation rather than simply describing the observed patterns.</p>
+<p>It also serves as an important bridge between <a href="../library/turing-1952.html">Turing’s abstract reaction–diffusion theory</a> and biologically motivated models of butterfly development.</p>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Murray proposes a mathematical mechanism capable of generating common butterfly wing patterns using a diffusing morphogen coupled with a threshold gene-activation process. He then compares the predictions of the model with experimental results from butterfly and moth wings.</p>
+<p>The second half of the paper extends similar mathematical ideas to mammalian coat patterns, arguing that geometry and scale may explain much of the diversity observed in nature.</p>
+</section>
+<section id="main-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="main-ideas">Main Ideas</h2>
+<section id="pattern-formation-requires-a-mechanism" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-formation-requires-a-mechanism">Pattern Formation Requires a Mechanism</h3>
 <ul>
-<li>How can wing geometry be represented as a graph?</li>
-<li>How might signaling molecules diffuse across that structure?</li>
-<li>Which simulated patterns can be meaningfully compared with observed wings?</li>
+<li>The goal is to explain <strong>how</strong> biological patterns arise, not simply describe them.</li>
+<li>Mathematical models should propose mechanisms that can generate observed patterns.</li>
+<li>The focus is on developmental processes rather than static pigmentation.</li>
 </ul>
 </section>
-<section id="current-work" class="level2">
-<h2 class="anchored" data-anchor-id="current-work">Current Work</h2>
+<section id="diffusing-morphogens" class="level3">
+<h3 class="anchored" data-anchor-id="diffusing-morphogens">Diffusing Morphogens</h3>
 <ul>
-<li>Raising and documenting painted lady butterflies</li>
-<li>Developing an image-processing pipeline</li>
-<li>Constructing graph representations of wing structure</li>
-<li>Studying reaction–diffusion and morphogen-based models</li>
+<li>A morphogen is released from localized sources on the developing wing.</li>
+<li>Diffusion produces a spatial concentration gradient.</li>
+<li>Cells measure the local morphogen concentration.</li>
+<li>Developmental responses depend on concentration thresholds.</li>
+<li>Temporary chemical gradients produce lasting spatial patterns.</li>
 </ul>
 </section>
-<section id="project-direction" class="level2">
-<h2 class="anchored" data-anchor-id="project-direction">Project Direction</h2>
-<p>The long-term goal is to develop a computational framework for comparing mathematical pattern-formation models with observed butterfly wings.</p>
+<section id="gene-activation-as-a-switch" class="level3">
+<h3 class="anchored" data-anchor-id="gene-activation-as-a-switch">Gene Activation as a Switch</h3>
+<ul>
+<li>Morphogen concentration does not continuously determine pigment.</li>
+<li>Cells permanently switch developmental states once a critical threshold is exceeded.</li>
+<li>The developmental decision persists even after the morphogen disappears.</li>
+<li>Threshold activation stabilizes the final wing pattern.</li>
+</ul>
+</section>
+<section id="geometry-matters" class="level3">
+<h3 class="anchored" data-anchor-id="geometry-matters">Geometry Matters</h3>
+<ul>
+<li>Wing geometry is an active component of pattern formation.</li>
+<li>Changing wing size can alter the resulting pattern.</li>
+<li>Changing wing shape changes morphogen distributions.</li>
+<li>Vein arrangement influences diffusion pathways.</li>
+<li>The same governing equations can generate different patterns solely because of geometry.</li>
+</ul>
+</section>
+</section>
+<section id="figures-worth-revisiting" class="level2">
+<h2 class="anchored" data-anchor-id="figures-worth-revisiting">Figures Worth Revisiting</h2>
+<section id="figure-1" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1">Figure 1</h3>
+<ul>
+<li>Generalized butterfly wing geometry.</li>
+<li>Proposed morphogen source locations.</li>
+<li>Useful for relating the mathematical model to real butterfly anatomy.</li>
+</ul>
+</section>
+<section id="figure-2" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2">Figure 2</h3>
+<ul>
+<li>Threshold gene activation (“switch”) mechanism.</li>
+<li>Demonstrates how temporary morphogen exposure can permanently determine cell fate.</li>
+<li>Arguably the central conceptual figure in the paper.</li>
+</ul>
+</section>
+<section id="figure-3" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3">Figure 3</h3>
+<ul>
+<li>Diffusing morphogen wave across a wing cell.</li>
+<li>Connects morphogen diffusion to the emergence of visible pigmentation.</li>
+</ul>
+</section>
+<section id="figures-48" class="level3">
+<h3 class="anchored" data-anchor-id="figures-48">Figures 4–8</h3>
+<ul>
+<li>Comparisons between simulated and observed butterfly and moth wing patterns.</li>
+<li>Demonstrate the qualitative agreement between the mathematical model and biological observations.</li>
+<li>Illustrate how changes in geometry and parameters influence the resulting patterns.</li>
+</ul>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ul>
+<li>Can Murray’s continuous diffusion model can be reformulated on a graph using graph Laplacians?</li>
+<li>How well has this model held up over the last forty years?</li>
+<li>Which parts of the mechanism have experimental support today?</li>
+<li>How would the model change if diffusion occurred on a graph instead of a continuous surface?</li>
+<li>Could real wing vein networks be extracted automatically from photographs and used directly in simulations?</li>
+<li>How do modern models incorporate gene regulatory networks in addition to morphogen diffusion?</li>
+</ul>
+</section>
+<section id="vocabulary" class="level2">
+<h2 class="anchored" data-anchor-id="vocabulary">Vocabulary</h2>
+<ul>
+<li><p><strong>Morphogen</strong> — A signaling molecule whose concentration varies across space and provides positional cues to developing cells.</p></li>
+<li><p><strong>Reaction–diffusion</strong> — A mathematical model in which interacting chemicals react locally while diffusing through tissue, producing spatial patterns.</p></li>
+<li><p><strong>Determination stream</strong> — A moving developmental boundary that records where morphogen concentration first exceeds the activation threshold, leaving behind permanently determined cells.</p></li>
+<li><p><strong>Positional information</strong> — Information encoded by a cell’s location, often inferred from local morphogen concentration, that guides developmental fate.</p></li>
+<li><p><strong>Threshold activation</strong> — The process by which a developmental response occurs only when morphogen concentration exceeds a critical value.</p></li>
+<li><p><strong>Gene switch</strong> — A regulatory mechanism in which cells permanently change developmental state once a threshold is crossed.</p></li>
+<li><p><strong>Diffusion field</strong> — The spatial distribution of morphogen concentration over the developing wing at a given time.</p></li>
+<li><p><strong>Geometry</strong> — The shape, size, and internal structure of the wing that influence how morphogens spread.</p></li>
+<li><p><strong>Scale</strong> — The physical dimensions of the tissue, which affect diffusion distances and therefore the resulting pattern.</p></li>
+<li><p><strong>Boundary conditions</strong> — Mathematical constraints imposed at the edges of the wing that determine how morphogens behave at tissue boundaries.</p></li>
+</ul>
+</section>
+<section id="related-pages" class="level2">
+<h2 class="anchored" data-anchor-id="related-pages">Related Pages</h2>
+<ul>
+<li><a href="../library/turing-1952.html">The Chemical Basis of Morphogenesis</a></li>
+<li><a href="../library/traore-butterfly-model-2017.html">A Mathematical Model for Butterfly Wing Patterns</a></li>
+<li><a href="../butterfly-wings.html">Butterfly Wing Project</a></li>
+<li><a href="../library.html">Library</a></li>
+</ul>
 
 
 </section>

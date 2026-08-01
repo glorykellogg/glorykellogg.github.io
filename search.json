@@ -1,5 +1,117 @@
 [
   {
+    "objectID": "library/turing-1952.html#citation",
+    "href": "library/turing-1952.html#citation",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Citation",
+    "text": "Citation\nTuring, A. M. (1952). The Chemical Basis of Morphogenesis. Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences, 237(641), 37–72. https://doi.org/10.1098/rstb.1952.0012\nRead the paper."
+  },
+  {
+    "objectID": "library/turing-1952.html#overview",
+    "href": "library/turing-1952.html#overview",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Overview",
+    "text": "Overview\nTuring proposes that biological patterns can emerge from a system of interacting chemical substances, which he calls morphogens. These substances react with one another and diffuse through tissue.\nA spatially uniform state can become unstable under the right conditions. Small differences in morphogen concentration may then grow rather than disappear, producing nonuniform patterns."
+  },
+  {
+    "objectID": "library/turing-1952.html#main-ideas",
+    "href": "library/turing-1952.html#main-ideas",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Main Ideas",
+    "text": "Main Ideas\n\nMorphogens\n\nMorphogens are chemical substances involved in the development of biological form.\nCells do not follow a fixed developmental blueprint.\nInstead, cells respond to local morphogen concentrations that change over time.\n\n\n\nReaction and Diffusion\nThe model combines two processes:\n\nlocal chemical reactions;\ndiffusion across space.\n\nA simplified reaction–diffusion system is\n\\[\n\\frac{\\partial u}{\\partial t}\n=\nD_u \\nabla^2 u + f(u,v),\n\\]\n\\[\n\\frac{\\partial v}{\\partial t}\n=\nD_v \\nabla^2 v + g(u,v).\n\\]\nwhere\n\n\\(u\\) and \\(v\\) are morphogen concentrations.\n\\(D_u\\) and \\(D_v\\) are diffusion coefficients.\n\\(f(u,v)\\) and \\(g(u,v)\\) describe the local reaction terms.\n\\(\\nabla^2\\) is the Laplacian operator.\n\n\n\nDiffusion-Driven Instability\n\nA spatially uniform equilibrium can become unstable when diffusion is added.\nDiffusion normally smooths differences in concentration.\nIn a coupled reaction–diffusion system, unequal diffusion rates can instead amplify small perturbations.\nThose perturbations can develop into stable spatial patterns.\n\n\n\nPattern Formation\nPossible outcomes include\n\nspots;\nstripes;\nwaves;\nrepeated structures;\nother spatial arrangements.\n\nThe resulting pattern depends on\n\nthe reaction terms;\nthe diffusion coefficients;\nthe geometry of the domain;\nthe initial perturbations."
+  },
+  {
+    "objectID": "library/turing-1952.html#questions",
+    "href": "library/turing-1952.html#questions",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Questions",
+    "text": "Questions\n\nWhy does diffusion stabilize some systems but destabilize others?\nWhat determines whether spots or stripes emerge?\nHow does the geometry of the domain influence the final pattern?\nHow should a reaction–diffusion model be adapted to an irregular butterfly wing?\nCan diffusion on a graph preserve meaningful geometric information?\nWhich aspects of butterfly wing development are well described by Turing models, and which require additional biological mechanisms?"
+  },
+  {
+    "objectID": "library/turing-1952.html#connections-to-my-research",
+    "href": "library/turing-1952.html#connections-to-my-research",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Connections to My Research",
+    "text": "Connections to My Research\nThis paper provides the mathematical foundation for my butterfly wing project.\nI’m interested in\n\nrepresenting wing structure as a graph;\nmodeling morphogen diffusion across that graph;\ncomparing simulated patterns with real butterfly wings.\n\nA graph-based analogue replaces the continuous Laplacian with a graph Laplacian.\nA simplified system becomes\n\\[\n\\frac{d\\mathbf{u}}{dt}\n=\n-D_uL\\mathbf{u}\n+\n\\mathbf{f}(\\mathbf{u},\\mathbf{v}),\n\\]\n\\[\n\\frac{d\\mathbf{v}}{dt}\n=\n-D_vL\\mathbf{v}\n+\n\\mathbf{g}(\\mathbf{u},\\mathbf{v}),\n\\]\nwhere\n\n(L) is the graph Laplacian;\n() and () are morphogen concentrations defined on the graph."
+  },
+  {
+    "objectID": "library/turing-1952.html#notes",
+    "href": "library/turing-1952.html#notes",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Notes",
+    "text": "Notes\n\nHomogeneous Equilibrium\n\nMorphogen concentrations are constant throughout the domain.\nConcentrations do not change over time.\nThe reaction system must be stable before diffusion is introduced.\nTuring instability occurs when diffusion destabilizes this equilibrium.\n\n\n\nLinear Stability\n\nSmall perturbations are analyzed by linearizing the reaction terms near an equilibrium.\nThe Jacobian matrix is\n\n\\[\nJ =\n\\begin{pmatrix}\nf_u & f_v \\\\\ng_u & g_v\n\\end{pmatrix}.\n\\]\n\nThe entries of (J) determine the local stability of the reaction system.\nWith diffusion, each spatial mode evolves independently.\nSome modes decay while others grow into observable patterns.\n\n\n\nGeometry\n\nGeometry determines which spatial modes are possible.\nBoundary conditions influence how morphogens behave near the edges of the domain.\nDomain shape affects the resulting biological pattern.\nGeometry is therefore a central component of models for butterfly wings, shells, and animal coat markings."
+  },
+  {
+    "objectID": "library/turing-1952.html#vocabulary",
+    "href": "library/turing-1952.html#vocabulary",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nMorphogen — A chemical signaling molecule whose concentration varies across tissue and provides positional information during development.\nHomogeneous equilibrium — A steady state in which morphogen concentrations are the same everywhere in space and remain constant over time.\nPerturbation — A small disturbance from an equilibrium state used to test whether the system returns to equilibrium or evolves into a new pattern.\nLinear stability — A method of analyzing how small perturbations behave near an equilibrium by approximating the system with its linear terms.\nDiffusion coefficient — A parameter that determines how quickly a morphogen spreads through space.\nLaplacian — A differential operator, denoted (^2), that measures how a quantity diffuses by comparing its value to the surrounding region.\nEigenmode — A spatial pattern of variation that grows or decays independently during stability analysis. The dominant growing eigenmode determines the emerging biological pattern.\nBoundary condition — A mathematical constraint imposed at the edges of the domain that influences how diffusion and reactions behave.\nDiffusion-driven instability (Turing instability) — A phenomenon in which diffusion, rather than smoothing differences, destabilizes an otherwise stable homogeneous equilibrium and produces spatial patterns.\nGraph Laplacian — The graph-theoretic analogue of the continuous Laplacian. It models diffusion on discrete structures such as networks or graph representations of butterfly wings."
+  },
+  {
+    "objectID": "library/turing-1952.html#related-pages",
+    "href": "library/turing-1952.html#related-pages",
+    "title": "The Chemical Basis of Morphogenesis (1952)",
+    "section": "Related Pages",
+    "text": "Related Pages\n\nButterfly Wing Pattern Formation\nLibrary"
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#citation",
+    "href": "library/murray-pattern-formation-1981.html#citation",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Citation",
+    "text": "Citation\nMurray, J. D. (1981). On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 295(1078), 473–496.\nRead the paper."
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#why-im-reading-it",
+    "href": "library/murray-pattern-formation-1981.html#why-im-reading-it",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Why I’m Reading It",
+    "text": "Why I’m Reading It\nThis paper is especially relevant to my butterfly wing project because it is one of the earliest mathematical attempts to explain wing pattern formation through diffusion and gene activation rather than simply describing the observed patterns.\nIt also serves as an important bridge between Turing’s abstract reaction–diffusion theory and biologically motivated models of butterfly development."
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#overview",
+    "href": "library/murray-pattern-formation-1981.html#overview",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Overview",
+    "text": "Overview\nMurray proposes a mathematical mechanism capable of generating common butterfly wing patterns using a diffusing morphogen coupled with a threshold gene-activation process. He then compares the predictions of the model with experimental results from butterfly and moth wings.\nThe second half of the paper extends similar mathematical ideas to mammalian coat patterns, arguing that geometry and scale may explain much of the diversity observed in nature."
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#main-ideas",
+    "href": "library/murray-pattern-formation-1981.html#main-ideas",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Main Ideas",
+    "text": "Main Ideas\n\nPattern Formation Requires a Mechanism\n\nThe goal is to explain how biological patterns arise, not simply describe them.\nMathematical models should propose mechanisms that can generate observed patterns.\nThe focus is on developmental processes rather than static pigmentation.\n\n\n\nDiffusing Morphogens\n\nA morphogen is released from localized sources on the developing wing.\nDiffusion produces a spatial concentration gradient.\nCells measure the local morphogen concentration.\nDevelopmental responses depend on concentration thresholds.\nTemporary chemical gradients produce lasting spatial patterns.\n\n\n\nGene Activation as a Switch\n\nMorphogen concentration does not continuously determine pigment.\nCells permanently switch developmental states once a critical threshold is exceeded.\nThe developmental decision persists even after the morphogen disappears.\nThreshold activation stabilizes the final wing pattern.\n\n\n\nGeometry Matters\n\nWing geometry is an active component of pattern formation.\nChanging wing size can alter the resulting pattern.\nChanging wing shape changes morphogen distributions.\nVein arrangement influences diffusion pathways.\nThe same governing equations can generate different patterns solely because of geometry."
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#figures-worth-revisiting",
+    "href": "library/murray-pattern-formation-1981.html#figures-worth-revisiting",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Figures Worth Revisiting",
+    "text": "Figures Worth Revisiting\n\nFigure 1\n\nGeneralized butterfly wing geometry.\nProposed morphogen source locations.\nUseful for relating the mathematical model to real butterfly anatomy.\n\n\n\nFigure 2\n\nThreshold gene activation (“switch”) mechanism.\nDemonstrates how temporary morphogen exposure can permanently determine cell fate.\nArguably the central conceptual figure in the paper.\n\n\n\nFigure 3\n\nDiffusing morphogen wave across a wing cell.\nConnects morphogen diffusion to the emergence of visible pigmentation.\n\n\n\nFigures 4–8\n\nComparisons between simulated and observed butterfly and moth wing patterns.\nDemonstrate the qualitative agreement between the mathematical model and biological observations.\nIllustrate how changes in geometry and parameters influence the resulting patterns."
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#questions",
+    "href": "library/murray-pattern-formation-1981.html#questions",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Questions",
+    "text": "Questions\n\nCan Murray’s continuous diffusion model can be reformulated on a graph using graph Laplacians?\nHow well has this model held up over the last forty years?\nWhich parts of the mechanism have experimental support today?\nHow would the model change if diffusion occurred on a graph instead of a continuous surface?\nCould real wing vein networks be extracted automatically from photographs and used directly in simulations?\nHow do modern models incorporate gene regulatory networks in addition to morphogen diffusion?"
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#vocabulary",
+    "href": "library/murray-pattern-formation-1981.html#vocabulary",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nMorphogen — A signaling molecule whose concentration varies across space and provides positional cues to developing cells.\nReaction–diffusion — A mathematical model in which interacting chemicals react locally while diffusing through tissue, producing spatial patterns.\nDetermination stream — A moving developmental boundary that records where morphogen concentration first exceeds the activation threshold, leaving behind permanently determined cells.\nPositional information — Information encoded by a cell’s location, often inferred from local morphogen concentration, that guides developmental fate.\nThreshold activation — The process by which a developmental response occurs only when morphogen concentration exceeds a critical value.\nGene switch — A regulatory mechanism in which cells permanently change developmental state once a threshold is crossed.\nDiffusion field — The spatial distribution of morphogen concentration over the developing wing at a given time.\nGeometry — The shape, size, and internal structure of the wing that influence how morphogens spread.\nScale — The physical dimensions of the tissue, which affect diffusion distances and therefore the resulting pattern.\nBoundary conditions — Mathematical constraints imposed at the edges of the wing that determine how morphogens behave at tissue boundaries."
+  },
+  {
+    "objectID": "library/murray-pattern-formation-1981.html#related-pages",
+    "href": "library/murray-pattern-formation-1981.html#related-pages",
+    "title": "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)",
+    "section": "Related Pages",
+    "text": "Related Pages\n\nThe Chemical Basis of Morphogenesis\nA Mathematical Model for Butterfly Wing Patterns\nButterfly Wing Project\nLibrary"
+  },
+  {
     "objectID": "curriculum-vitae.html",
     "href": "curriculum-vitae.html",
     "title": "Curriculum Vitae",
@@ -74,7 +186,7 @@
     "href": "index.html",
     "title": "Glory Kellogg",
     "section": "",
-    "text": "Glory Kellogg\nI am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.\nI’m drawn to the mathematical undercurrents of the natural world. I like building models that bring those hidden structures into view. Lately, I’ve been wondering how butterfly wings form their patterns and why some networks become unequal.\nRead my curriculum vitae, or send me an email."
+    "text": "Glory Kellogg\nI am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.\nI’m drawn to the hidden patterns of the natural world and to the math that helps bring them into focus. Lately, I’ve been wondering how butterfly wings form patterns and why some networks become unequal.\nI’ve started keeping a library of books and papers with notes on the ideas that have shaped my thinking. You can also read my curriculum vitae or send me an email."
   },
   {
     "objectID": "index.html#current-research",
@@ -110,5 +222,89 @@
     "title": "Collaboration Networks",
     "section": "Current Questions",
     "text": "Current Questions\n\nHow does attachment strength affect degree inequality?\nDoes the model exhibit threshold-like behavior?\nUnder what conditions does collaboration become concentrated around a small number of highly connected individuals?"
+  },
+  {
+    "objectID": "library.html",
+    "href": "library.html",
+    "title": "Library",
+    "section": "",
+    "text": "Books and papers that have shaped my thinking."
+  },
+  {
+    "objectID": "library.html#currently-reading",
+    "href": "library.html#currently-reading",
+    "title": "Library",
+    "section": "Currently Reading",
+    "text": "Currently Reading\n\n\n Project Report A Mathematical Model for Butterfly Wing Patterns Edwin Nongba Traore · 2017  Notes on a numerical implementation of Murray’s butterfly wing model using finite differences, morphogen diffusion, and gene-product activation.  Finished \n\n\n Article  On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings   J. D. Murray · 1981   Murray’s extension of Turing’s ideas to butterfly wing development, introducing a diffusing morphogen model, threshold gene activation, and the roles of wing geometry and scale in biological pattern formation.  Reading \n\n\n Article The Chemical Basis of Morphogenesis Alan M. Turing · 1952  Notes on morphogens, diffusion-driven instability, and the mathematical foundations of biological pattern formation.  Reading"
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#citation",
+    "href": "library/traore-butterfly-model-2017.html#citation",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Citation",
+    "text": "Citation\nTraore, E. N. (2017). A Mathematical Model for Butterfly Wing Patterns. Project report supervised by Filippo Remonato and Mats Ehrnstrøm."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#overview",
+    "href": "library/traore-butterfly-model-2017.html#overview",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Overview",
+    "text": "Overview\nThe report studies a mathematical model based on two interacting processes:\n\nA morphogen diffuses across the wing and degrades over time.\nThe local morphogen concentration activates a gene product that controls later pigmentation.\n\nThe author implements the model numerically and investigates how changes in parameters, domain size, and initial morphogen placement affect the resulting wing pattern."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#the-model",
+    "href": "library/traore-butterfly-model-2017.html#the-model",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "The Model",
+    "text": "The Model\n\nMorphogen Diffusion\nThe morphogen concentration \\(S\\) is governed by\n\\[\n\\frac{\\partial S}{\\partial t}\n=\nD\\nabla^2S\n-\nK\\gamma S.\n\\]\nThe equation combines two competing processes:\n\nDiffusion (\\(D\\nabla^2S\\)), which spreads the morphogen across the wing.\nDegradation (\\(-K\\gamma S\\)), which removes morphogen over time.\n\nwhere\n\n\\(S\\) is the morphogen concentration.\n\\(\\frac{\\partial S}{\\partial t}\\) is the rate of change of \\(S\\) over time.\n\\(D\\) is the diffusion coefficient.\n\\(\\nabla^2S\\) measures how the concentration differs from its surroundings.\n\\(K\\) controls the degradation rate.\n\\(\\gamma\\) is a scaling parameter related to wing size.\n\n\n\nGene-Product Activation\nThe gene product \\(g\\) satisfies\n\\[\n\\frac{\\partial g}{\\partial t}\n=\n\\gamma\n\\left(\nk_1S\n+\n\\frac{k_2g^2}{1+g^2}\n-\nk_3g\n\\right).\n\\]\nThe equation combines three competing processes:\n\nActivation by the morphogen (\\(k_1S\\)), which increases \\(g\\) when the local morphogen concentration is high.\nNonlinear self-activation \\(\\left(\\frac{k_2g^2}{1+g^2}\\right)\\), in which existing gene product promotes the production of more gene product.\nDegradation (\\(-k_3g\\)), which removes gene product over time.\n\nwhere\n\n\\(g\\) is the concentration of the gene product, the molecule that ultimately influences pigmentation.\n\\(\\frac{\\partial g}{\\partial t}\\) is the rate at which the gene-product concentration changes over time.\n\\(S\\) is the local morphogen concentration.\n\\(k_1\\) controls how strongly the morphogen activates gene production.\n\\(k_2\\) controls the strength of self-activation.\n\\(k_3\\) controls the degradation rate.\n\\(\\gamma\\) scales the overall speed of the system.\n\nThe nonlinear self-activation term\n\\[\n\\frac{k_2g^2}{1+g^2}\n\\]\nhas three important properties:\n\nNonlinear means the rate of activation does not increase at a constant rate as \\(g\\) increases.\nSelf-activation means that gene product already present encourages the production of more of itself.\nThe denominator \\(1+g^2\\) prevents the activation from increasing indefinitely, causing the term to level off at high concentrations.\n\nTogether, self-activation and degradation create a biological switch:\n\nBelow a critical morphogen concentration, gene production eventually stops and \\(g\\) returns to zero.\nAbove the threshold, the gene product can stabilize at a positive value.\nThis stable “on” state corresponds to cells that later become pigmented.\n\n\n\nBoundary Conditions\nThe model assumes that morphogen cannot diffuse across\n\nthe outer edge of the wing;\nwing veins.\n\nThis is expressed by the zero-flux boundary condition\n\\[\n\\frac{\\partial S}{\\partial \\mathbf{n}}\n=\n0\n\\qquad\n\\text{on } \\partial\\Omega.\n\\]\nwhere\n\n\\(S\\) is the morphogen concentration.\n\\(\\frac{\\partial S}{\\partial \\mathbf{n}}\\) is the rate at which the morphogen changes in the direction perpendicular to the boundary.\n\\(\\mathbf{n}\\) is the outward normal vector, a vector pointing directly away from the boundary.\n\\(\\partial\\Omega\\) denotes the boundary of the computational domain."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#numerical-method",
+    "href": "library/traore-butterfly-model-2017.html#numerical-method",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Numerical Method",
+    "text": "Numerical Method\n\nFinite Differences\n\nThe continuous wing is replaced by a finite grid.\nSpatial derivatives are approximated using finite differences.\nThe Laplacian is computed with a second-order central-difference stencil.\n\n\n\nGhost Nodes\n\nGhost nodes enforce the zero-flux boundary condition.\nArtificial boundary values are chosen so that the normal derivative is zero.\nThis prevents morphogen from leaving the computational domain.\n\n\n\nTime Integration\n\nTime evolution is computed using the forward Euler method.\nThe emphasis is on reproducing qualitative biological patterns rather than high numerical accuracy."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#main-results",
+    "href": "library/traore-butterfly-model-2017.html#main-results",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Main Results",
+    "text": "Main Results\n\nReproducing Cautery Experiments\nThe simulations reproduce Murray’s cauterization experiments.\n\nHoles placed near the morphogen source interrupt pigment-band formation.\nHoles farther from the source allow pigment bands to develop before diffusion is disrupted.\n\n\n\nEffect of Scale\nThe parameter ()\n\nchanges wing size without changing the computational grid;\nalters the relative size of the pigmented region.\n\nAs () increases, the activated region occupies a smaller portion of the wing.\n\n\nConstructing a Wing-Shaped Domain\nThe computational wing is created by\n\nselecting boundary points;\ninterpolating them with Lagrange polynomials;\nembedding the resulting outline in a square computational grid.\n\n\n\nMultiple Morphogens\nThe report also investigates multiple interacting morphogen systems.\n\nTwo morphogen fields are simulated simultaneously.\nDifferent gene products produce separate pigment regions.\nThe approach suggests a pathway toward more complex wing patterns."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#figure-analysis",
+    "href": "library/traore-butterfly-model-2017.html#figure-analysis",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Figure Analysis",
+    "text": "Figure Analysis\n\nFigures 1–2\n\nCauterization experiments.\nDemonstrate how obstruction location changes pigment-band formation.\n\n\n\nFigure 3\n\nCompares several values of ().\nShows how wing scale changes the resulting pattern.\n\n\n\nFigure 4\n\nConstruction of a wing-shaped computational domain.\nParticularly relevant to extracting wing geometry from photographs.\n\n\n\nFigure 5\n\nTwo morphogen systems on the same wing.\nDifferent colors correspond to different gene products."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#strengths",
+    "href": "library/traore-butterfly-model-2017.html#strengths",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Strengths",
+    "text": "Strengths\n\nConverts Murray’s theoretical model into a numerical simulation.\nClearly explains the governing equations.\nClearly explains the boundary conditions.\nClearly explains the numerical implementation.\nUses a wing-shaped computational domain rather than a simple rectangle.\nDemonstrates how parameter changes alter biological patterns.\nBridges mathematical theory and computational experimentation."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#limitations",
+    "href": "library/traore-butterfly-model-2017.html#limitations",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Limitations",
+    "text": "Limitations\n\nTreats the wing as a largely homogeneous domain.\nDoes not explicitly model many structural features of real butterfly wings.\nRepresents geometry indirectly through a finite-difference grid.\nA graph-based or irregular-mesh representation may better preserve wing veins and compartment boundaries."
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#questions",
+    "href": "library/traore-butterfly-model-2017.html#questions",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Questions",
+    "text": "Questions\n\nHow sensitive are the simulated patterns to grid resolution?\nWould a higher-order or implicit time-stepping method change the results?\nShould diffusion coefficients vary across veins or wing compartments?\nCould wing boundaries be extracted directly from photographs?\nCould the graph Laplacian replace the finite-difference Laplacian?\nHow should multiple morphogens be coupled?\nHow can simulated gene-product fields be compared quantitatively with observed pigmentation?"
+  },
+  {
+    "objectID": "library/traore-butterfly-model-2017.html#influence-on-my-work",
+    "href": "library/traore-butterfly-model-2017.html#influence-on-my-work",
+    "title": "A Mathematical Model for Butterfly Wing Patterns",
+    "section": "Influence on My Work",
+    "text": "Influence on My Work\nThis report makes the transition from theory to implementation concrete.\nIt demonstrates that Murray’s model can be simulated on an idealized butterfly wing using finite differences.\nMy project may instead\n\nextract wing geometry directly from photographs;\nrepresent the wing as a graph;\nsimulate diffusion using the graph Laplacian;\ncompare simulated fields with observed butterfly wing patterns.\n\nA graph-based approach may provide\n\na more faithful representation of irregular geometry;\nexplicit treatment of veins and wing compartments;\na direct connection between measured wing structure and computation;\nquantitative comparison between simulations and real butterfly wings."
   }
 ]
