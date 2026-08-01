@@ -343,3 +343,25 @@ main {
   width: min(100% - 2rem, 1200px) !important;
   max-width: none !important;
 }
+/* Fix Quarto page width */
+
+.page-columns,
+.page-layout-article,
+.column-page,
+.column-body {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.column-body {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .column-body {
+    padding: 0 0.9rem !important;
+  }
+}
