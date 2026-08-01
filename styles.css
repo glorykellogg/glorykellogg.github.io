@@ -102,6 +102,16 @@ h3 {
   font-weight: 500;
 }
 
+.cv-subtitle {
+  margin: -0.5rem auto 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Hide Quarto's generated title block */
+.quarto-title-block {
+  display: none;
+}
 
 /* ==========================================================
    Clickable banner
