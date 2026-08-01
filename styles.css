@@ -1,12 +1,21 @@
 @import url("https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css");
 
+
+/* ==========================================================
+   Variables
+   ========================================================== */
+
 :root {
   --background: #faf9f6;
   --text: #000000;
   --rule: #000000;
   --font-serif: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
 }
-/* ---------- Global ---------- */
+
+
+/* ==========================================================
+   Global
+   ========================================================== */
 
 html {
   font-size: 22px !important;
@@ -27,7 +36,7 @@ main.content,
 .page-layout-article,
 .column-page,
 .column-body {
-  width: calc(100%) !important;
+  width: 100% !important;
   max-width: none !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -39,7 +48,10 @@ main.content,
   padding: 0 !important;
 }
 
-/* ---------- Typography ---------- */
+
+/* ==========================================================
+   Typography
+   ========================================================== */
 
 body,
 p,
@@ -90,7 +102,10 @@ h3 {
   font-weight: 500;
 }
 
-/* ---------- Clickable banner ---------- */
+
+/* ==========================================================
+   Clickable banner
+   ========================================================== */
 
 .site-header {
   width: 100%;
@@ -118,7 +133,10 @@ h3 {
   object-fit: contain;
 }
 
-/* ---------- Homepage introduction ---------- */
+
+/* ==========================================================
+   Homepage introduction
+   ========================================================== */
 
 .intro {
   display: flex;
@@ -149,7 +167,10 @@ h3 {
   border-radius: 6px;
 }
 
-/* ---------- Links ---------- */
+
+/* ==========================================================
+   Links
+   ========================================================== */
 
 a,
 a:visited {
@@ -163,14 +184,20 @@ a:hover {
   color: var(--text);
 }
 
-/* ---------- Footer ---------- */
+
+/* ==========================================================
+   Footer
+   ========================================================== */
 
 .nav-footer {
   background: var(--background);
   border-top: 1px solid var(--rule);
 }
 
-/* ---------- Buttons ---------- */
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
 
 .btn-primary {
   color: var(--text);
@@ -185,13 +212,19 @@ a:hover {
   border-color: var(--text);
 }
 
-/* ---------- Lists ---------- */
+
+/* ==========================================================
+   Lists
+   ========================================================== */
 
 ul li {
   margin-bottom: 0.35rem;
 }
 
-/* ---------- Project tiles ---------- */
+
+/* ==========================================================
+   Project tiles
+   ========================================================== */
 
 .project-grid {
   display: flex;
@@ -236,7 +269,10 @@ ul li {
   color: inherit;
 }
 
-/* ---------- Contact links ---------- */
+
+/* ==========================================================
+   Contact links
+   ========================================================== */
 
 .contact-links {
   display: flex;
@@ -249,6 +285,8 @@ ul li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
   color: var(--text);
   text-decoration: none;
 }
@@ -258,10 +296,15 @@ ul li {
 }
 
 .contact-links i {
+  display: block;
   font-size: 1.35rem;
+  line-height: 1;
 }
 
-/* ---------- Table of contents ---------- */
+
+/* ==========================================================
+   Table of contents
+   ========================================================== */
 
 #TOC {
   font-size: 0.95rem;
@@ -272,15 +315,21 @@ ul li {
   width: 240px;
 }
 
-/* ---------- Miscellaneous ---------- */
+
+/* ==========================================================
+   Miscellaneous
+   ========================================================== */
 
 .anchorjs-link {
   display: none;
 }
 
-/* ---------- Mobile ---------- */
 
-@media (max-width: 100%) {
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width: 800px) {
   html {
     font-size: 19px !important;
   }
@@ -290,18 +339,13 @@ ul li {
     line-height: 1.7;
   }
 
-  /*
-  Continue using the full viewport width minus 0.5rem.
-  No additional mobile padding is added.
-  */
-
   main,
   main.content,
   .page-columns,
   .page-layout-article,
   .column-page,
   .column-body {
-    width: calc(100%) !important;
+    width: 100% !important;
     max-width: none !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -346,10 +390,15 @@ ul li {
   }
 
   .project-grid {
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem;
+    align-items: stretch;
   }
 
   .project-card {
+    width: 100%;
+    flex: none;
     padding: 1.4rem;
   }
 
@@ -367,32 +416,3 @@ ul li {
     font-size: 1.5rem;
   }
 }
-
-@media (max-width: 800px) {
-
-  .project-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.25rem;
-    align-items: stretch;
-  }
-
-  .project-card {
-    width: 100%;
-    flex: none;
-  }
-
-}
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6rem;
-  height: 1.6rem;
-}
-
-.contact-links i {
-  display: block;
-  font-size: 1.35rem;
-  line-height: 1;
-} 
