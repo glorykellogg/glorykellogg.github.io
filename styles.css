@@ -14,16 +14,29 @@
 
 
 /* ==========================================================
+   Dark-mode variables
+   Applied when JavaScript adds .night to the <html> element
+   ========================================================== */
+
+.night {
+  --background: #18211d;
+  --text: #f1eee3;
+  --rule: rgba(241, 238, 227, 0.55);
+}
+
+
+/* ==========================================================
    Global
    ========================================================== */
 
 html {
   font-size: 22px !important;
+  background: var(--background);
 }
 
 body {
   margin: 0;
-  background: var(--background);
+  background-color: var(--background);
   color: var(--text);
   font-family: var(--font-serif);
   font-size: 1rem;
@@ -46,6 +59,33 @@ main.content,
 main.content,
 .column-body {
   padding: 0 !important;
+}
+
+
+/* ==========================================================
+   Chalkboard background
+   ========================================================== */
+
+.night body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.025),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 75% 65%,
+      rgba(255, 255, 255, 0.018),
+      transparent 40%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.012) 0,
+      rgba(255, 255, 255, 0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
 }
 
 
@@ -108,13 +148,17 @@ h3 {
   font-size: 1rem;
 }
 
-/* Hide Quarto's generated title block */
-.quarto-title-block {
+/*
+Hide Quarto's generated title block only on the CV page.
+The CV page is identified by the presence of .cv-subtitle.
+*/
+body:has(.cv-subtitle) .quarto-title-block {
   display: none;
 }
 
+
 /* ==========================================================
-   Clickable banner
+   Clickable cicada banner
    ========================================================== */
 
 .site-header {
@@ -132,15 +176,33 @@ h3 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
+  color: var(--text);
   text-decoration: none;
 }
 
 .site-banner {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: contain;
+  max-width: 1400px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: var(--text);
+
+  -webkit-mask-image: url("images/cicada-banner.png");
+  mask-image: url("images/cicada-banner.png");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.night .site-header {
+  background: transparent;
 }
 
 
@@ -202,6 +264,10 @@ a:hover {
 .nav-footer {
   background: var(--background);
   border-top: 1px solid var(--rule);
+}
+
+.night .nav-footer {
+  background: transparent;
 }
 
 
@@ -413,9 +479,7 @@ ul li {
   }
 
   .site-banner {
-    width: 100%;
-    max-height: 140px;
-    object-fit: contain;
+    height: 140px;
   }
 
   .contact-links {

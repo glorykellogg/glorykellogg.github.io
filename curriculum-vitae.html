@@ -73,13 +73,34 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
+/* ==========================================================
+   Cicada Banner
+   ========================================================== */
+
 <header class="site-header">
   <a href="index.html" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
-    <img src="images/cicada banner.png" alt="Glory Kellogg" class="site-banner">
+    <span class="site-banner" aria-hidden="true"></span>
   </a>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </header>
+
+<script>
+(() => {
+  const darkPreference = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  const hour = new Date().getHours();
+  const isNight = hour >= 19 || hour < 7;
+
+  if (darkPreference || isNight) {
+    document.documentElement.classList.add("night");
+  } else {
+    document.documentElement.classList.remove("night");
+  }
+})();
+</script>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
