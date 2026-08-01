@@ -384,3 +384,14 @@ ul li {
   }
 
 }
+
+.orcid-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.contact-links a:hover .orcid-icon {
+  transform: translateY(-1px);
+}
