@@ -340,8 +340,9 @@ h1.title {
 }
 
 main.content {
-  width: min(100% - 3rem, 1200px);
-  max-width: none;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
