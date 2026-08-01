@@ -385,13 +385,21 @@ ul li {
 
 }
 
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.contact-links i,
 .orcid-icon {
   width: 1.35rem;
   height: 1.35rem;
   display: block;
-  transition: transform 0.15s ease;
 }
 
-.contact-links a:hover .orcid-icon {
-  transform: translateY(-1px);
+.orcid-icon {
+  vertical-align: middle;
 }
