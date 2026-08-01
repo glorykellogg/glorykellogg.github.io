@@ -53,7 +53,7 @@
     "href": "library/turing-1952.html#related-pages",
     "title": "The Chemical Basis of Morphogenesis (1952)",
     "section": "Related Pages",
-    "text": "Related Pages\n\nButterfly Wing Pattern Formation\nLibrary"
+    "text": "Related Pages\n\nA Mathematical Model for Butterfly Wing Patterns\nOn Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings\nButterfly Wing Pattern Formation\nLibrary"
   },
   {
     "objectID": "library/murray-pattern-formation-1981.html#citation",
@@ -221,14 +221,7 @@
     "href": "library.html",
     "title": "Library",
     "section": "",
-    "text": "Books and papers that have shaped my thinking."
-  },
-  {
-    "objectID": "library.html#currently-reading",
-    "href": "library.html#currently-reading",
-    "title": "Library",
-    "section": "Currently Reading",
-    "text": "Currently Reading\n\n\n Project Report A Mathematical Model for Butterfly Wing Patterns Edwin Nongba Traore · 2017  Notes on a numerical implementation of Murray’s butterfly wing model using finite differences, morphogen diffusion, and gene-product activation.  Finished \n\n\n Article  On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings   J. D. Murray · 1981   Murray’s extension of Turing’s ideas to butterfly wing development, introducing a diffusing morphogen model, threshold gene activation, and the roles of wing geometry and scale in biological pattern formation.  Reading \n\n\n Article The Chemical Basis of Morphogenesis Alan M. Turing · 1952  Notes on morphogens, diffusion-driven instability, and the mathematical foundations of biological pattern formation.  Reading"
+    "text": "Project Report A Mathematical Model for Butterfly Wing Patterns Edwin Nongba Traore · 2017  Notes on a numerical implementation of Murray’s butterfly wing model using finite differences, morphogen diffusion, and gene-product activation.  Finished \n\n\n Article  On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings   J. D. Murray · 1981   Murray’s extension of Turing’s ideas to butterfly wing development, introducing a diffusing morphogen model, threshold gene activation, and the roles of wing geometry and scale in biological pattern formation.  Reading \n\n\n Article The Chemical Basis of Morphogenesis Alan M. Turing · 1952  Notes on morphogens, diffusion-driven instability, and the mathematical foundations of biological pattern formation.  Reading"
   },
   {
     "objectID": "library/traore-butterfly-model-2017.html#citation",
