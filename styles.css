@@ -22,20 +22,13 @@ body {
   line-height: 1.65;
 }
 
-/*
-Use the full viewport width minus 2rem.
-
-This leaves a 1rem margin on the left and right on both
-desktop and mobile.
-*/
-
 main,
 main.content,
 .page-columns,
 .page-layout-article,
 .column-page,
 .column-body {
-  width: calc(100% - 2rem) !important;
+  width: calc(100%) !important;
   max-width: none !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -288,7 +281,7 @@ ul li {
 
 /* ---------- Mobile ---------- */
 
-@media (max-width: 800px) {
+@media (max-width: 100%) {
   html {
     font-size: 19px !important;
   }
@@ -299,7 +292,7 @@ ul li {
   }
 
   /*
-  Continue using the full viewport width minus 2rem.
+  Continue using the full viewport width minus 0.5rem.
   No additional mobile padding is added.
   */
 
@@ -309,7 +302,7 @@ ul li {
   .page-layout-article,
   .column-page,
   .column-body {
-    width: calc(100% - 2rem) !important;
+    width: calc(100%) !important;
     max-width: none !important;
     margin-left: auto !important;
     margin-right: auto !important;
