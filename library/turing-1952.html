@@ -114,7 +114,10 @@ window.Quarto = {
   <li><a href="#pattern-formation" id="toc-pattern-formation" class="nav-link" data-scroll-target="#pattern-formation">Pattern Formation</a></li>
   </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#connections-to-my-research" id="toc-connections-to-my-research" class="nav-link" data-scroll-target="#connections-to-my-research">Connections to My Research</a></li>
+  <li><a href="#connections-to-my-research" id="toc-connections-to-my-research" class="nav-link" data-scroll-target="#connections-to-my-research">Connections to My Research</a>
+  <ul class="collapse">
+  <li><a href="#graph-based-diffusion" id="toc-graph-based-diffusion" class="nav-link" data-scroll-target="#graph-based-diffusion">Graph-Based Diffusion</a></li>
+  </ul></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a>
   <ul class="collapse">
   <li><a href="#homogeneous-equilibrium" id="toc-homogeneous-equilibrium" class="nav-link" data-scroll-target="#homogeneous-equilibrium">Homogeneous Equilibrium</a></li>
@@ -267,8 +270,10 @@ D_v \nabla^2 v + g(u,v).
 <li>modeling morphogen diffusion across that graph;</li>
 <li>comparing simulated patterns with real butterfly wings.</li>
 </ul>
-<p>A graph-based analogue replaces the continuous Laplacian with a graph Laplacian.</p>
-<p>A simplified system becomes</p>
+<section id="graph-based-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="graph-based-diffusion">Graph-Based Diffusion</h3>
+<p>A graph-based analogue replaces the continuous Laplacian with the <strong>graph Laplacian</strong>.</p>
+<p>The system becomes</p>
 <p><span class="math display">\[
 \frac{d\mathbf{u}}{dt}
 =
@@ -281,13 +286,35 @@ D_v \nabla^2 v + g(u,v).
 =
 -D_vL\mathbf{v}
 +
-\mathbf{g}(\mathbf{u},\mathbf{v}),
+\mathbf{g}(\mathbf{u},\mathbf{v}).
 \]</span></p>
-<p>where</p>
+<p>These equations combine two competing processes:</p>
 <ul>
-<li>(L) is the graph Laplacian;</li>
-<li>() and () are morphogen concentrations defined on the graph.</li>
+<li><strong>Graph diffusion</strong> (<span class="math inline">\(-D_uL\mathbf{u}\)</span> and <span class="math inline">\(-D_vL\mathbf{v}\)</span>), which spreads morphogens across the graph.</li>
+<li><strong>Local reactions</strong> (<span class="math inline">\(\mathbf{f}(\mathbf{u},\mathbf{v})\)</span> and <span class="math inline">\(\mathbf{g}(\mathbf{u},\mathbf{v})\)</span>), which describe chemical interactions at each node.</li>
 </ul>
+<section id="terms" class="level4">
+<h4 class="anchored" data-anchor-id="terms">Terms</h4>
+<ul>
+<li><span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> are vectors of morphogen concentrations, with one value assigned to each node of the graph.</li>
+<li><span class="math inline">\(\frac{d\mathbf{u}}{dt}\)</span> and <span class="math inline">\(\frac{d\mathbf{v}}{dt}\)</span> are the rates of change of those concentrations over time.</li>
+<li><span class="math inline">\(t\)</span> is time.</li>
+<li><span class="math inline">\(D_u\)</span> and <span class="math inline">\(D_v\)</span> are diffusion coefficients.</li>
+<li><span class="math inline">\(L\)</span> is the <strong>graph Laplacian</strong>, which describes how quantities diffuse between neighboring nodes.</li>
+<li><span class="math inline">\(\mathbf{f}(\mathbf{u},\mathbf{v})\)</span> and <span class="math inline">\(\mathbf{g}(\mathbf{u},\mathbf{v})\)</span> describe the local reaction dynamics at each node.</li>
+</ul>
+</section>
+<section id="biological-interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="biological-interpretation">Biological Interpretation</h4>
+<p>Rather than allowing morphogens to diffuse across a continuous surface,</p>
+<ul>
+<li>diffusion occurs along the edges of a graph;</li>
+<li>each node represents a location on the butterfly wing;</li>
+<li>the graph structure determines the possible diffusion pathways.</li>
+</ul>
+<p>This formulation naturally accommodates irregular geometries and may better capture wing veins and compartment boundaries than a regular finite-difference grid.</p>
+</section>
+</section>
 </section>
 <section id="notes" class="level2">
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
@@ -314,7 +341,7 @@ g_u &amp; g_v
 \end{pmatrix}.
 \]</span></p>
 <ul>
-<li>The entries of (J) determine the local stability of the reaction system.</li>
+<li>The entries of <span class="math inline">\(J\)</span> determine the local stability of the reaction system.</li>
 <li>With diffusion, each spatial mode evolves independently.</li>
 <li>Some modes decay while others grow into observable patterns.</li>
 </ul>
@@ -337,7 +364,7 @@ g_u &amp; g_v
 <li><p><strong>Perturbation</strong> — A small disturbance from an equilibrium state used to test whether the system returns to equilibrium or evolves into a new pattern.</p></li>
 <li><p><strong>Linear stability</strong> — A method of analyzing how small perturbations behave near an equilibrium by approximating the system with its linear terms.</p></li>
 <li><p><strong>Diffusion coefficient</strong> — A parameter that determines how quickly a morphogen spreads through space.</p></li>
-<li><p><strong>Laplacian</strong> — A differential operator, denoted (^2), that measures how a quantity diffuses by comparing its value to the surrounding region.</p></li>
+<li><p><strong>Laplacian</strong> — A differential operator, denoted <span class="math inline">\(\nabla^2\)</span>, that measures how a quantity diffuses by comparing its value to the surrounding region.</p></li>
 <li><p><strong>Eigenmode</strong> — A spatial pattern of variation that grows or decays independently during stability analysis. The dominant growing eigenmode determines the emerging biological pattern.</p></li>
 <li><p><strong>Boundary condition</strong> — A mathematical constraint imposed at the edges of the domain that influences how diffusion and reactions behave.</p></li>
 <li><p><strong>Diffusion-driven instability (Turing instability)</strong> — A phenomenon in which diffusion, rather than smoothing differences, destabilizes an otherwise stable homogeneous equilibrium and produces spatial patterns.</p></li>

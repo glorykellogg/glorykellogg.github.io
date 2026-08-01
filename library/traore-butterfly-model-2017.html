@@ -136,6 +136,8 @@ window.Quarto = {
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#influence-on-my-work" id="toc-influence-on-my-work" class="nav-link" data-scroll-target="#influence-on-my-work">Influence on My Work</a></li>
+  <li><a href="#vocabulary" id="toc-vocabulary" class="nav-link" data-scroll-target="#vocabulary">Vocabulary</a></li>
+  <li><a href="#related-pages" id="toc-related-pages" class="nav-link" data-scroll-target="#related-pages">Related Pages</a></li>
   </ul>
 </nav>
     </div>
@@ -189,6 +191,7 @@ window.Quarto = {
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
 <p>Traore, E. N. (2017). <em>A Mathematical Model for Butterfly Wing Patterns</em>. Project report supervised by Filippo Remonato and Mats Ehrnstrøm.</p>
+<p><a href="https://www.math.ntnu.no/studforsk/butterflyreport.pdf">Read the paper</a>.</p>
 </section>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
@@ -203,7 +206,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-model">The Model</h2>
 <section id="morphogen-diffusion" class="level3">
 <h3 class="anchored" data-anchor-id="morphogen-diffusion">Morphogen Diffusion</h3>
-<p>The morphogen concentration <span class="math inline">\(S\)</span> is governed by</p>
+<p>The morphogen concentration <span class="math inline">\(S\)</span> evolves according to</p>
 <p><span class="math display">\[
 \frac{\partial S}{\partial t}
 =
@@ -211,24 +214,36 @@ D\nabla^2S
 -
 K\gamma S.
 \]</span></p>
-<p>The equation combines two competing processes:</p>
+<p>This equation describes two competing processes:</p>
 <ul>
-<li><strong>Diffusion</strong> (<span class="math inline">\(D\nabla^2S\)</span>), which spreads the morphogen across the wing.</li>
+<li><strong>Diffusion</strong> (<span class="math inline">\(D\nabla^2S\)</span>), which spreads morphogen across the wing.</li>
 <li><strong>Degradation</strong> (<span class="math inline">\(-K\gamma S\)</span>), which removes morphogen over time.</li>
 </ul>
-<p>where</p>
+<section id="terms" class="level4">
+<h4 class="anchored" data-anchor-id="terms">Terms</h4>
 <ul>
 <li><span class="math inline">\(S\)</span> is the morphogen concentration.</li>
 <li><span class="math inline">\(\frac{\partial S}{\partial t}\)</span> is the rate of change of <span class="math inline">\(S\)</span> over time.</li>
 <li><span class="math inline">\(D\)</span> is the diffusion coefficient.</li>
-<li><span class="math inline">\(\nabla^2S\)</span> measures how the concentration differs from its surroundings.</li>
+<li><span class="math inline">\(\nabla^2S\)</span> measures how the concentration differs from neighboring locations.</li>
 <li><span class="math inline">\(K\)</span> controls the degradation rate.</li>
 <li><span class="math inline">\(\gamma\)</span> is a scaling parameter related to wing size.</li>
 </ul>
 </section>
+<section id="biological-interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="biological-interpretation">Biological Interpretation</h4>
+<p>The balance between diffusion and degradation determines</p>
+<ul>
+<li>how far the morphogen spreads;</li>
+<li>how long it remains present;</li>
+<li>the shape of the resulting concentration field.</li>
+</ul>
+<hr>
+</section>
+</section>
 <section id="gene-product-activation" class="level3">
 <h3 class="anchored" data-anchor-id="gene-product-activation">Gene-Product Activation</h3>
-<p>The gene product <span class="math inline">\(g\)</span> satisfies</p>
+<p>The gene-product concentration <span class="math inline">\(g\)</span> evolves according to</p>
 <p><span class="math display">\[
 \frac{\partial g}{\partial t}
 =
@@ -241,38 +256,46 @@ k_1S
 k_3g
 \right).
 \]</span></p>
-<p>The equation combines three competing processes:</p>
+<p>This equation combines three competing processes:</p>
 <ul>
-<li><strong>Activation by the morphogen</strong> (<span class="math inline">\(k_1S\)</span>), which increases <span class="math inline">\(g\)</span> when the local morphogen concentration is high.</li>
-<li><strong>Nonlinear self-activation</strong> <span class="math inline">\(\left(\frac{k_2g^2}{1+g^2}\right)\)</span>, in which existing gene product promotes the production of more gene product.</li>
+<li><strong>Morphogen activation</strong> (<span class="math inline">\(k_1S\)</span>), which increases gene-product production when morphogen concentration is high.</li>
+<li><strong>Self-activation</strong> <span class="math inline">\(\left(\frac{k_2g^2}{1+g^2}\right)\)</span>, which allows existing gene product to stimulate further production.</li>
 <li><strong>Degradation</strong> (<span class="math inline">\(-k_3g\)</span>), which removes gene product over time.</li>
 </ul>
-<p>where</p>
+<section id="terms-1" class="level4">
+<h4 class="anchored" data-anchor-id="terms-1">Terms</h4>
 <ul>
-<li><span class="math inline">\(g\)</span> is the concentration of the gene product, the molecule that ultimately influences pigmentation.</li>
-<li><span class="math inline">\(\frac{\partial g}{\partial t}\)</span> is the rate at which the gene-product concentration changes over time.</li>
+<li><span class="math inline">\(g\)</span> is the gene-product concentration.</li>
+<li><span class="math inline">\(\frac{\partial g}{\partial t}\)</span> is the rate of change of <span class="math inline">\(g\)</span> over time.</li>
 <li><span class="math inline">\(S\)</span> is the local morphogen concentration.</li>
-<li><span class="math inline">\(k_1\)</span> controls how strongly the morphogen activates gene production.</li>
+<li><span class="math inline">\(k_1\)</span> controls morphogen-driven activation.</li>
 <li><span class="math inline">\(k_2\)</span> controls the strength of self-activation.</li>
 <li><span class="math inline">\(k_3\)</span> controls the degradation rate.</li>
 <li><span class="math inline">\(\gamma\)</span> scales the overall speed of the system.</li>
 </ul>
-<p>The nonlinear self-activation term</p>
+</section>
+<section id="nonlinear-self-activation" class="level4">
+<h4 class="anchored" data-anchor-id="nonlinear-self-activation">Nonlinear Self-Activation</h4>
+<p>The self-activation term is</p>
 <p><span class="math display">\[
-\frac{k_2g^2}{1+g^2}
+\frac{k_2g^2}{1+g^2}.
 \]</span></p>
-<p>has three important properties:</p>
+<p>Its behavior has three important features:</p>
 <ul>
-<li><strong>Nonlinear</strong> means the rate of activation does not increase at a constant rate as <span class="math inline">\(g\)</span> increases.</li>
-<li><strong>Self-activation</strong> means that gene product already present encourages the production of more of itself.</li>
-<li>The denominator <span class="math inline">\(1+g^2\)</span> prevents the activation from increasing indefinitely, causing the term to level off at high concentrations.</li>
+<li><strong>Nonlinear</strong> means the activation does not increase at a constant rate as <span class="math inline">\(g\)</span> increases.</li>
+<li><strong>Self-activation</strong> means existing gene product promotes the production of more gene product.</li>
+<li>The denominator <span class="math inline">\(1+g^2\)</span> limits the activation at high concentrations, preventing unbounded growth.</li>
 </ul>
+</section>
+<section id="biological-interpretation-1" class="level4">
+<h4 class="anchored" data-anchor-id="biological-interpretation-1">Biological Interpretation</h4>
 <p>Together, self-activation and degradation create a <strong>biological switch</strong>:</p>
 <ul>
-<li>Below a critical morphogen concentration, gene production eventually stops and <span class="math inline">\(g\)</span> returns to zero.</li>
-<li>Above the threshold, the gene product can stabilize at a positive value.</li>
-<li>This stable “on” state corresponds to cells that later become pigmented.</li>
+<li>Below a critical morphogen concentration, <span class="math inline">\(g\)</span> returns to zero.</li>
+<li>Above the threshold, <span class="math inline">\(g\)</span> stabilizes at a positive value.</li>
+<li>Cells with a stable positive value of <span class="math inline">\(g\)</span> later become pigmented.</li>
 </ul>
+</section>
 </section>
 <section id="boundary-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="boundary-conditions">Boundary Conditions</h3>
@@ -328,38 +351,44 @@ k_3g
 <h2 class="anchored" data-anchor-id="main-results">Main Results</h2>
 <section id="reproducing-cautery-experiments" class="level3">
 <h3 class="anchored" data-anchor-id="reproducing-cautery-experiments">Reproducing Cautery Experiments</h3>
-<p>The simulations reproduce Murray’s cauterization experiments.</p>
+<p>The simulations reproduce Murray’s cauterization experiments, in which small holes are burned into developing butterfly wings.</p>
+<p>The model predicts that</p>
 <ul>
-<li>Holes placed near the morphogen source interrupt pigment-band formation.</li>
-<li>Holes farther from the source allow pigment bands to develop before diffusion is disrupted.</li>
+<li>holes placed near the morphogen source interrupt pigment-band formation;</li>
+<li>holes farther from the source allow pigment bands to develop before diffusion is disrupted.</li>
 </ul>
+<p>These results support the idea that pigment patterns depend on the movement of a diffusing morphogen rather than a fixed developmental blueprint.</p>
 </section>
 <section id="effect-of-scale" class="level3">
 <h3 class="anchored" data-anchor-id="effect-of-scale">Effect of Scale</h3>
-<p>The parameter ()</p>
+<p>The parameter <span class="math inline">\(\gamma\)</span> changes the effective wing size without changing the dimensions of the computational grid.</p>
+<p>As <span class="math inline">\(\gamma\)</span> increases,</p>
 <ul>
-<li>changes wing size without changing the computational grid;</li>
-<li>alters the relative size of the pigmented region.</li>
+<li>the activated region occupies a smaller fraction of the wing;</li>
+<li>pigment bands become more localized.</li>
 </ul>
-<p>As () increases, the activated region occupies a smaller portion of the wing.</p>
+<p>This demonstrates that the same mathematical model can generate different patterns simply by changing the scale of the domain.</p>
 </section>
 <section id="constructing-a-wing-shaped-domain" class="level3">
 <h3 class="anchored" data-anchor-id="constructing-a-wing-shaped-domain">Constructing a Wing-Shaped Domain</h3>
-<p>The computational wing is created by</p>
+<p>Rather than solving the equations on a simple square, the author constructs a butterfly wing by</p>
 <ul>
 <li>selecting boundary points;</li>
 <li>interpolating them with Lagrange polynomials;</li>
 <li>embedding the resulting outline in a square computational grid.</li>
 </ul>
+<p>This allows the reaction–diffusion model to be solved on a domain that more closely resembles a real butterfly wing.</p>
 </section>
 <section id="multiple-morphogens" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-morphogens">Multiple Morphogens</h3>
-<p>The report also investigates multiple interacting morphogen systems.</p>
+<p>The report also explores multiple interacting morphogen systems.</p>
+<p>The simulations</p>
 <ul>
-<li>Two morphogen fields are simulated simultaneously.</li>
-<li>Different gene products produce separate pigment regions.</li>
-<li>The approach suggests a pathway toward more complex wing patterns.</li>
+<li>evolve two morphogen fields simultaneously;</li>
+<li>produce distinct gene-product distributions;</li>
+<li>generate more complex pigmentation patterns than a single morphogen system.</li>
 </ul>
+<p>This suggests that multiple developmental signals may help explain the diversity of butterfly wing patterns observed in nature.</p>
 </section>
 </section>
 <section id="figure-analysis" class="level2">
@@ -367,29 +396,33 @@ k_3g
 <section id="figures-12" class="level3">
 <h3 class="anchored" data-anchor-id="figures-12">Figures 1–2</h3>
 <ul>
-<li>Cauterization experiments.</li>
-<li>Demonstrate how obstruction location changes pigment-band formation.</li>
+<li>Simulations of cauterization experiments.</li>
+<li>Compare holes placed near and far from the morphogen source.</li>
+<li>Demonstrate how interrupting diffusion changes pigment-band formation.</li>
 </ul>
 </section>
 <section id="figure-3" class="level3">
 <h3 class="anchored" data-anchor-id="figure-3">Figure 3</h3>
 <ul>
-<li>Compares several values of ().</li>
-<li>Shows how wing scale changes the resulting pattern.</li>
+<li>Compares several values of <span class="math inline">\(\gamma\)</span>.</li>
+<li>Shows how changing scale alters the final pattern.</li>
+<li>Illustrates that geometry and size influence pattern formation even when the governing equations remain unchanged.</li>
 </ul>
 </section>
 <section id="figure-4" class="level3">
 <h3 class="anchored" data-anchor-id="figure-4">Figure 4</h3>
 <ul>
 <li>Construction of a wing-shaped computational domain.</li>
-<li>Particularly relevant to extracting wing geometry from photographs.</li>
+<li>Shows how the butterfly outline is embedded in a computational grid.</li>
+<li>Particularly relevant to my own interest in extracting wing geometry from photographs.</li>
 </ul>
 </section>
 <section id="figure-5" class="level3">
 <h3 class="anchored" data-anchor-id="figure-5">Figure 5</h3>
 <ul>
-<li>Two morphogen systems on the same wing.</li>
+<li>Simulates two interacting morphogen systems.</li>
 <li>Different colors correspond to different gene products.</li>
+<li>Demonstrates how combining multiple developmental signals can generate more complex patterns.</li>
 </ul>
 </section>
 </section>
@@ -443,6 +476,34 @@ k_3g
 <li>explicit treatment of veins and wing compartments;</li>
 <li>a direct connection between measured wing structure and computation;</li>
 <li>quantitative comparison between simulations and real butterfly wings.</li>
+</ul>
+</section>
+<section id="vocabulary" class="level2">
+<h2 class="anchored" data-anchor-id="vocabulary">Vocabulary</h2>
+<ul>
+<li><p><strong>Morphogen</strong> — A signaling molecule that diffuses through developing tissue and provides positional information to surrounding cells.</p></li>
+<li><p><strong>Gene product</strong> — The molecule produced when a gene is expressed. In this model, its concentration determines whether a cell ultimately becomes pigmented.</p></li>
+<li><p><strong>Self-activation</strong> — A positive feedback mechanism in which existing gene product stimulates the production of more gene product.</p></li>
+<li><p><strong>Nonlinear</strong> — A relationship in which the output is not directly proportional to the input. Doubling the input does not necessarily double the response.</p></li>
+<li><p><strong>Zero-flux boundary condition</strong> — A boundary condition that prevents morphogen from crossing the edge of the computational domain.</p></li>
+<li><p><strong>Normal vector</strong> — A vector that points perpendicular to a surface or boundary. It is used to describe diffusion across the boundary.</p></li>
+<li><p><strong>Computational domain</strong> — The region over which the equations are solved. In this report, the domain is a butterfly-wing-shaped region embedded in a square grid.</p></li>
+<li><p><strong>Finite-difference method</strong> — A numerical technique that approximates derivatives using values at neighboring grid points.</p></li>
+<li><p><strong>Central-difference stencil</strong> — A finite-difference formula that estimates a derivative by using values on both sides of a point.</p></li>
+<li><p><strong>Ghost node</strong> — An artificial grid point outside the computational domain used to enforce boundary conditions.</p></li>
+<li><p><strong>Forward Euler method</strong> — A simple numerical method that advances the solution forward in time using the current rate of change.</p></li>
+<li><p><strong>Grid resolution</strong> — The spacing between grid points in a numerical simulation. Finer grids generally produce more accurate approximations but require more computation.</p></li>
+<li><p><strong>Lagrange interpolation</strong> — A polynomial interpolation method used in the report to construct a smooth butterfly-wing boundary from selected points.</p></li>
+<li><p><strong>Computational grid</strong> — The collection of discrete points on which the differential equations are approximated and solved.</p></li>
+</ul>
+</section>
+<section id="related-pages" class="level2">
+<h2 class="anchored" data-anchor-id="related-pages">Related Pages</h2>
+<ul>
+<li><a href="turing-1952.html">The Chemical Basis of Morphogenesis</a></li>
+<li><a href="murray-pattern-formation-1981.html">On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings</a></li>
+<li><a href="../butterfly-wings.html">Butterfly Wing Pattern Formation</a></li>
+<li><a href="../library.html">Library</a></li>
 </ul>
 
 

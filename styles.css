@@ -477,7 +477,6 @@ ul li {
 
 .library-card {
   min-width: 0;
-  border: 1px solid var(--rule);
   box-sizing: border-box;
 }
 
