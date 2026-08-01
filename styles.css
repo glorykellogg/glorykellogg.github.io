@@ -1,7 +1,9 @@
-```css
-/* ==========================================================
-   Fonts and variables
-   ========================================================== */
+ChatGPT Plus
+
+
+
+
+
 
 @import url("https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css");
 
@@ -12,10 +14,7 @@
   --font-serif: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
 }
 
-
-/* ==========================================================
-   Global layout
-   ========================================================== */
+/* ---------- Global ---------- */
 
 html {
   font-size: 22px !important;
@@ -30,7 +29,6 @@ body {
   line-height: 1.65;
 }
 
-/* Remove Quarto's default width restrictions. */
 main,
 main.content,
 .page-columns,
@@ -44,18 +42,13 @@ main.content,
   box-sizing: border-box;
 }
 
-/* Remove default content padding. */
 main.content,
 .column-body {
   padding: 0 !important;
 }
 
+/* ---------- Typography ---------- */
 
-/* ==========================================================
-   Typography
-   ========================================================== */
-
-/* Apply the primary text color and serif font consistently. */
 body,
 p,
 li,
@@ -72,7 +65,6 @@ blockquote,
   font-family: var(--font-serif) !important;
 }
 
-/* Main page title and homepage name. */
 .hero-name,
 .quarto-title h1,
 h1.title {
@@ -85,7 +77,6 @@ h1.title {
   text-align: center;
 }
 
-/* Page subtitle. */
 .quarto-title .subtitle,
 .quarto-title-block .subtitle {
   width: 100%;
@@ -93,7 +84,6 @@ h1.title {
   text-align: center;
 }
 
-/* Section headings. */
 h2 {
   margin-top: 2.5rem;
   padding-bottom: 0.2rem;
@@ -102,17 +92,13 @@ h2 {
   font-weight: 500;
 }
 
-/* Subsection headings. */
 h3 {
   margin-top: 1.5rem;
   font-size: 1.15rem;
   font-weight: 500;
 }
 
-
-/* ==========================================================
-   Clickable site banner
-   ========================================================== */
+/* ---------- Clickable banner ---------- */
 
 .site-header {
   width: 100%;
@@ -121,7 +107,6 @@ h3 {
   background: var(--background);
 }
 
-/* Make the entire banner area clickable. */
 .site-banner-link,
 .site-banner-link:visited,
 .site-banner-link:hover {
@@ -133,7 +118,6 @@ h3 {
   text-decoration: none;
 }
 
-/* Preserve the banner's aspect ratio. */
 .site-banner {
   display: block;
   width: 100%;
@@ -142,12 +126,8 @@ h3 {
   object-fit: contain;
 }
 
+/* ---------- Homepage introduction ---------- */
 
-/* ==========================================================
-   Homepage introduction
-   ========================================================== */
-
-/* Side-by-side introduction text and headshot. */
 .intro {
   display: flex;
   align-items: center;
@@ -164,7 +144,6 @@ h3 {
   flex: 0 0 230px;
 }
 
-/* Remove paragraph spacing around the image. */
 .intro-photo p {
   margin: 0;
 }
@@ -178,10 +157,7 @@ h3 {
   border-radius: 6px;
 }
 
-
-/* ==========================================================
-   Links
-   ========================================================== */
+/* ---------- Links ---------- */
 
 a,
 a:visited {
@@ -195,20 +171,14 @@ a:hover {
   color: var(--text);
 }
 
-
-/* ==========================================================
-   Footer
-   ========================================================== */
+/* ---------- Footer ---------- */
 
 .nav-footer {
   background: var(--background);
   border-top: 1px solid var(--rule);
 }
 
-
-/* ==========================================================
-   Buttons
-   ========================================================== */
+/* ---------- Buttons ---------- */
 
 .btn-primary {
   color: var(--text);
@@ -223,21 +193,14 @@ a:hover {
   border-color: var(--text);
 }
 
-
-/* ==========================================================
-   Lists
-   ========================================================== */
+/* ---------- Lists ---------- */
 
 ul li {
   margin-bottom: 0.35rem;
 }
 
+/* ---------- Project tiles ---------- */
 
-/* ==========================================================
-   Project tiles
-   ========================================================== */
-
-/* Horizontal project-card layout. */
 .project-grid {
   display: flex;
   gap: 1.5rem;
@@ -270,7 +233,6 @@ ul li {
   color: inherit;
 }
 
-/* Invert the card colors when hovered. */
 .project-card:hover {
   color: var(--background);
   background: var(--text);
@@ -282,10 +244,7 @@ ul li {
   color: inherit;
 }
 
-
-/* ==========================================================
-   Contact links
-   ========================================================== */
+/* ---------- Contact links ---------- */
 
 .contact-links {
   display: flex;
@@ -310,10 +269,7 @@ ul li {
   font-size: 1.35rem;
 }
 
-
-/* ==========================================================
-   Table of contents
-   ========================================================== */
+/* ---------- Table of contents ---------- */
 
 #TOC {
   font-size: 0.95rem;
@@ -324,20 +280,13 @@ ul li {
   width: 240px;
 }
 
+/* ---------- Miscellaneous ---------- */
 
-/* ==========================================================
-   Miscellaneous
-   ========================================================== */
-
-/* Hide automatically generated heading-anchor icons. */
 .anchorjs-link {
   display: none;
 }
 
-
-/* ==========================================================
-   Mobile layout
-   ========================================================== */
+/* ---------- Mobile ---------- */
 
 @media (max-width: 100%) {
   html {
@@ -389,7 +338,6 @@ ul li {
     font-size: 1.3rem;
   }
 
-  /* Stack the headshot above the introduction text. */
   .intro {
     flex-direction: column-reverse;
     align-items: flex-start;
@@ -405,7 +353,6 @@ ul li {
     max-width: 210px;
   }
 
-  /* Stack project cards vertically. */
   .project-grid {
     flex-direction: column;
   }
@@ -429,12 +376,8 @@ ul li {
   }
 }
 
-
-/* ==========================================================
-   Project-card breakpoint
-   ========================================================== */
-
 @media (max-width: 800px) {
+
   .project-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -446,14 +389,8 @@ ul li {
     width: 100%;
     flex: none;
   }
+
 }
-
-
-/* ==========================================================
-   Final contact-icon sizing
-   ========================================================== */
-
-/* Give each contact link a consistent clickable area. */
 .contact-links a {
   display: inline-flex;
   align-items: center;
@@ -462,10 +399,8 @@ ul li {
   height: 1.6rem;
 }
 
-/* Normalize icon alignment inside each contact link. */
 .contact-links i {
   display: block;
   font-size: 1.35rem;
   line-height: 1;
-}
-```
+} 
