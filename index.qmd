@@ -1,17 +1,18 @@
 ---
 title: ""
+description-meta: "Glory Kellogg is an Applied Mathematics Honors student at the Illinois Institute of Technology whose research focuses on mathematical biology, graph theory, computational modeling, reaction-diffusion systems, and complex networks."
 toc: false
 title-block-banner: false
 page-layout: full
 ---
+<p class="hero-name">Glory Kellogg</p>
 
-I am **Glory Kellogg**, an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.
+I am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.
 
-I'm drawn to the mathematical undercurrents of the natural world. I like building models that bring those hidden structures into view.
+I'm drawn to the hidden patterns of the natural world and to the math that helps bring them into focus.
+Lately, I’ve been wondering how butterfly wings form patterns and why some networks become unequal.
 
-Lately, I’ve been wondering how butterfly wings form their patterns and why some networks become unequal.
-
-Read my [curriculum vitae](curriculum-vitae.qmd), or [send me an email](mailto:gloryekellogg@gmail.com).
+I've started keeping a [library](library.qmd) of books and papers with notes on the ideas that have shaped my thinking. You can also read my [curriculum vitae](curriculum-vitae.qmd) or [send me an email](mailto:gloryekellogg@gmail.com).
 
 ## Current Research
 
@@ -40,6 +41,12 @@ Read my [curriculum vitae](curriculum-vitae.qmd), or [send me an email](mailto:g
   <a href="https://www.linkedin.com/in/glorykellogg" target="_blank" aria-label="LinkedIn">
     <i class="bi bi-linkedin"></i>
   </a>
+
+   <a href="https://orcid.org/0009-0005-3119-4308"
+    target="_blank"
+    aria-label="ORCID">
+    <i class="ai ai-orcid"></i>
+   </a>
 
   <a href="mailto:gloryekellogg@gmail.com" aria-label="Email">
     <i class="bi bi-envelope"></i>

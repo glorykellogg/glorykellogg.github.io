@@ -1,0 +1,312 @@
+---
+title: "A Mathematical Model for Butterfly Wing Patterns"
+description-meta: "Reading notes by Glory Kellogg on Edwin Nongba Traore's 2017 project report implementing J. D. Murray's mathematical model for butterfly wing pattern formation."
+toc: true
+page-layout: full
+---
+## Citation
+
+Traore, E. N. (2017). *A Mathematical Model for Butterfly Wing Patterns*. Project report supervised by Filippo Remonato and Mats Ehrnstrøm.
+
+[Read the paper](https://www.math.ntnu.no/studforsk/butterflyreport.pdf).
+
+## Overview
+
+The report studies a mathematical model based on two interacting processes:
+
+1. A morphogen diffuses across the wing and degrades over time.
+2. The local morphogen concentration activates a gene product that controls later pigmentation.
+
+The author implements the model numerically and investigates how changes in parameters, domain size, and initial morphogen placement affect the resulting wing pattern.
+
+## The Model
+
+### Morphogen Diffusion
+
+The morphogen concentration $S$ evolves according to
+
+$$
+\frac{\partial S}{\partial t}
+=
+D\nabla^2S
+-
+K\gamma S.
+$$
+
+This equation describes two competing processes:
+
+- **Diffusion** ($D\nabla^2S$), which spreads morphogen across the wing.
+- **Degradation** ($-K\gamma S$), which removes morphogen over time.
+
+#### Terms
+
+- $S$ is the morphogen concentration.
+- $\frac{\partial S}{\partial t}$ is the rate of change of $S$ over time.
+- $D$ is the diffusion coefficient.
+- $\nabla^2S$ measures how the concentration differs from neighboring locations.
+- $K$ controls the degradation rate.
+- $\gamma$ is a scaling parameter related to wing size.
+
+#### Biological Interpretation
+
+The balance between diffusion and degradation determines
+
+- how far the morphogen spreads;
+- how long it remains present;
+- the shape of the resulting concentration field.
+
+---
+
+### Gene-Product Activation
+
+The gene-product concentration $g$ evolves according to
+
+$$
+\frac{\partial g}{\partial t}
+=
+\gamma
+\left(
+k_1S
++
+\frac{k_2g^2}{1+g^2}
+-
+k_3g
+\right).
+$$
+
+This equation combines three competing processes:
+
+- **Morphogen activation** ($k_1S$), which increases gene-product production when morphogen concentration is high.
+- **Self-activation** $\left(\frac{k_2g^2}{1+g^2}\right)$, which allows existing gene product to stimulate further production.
+- **Degradation** ($-k_3g$), which removes gene product over time.
+
+#### Terms
+
+- $g$ is the gene-product concentration.
+- $\frac{\partial g}{\partial t}$ is the rate of change of $g$ over time.
+- $S$ is the local morphogen concentration.
+- $k_1$ controls morphogen-driven activation.
+- $k_2$ controls the strength of self-activation.
+- $k_3$ controls the degradation rate.
+- $\gamma$ scales the overall speed of the system.
+
+#### Nonlinear Self-Activation
+
+The self-activation term is
+
+$$
+\frac{k_2g^2}{1+g^2}.
+$$
+
+Its behavior has three important features:
+
+- **Nonlinear** means the activation does not increase at a constant rate as $g$ increases.
+- **Self-activation** means existing gene product promotes the production of more gene product.
+- The denominator $1+g^2$ limits the activation at high concentrations, preventing unbounded growth.
+
+#### Biological Interpretation
+
+Together, self-activation and degradation create a **biological switch**:
+
+- Below a critical morphogen concentration, $g$ returns to zero.
+- Above the threshold, $g$ stabilizes at a positive value.
+- Cells with a stable positive value of $g$ later become pigmented.
+
+### Boundary Conditions
+
+The model assumes that morphogen cannot diffuse across
+
+- the outer edge of the wing;
+- wing veins.
+
+This is expressed by the **zero-flux boundary condition**
+
+$$
+\frac{\partial S}{\partial \mathbf{n}}
+=
+0
+\qquad
+\text{on } \partial\Omega.
+$$
+
+where
+
+- $S$ is the morphogen concentration.
+- $\frac{\partial S}{\partial \mathbf{n}}$ is the rate at which the morphogen changes in the direction perpendicular to the boundary.
+- $\mathbf{n}$ is the outward **normal vector**, a vector pointing directly away from the boundary.
+- $\partial\Omega$ denotes the boundary of the computational domain.
+
+## Numerical Method
+
+### Finite Differences
+
+- The continuous wing is replaced by a finite grid.
+- Spatial derivatives are approximated using finite differences.
+- The Laplacian is computed with a second-order central-difference stencil.
+
+### Ghost Nodes
+
+- Ghost nodes enforce the zero-flux boundary condition.
+- Artificial boundary values are chosen so that the normal derivative is zero.
+- This prevents morphogen from leaving the computational domain.
+
+### Time Integration
+
+- Time evolution is computed using the forward Euler method.
+- The emphasis is on reproducing qualitative biological patterns rather than high numerical accuracy.
+
+## Main Results
+
+### Reproducing Cautery Experiments
+
+The simulations reproduce Murray's cauterization experiments, in which small holes are burned into developing butterfly wings.
+
+The model predicts that
+
+- holes placed near the morphogen source interrupt pigment-band formation;
+- holes farther from the source allow pigment bands to develop before diffusion is disrupted.
+
+These results support the idea that pigment patterns depend on the movement of a diffusing morphogen rather than a fixed developmental blueprint.
+
+### Effect of Scale
+
+The parameter $\gamma$ changes the effective wing size without changing the dimensions of the computational grid.
+
+As $\gamma$ increases,
+
+- the activated region occupies a smaller fraction of the wing;
+- pigment bands become more localized.
+
+This demonstrates that the same mathematical model can generate different patterns simply by changing the scale of the domain.
+
+### Constructing a Wing-Shaped Domain
+
+Rather than solving the equations on a simple square, the author constructs a butterfly wing by
+
+- selecting boundary points;
+- interpolating them with Lagrange polynomials;
+- embedding the resulting outline in a square computational grid.
+
+This allows the reaction–diffusion model to be solved on a domain that more closely resembles a real butterfly wing.
+
+### Multiple Morphogens
+
+The report also explores multiple interacting morphogen systems.
+
+The simulations
+
+- evolve two morphogen fields simultaneously;
+- produce distinct gene-product distributions;
+- generate more complex pigmentation patterns than a single morphogen system.
+
+This suggests that multiple developmental signals may help explain the diversity of butterfly wing patterns observed in nature.
+
+## Figure Analysis
+
+### Figures 1–2
+
+- Simulations of cauterization experiments.
+- Compare holes placed near and far from the morphogen source.
+- Demonstrate how interrupting diffusion changes pigment-band formation.
+
+### Figure 3
+
+- Compares several values of $\gamma$.
+- Shows how changing scale alters the final pattern.
+- Illustrates that geometry and size influence pattern formation even when the governing equations remain unchanged.
+
+### Figure 4
+
+- Construction of a wing-shaped computational domain.
+- Shows how the butterfly outline is embedded in a computational grid.
+- Particularly relevant to my own interest in extracting wing geometry from photographs.
+
+### Figure 5
+
+- Simulates two interacting morphogen systems.
+- Different colors correspond to different gene products.
+- Demonstrates how combining multiple developmental signals can generate more complex patterns.
+
+## Strengths
+
+- Converts Murray's theoretical model into a numerical simulation.
+- Clearly explains the governing equations.
+- Clearly explains the boundary conditions.
+- Clearly explains the numerical implementation.
+- Uses a wing-shaped computational domain rather than a simple rectangle.
+- Demonstrates how parameter changes alter biological patterns.
+- Bridges mathematical theory and computational experimentation.
+
+## Limitations
+
+- Treats the wing as a largely homogeneous domain.
+- Does not explicitly model many structural features of real butterfly wings.
+- Represents geometry indirectly through a finite-difference grid.
+- A graph-based or irregular-mesh representation may better preserve wing veins and compartment boundaries.
+
+## Questions
+
+- How sensitive are the simulated patterns to grid resolution?
+- Would a higher-order or implicit time-stepping method change the results?
+- Should diffusion coefficients vary across veins or wing compartments?
+- Could wing boundaries be extracted directly from photographs?
+- Could the graph Laplacian replace the finite-difference Laplacian?
+- How should multiple morphogens be coupled?
+- How can simulated gene-product fields be compared quantitatively with observed pigmentation?
+
+## Influence on My Work
+
+This report makes the transition from theory to implementation concrete.
+
+It demonstrates that Murray's model can be simulated on an idealized butterfly wing using finite differences.
+
+My project may instead
+
+- extract wing geometry directly from photographs;
+- represent the wing as a graph;
+- simulate diffusion using the graph Laplacian;
+- compare simulated fields with observed butterfly wing patterns.
+
+A graph-based approach may provide
+
+- a more faithful representation of irregular geometry;
+- explicit treatment of veins and wing compartments;
+- a direct connection between measured wing structure and computation;
+- quantitative comparison between simulations and real butterfly wings.
+
+## Vocabulary
+
+- **Morphogen** — A signaling molecule that diffuses through developing tissue and provides positional information to surrounding cells.
+
+- **Gene product** — The molecule produced when a gene is expressed. In this model, its concentration determines whether a cell ultimately becomes pigmented.
+
+- **Self-activation** — A positive feedback mechanism in which existing gene product stimulates the production of more gene product.
+
+- **Nonlinear** — A relationship in which the output is not directly proportional to the input. Doubling the input does not necessarily double the response.
+
+- **Zero-flux boundary condition** — A boundary condition that prevents morphogen from crossing the edge of the computational domain.
+
+- **Normal vector** — A vector that points perpendicular to a surface or boundary. It is used to describe diffusion across the boundary.
+
+- **Computational domain** — The region over which the equations are solved. In this report, the domain is a butterfly-wing-shaped region embedded in a square grid.
+
+- **Finite-difference method** — A numerical technique that approximates derivatives using values at neighboring grid points.
+
+- **Central-difference stencil** — A finite-difference formula that estimates a derivative by using values on both sides of a point.
+
+- **Ghost node** — An artificial grid point outside the computational domain used to enforce boundary conditions.
+
+- **Forward Euler method** — A simple numerical method that advances the solution forward in time using the current rate of change.
+
+- **Grid resolution** — The spacing between grid points in a numerical simulation. Finer grids generally produce more accurate approximations but require more computation.
+
+- **Lagrange interpolation** — A polynomial interpolation method used in the report to construct a smooth butterfly-wing boundary from selected points.
+
+- **Computational grid** — The collection of discrete points on which the differential equations are approximated and solved.
+
+## Related Pages
+
+- [The Chemical Basis of Morphogenesis](turing-1952.html)
+- [On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings](murray-pattern-formation-1981.html)
+- [Butterfly Wing Pattern Formation Project](../butterfly-wings.html)
+- [Library](../library.html)

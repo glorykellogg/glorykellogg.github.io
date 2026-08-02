@@ -1,23 +1,28 @@
 project:
   type: website
   output-dir: _site
+
   render:
     - index.qmd
     - butterfly-wings.qmd
     - collaboration-networks.qmd
     - curriculum-vitae.qmd
+    - library.qmd
+    - library/*.qmd
+
   resources:
     - files/Glory-Kellogg-CV.pdf
+    - images/**
 
 website:
   title: "Glory Kellogg"
+  site-url: "https://glorykellogg.github.io"
   favicon: images/favicon.png
   search: false
   navbar: false
 
   page-footer:
     left: "© 2026 Glory Kellogg"
-    right: "Built with Quarto"
 
 format:
   html:

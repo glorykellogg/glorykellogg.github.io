@@ -1,9 +1,17 @@
 ---
-title: "Glory Kellogg"
-subtitle: "[gloryekellogg@gmail.com](mailto:gloryekellogg@gmail.com) · Chicago, Illinois · [linkedin.com/in/glorykellogg](https://www.linkedin.com/in/glorykellogg)"
+title: "Curriculum Vitae"
+description-meta: "Curriculum vitae of Glory Kellogg, an Applied Mathematics Honors student at the Illinois Institute of Technology with research interests in mathematical biology, graph theory, computational modeling, and complex networks."
 toc: false
+title-block: false
 page-layout: full
 ---
+<p class="hero-name">Glory Kellogg</p>
+
+<p class="cv-subtitle">
+<a href="mailto:gloryekellogg@gmail.com">gloryekellogg@gmail.com</a>
+· Chicago, Illinois ·
+<a href="https://www.linkedin.com/in/glorykellogg">linkedin.com/in/glorykellogg</a>
+</p>
 
 [Download my CV](files/Glory-Kellogg-CV.pdf).
 

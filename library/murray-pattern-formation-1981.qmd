@@ -1,0 +1,112 @@
+---
+title: "On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings (1981)"
+description-meta: "Reading notes by Glory Kellogg on J. D. Murray's 1981 paper introducing mathematical models for butterfly wing pattern formation and mammalian coat markings."
+toc: true
+page-layout: full
+---
+## Citation
+
+Murray, J. D. (1981). *On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings*. *Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences*, **295**(1078), 473–496.
+
+[Read the paper](Murray-PatternFormationMechanisms-1981.pdf).
+
+## Overview
+
+Murray proposes a mathematical mechanism capable of generating common butterfly wing patterns using a diffusing morphogen coupled with a threshold gene-activation process. He then compares the predictions of the model with experimental results from butterfly and moth wings.
+
+The second half of the paper extends similar mathematical ideas to mammalian coat patterns, arguing that geometry and scale may explain much of the diversity observed in nature.
+
+## Main Ideas
+
+### Pattern Formation Requires a Mechanism
+
+- The goal is to explain **how** biological patterns arise, not simply describe them.
+- Mathematical models should propose mechanisms that can generate observed patterns.
+- The focus is on developmental processes rather than static pigmentation.
+
+### Diffusing Morphogens
+
+- A morphogen is released from localized sources on the developing wing.
+- Diffusion produces a spatial concentration gradient.
+- Cells measure the local morphogen concentration.
+- Developmental responses depend on concentration thresholds.
+- Temporary chemical gradients produce lasting spatial patterns.
+
+### Gene Activation as a Switch
+
+- Morphogen concentration does not continuously determine pigment.
+- Cells permanently switch developmental states once a critical threshold is exceeded.
+- The developmental decision persists even after the morphogen disappears.
+- Threshold activation stabilizes the final wing pattern.
+
+### Geometry Matters
+
+- Wing geometry is an active component of pattern formation.
+- Changing wing size can alter the resulting pattern.
+- Changing wing shape changes morphogen distributions.
+- Vein arrangement influences diffusion pathways.
+- The same governing equations can generate different patterns solely because of geometry. 
+
+
+## Figures Worth Revisiting
+
+### Figure 1
+
+- Generalized butterfly wing geometry.
+- Proposed morphogen source locations.
+- Useful for relating the mathematical model to real butterfly anatomy.
+
+### Figure 2
+
+- Threshold gene activation ("switch") mechanism.
+- Demonstrates how temporary morphogen exposure can permanently determine cell fate.
+- Arguably the central conceptual figure in the paper.
+
+### Figure 3
+
+- Diffusing morphogen wave across a wing cell.
+- Connects morphogen diffusion to the emergence of visible pigmentation.
+
+### Figures 4–8
+
+- Comparisons between simulated and observed butterfly and moth wing patterns.
+- Demonstrate the qualitative agreement between the mathematical model and biological observations.
+- Illustrate how changes in geometry and parameters influence the resulting patterns.
+
+## Questions
+
+- Can Murray's continuous diffusion model can be reformulated on a graph using graph Laplacians?
+- How well has this model held up over the last forty years?
+- Which parts of the mechanism have experimental support today?
+- How would the model change if diffusion occurred on a graph instead of a continuous surface?
+- Could real wing vein networks be extracted automatically from photographs and used directly in simulations?
+- How do modern models incorporate gene regulatory networks in addition to morphogen diffusion?
+
+## Vocabulary
+
+- **Morphogen** — A signaling molecule whose concentration varies across space and provides positional cues to developing cells.
+
+- **Reaction–diffusion** — A mathematical model in which interacting chemicals react locally while diffusing through tissue, producing spatial patterns.
+
+- **Determination stream** — A moving developmental boundary that records where morphogen concentration first exceeds the activation threshold, leaving behind permanently determined cells.
+
+- **Positional information** — Information encoded by a cell's location, often inferred from local morphogen concentration, that guides developmental fate.
+
+- **Threshold activation** — The process by which a developmental response occurs only when morphogen concentration exceeds a critical value.
+
+- **Gene switch** — A regulatory mechanism in which cells permanently change developmental state once a threshold is crossed.
+
+- **Diffusion field** — The spatial distribution of morphogen concentration over the developing wing at a given time.
+
+- **Geometry** — The shape, size, and internal structure of the wing that influence how morphogens spread.
+
+- **Scale** — The physical dimensions of the tissue, which affect diffusion distances and therefore the resulting pattern.
+
+- **Boundary conditions** — Mathematical constraints imposed at the edges of the wing that determine how morphogens behave at tissue boundaries.
+
+## Related Pages
+
+- [The Chemical Basis of Morphogenesis](turing-1952.qmd)
+- [A Mathematical Model for Butterfly Wing Patterns](traore-butterfly-model-2017.qmd)
+- [Butterfly Wing Pattern Formation Project](../butterfly-wings.qmd)
+- [Library](../library.qmd)

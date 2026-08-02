@@ -1,5 +1,10 @@
 @import url("https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css");
 
+
+/* ==========================================================
+   Variables
+   ========================================================== */
+
 :root {
   --background: #faf9f6;
   --text: #000000;
@@ -7,23 +12,58 @@
   --font-serif: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
 }
 
-/* ---------- Global ---------- */
 
-html,
+/* ==========================================================
+   Dark-mode variables
+   Applied when JavaScript adds .night to the <html> element
+   ========================================================== */
+
+.night {
+  --background: #18211d;
+  --text: #f1eee3;
+  --rule: rgba(241, 238, 227, 0.55);
+}
+
+
+/* ==========================================================
+   Global
+   ========================================================== */
+
+html {
+  font-size: 22px !important;
+  background: var(--background);
+}
+
 body {
   margin: 0;
-  background: var(--background);
+  background-color: var(--background);
   color: var(--text);
   font-family: var(--font-serif);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-main.content {
-  max-width: 850px;
+main,
+main.content,
+.page-columns,
+.page-layout-article,
+.column-page,
+.column-body {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
 }
 
-/* ---------- Typography ---------- */
+main.content,
+.column-body {
+  padding: 0 !important;
+}
+
+/* ==========================================================
+   Typography
+   ========================================================== */
 
 body,
 p,
@@ -41,10 +81,23 @@ blockquote,
   font-family: var(--font-serif) !important;
 }
 
+.hero-name,
 .quarto-title h1,
 h1.title {
-  font-size: 2.6rem;
+  display: block;
+  width: 100%;
+  margin: 0 auto 1rem;
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
   font-weight: 500;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.quarto-title .subtitle,
+.quarto-title-block .subtitle {
+  width: 100%;
+  margin: 0 auto 1.5rem;
+  text-align: center;
 }
 
 h2 {
@@ -61,7 +114,24 @@ h3 {
   font-weight: 500;
 }
 
-/* ---------- Clickable banner ---------- */
+.cv-subtitle {
+  margin: -0.5rem auto 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/*
+Hide Quarto's generated title block only on the CV page.
+The CV page is identified by the presence of .cv-subtitle.
+*/
+body:has(.cv-subtitle) .quarto-title-block {
+  display: none;
+}
+
+
+/* ==========================================================
+   Clickable cicada banner
+   ========================================================== */
 
 .site-header {
   width: 100%;
@@ -70,24 +140,81 @@ h3 {
   background: var(--background);
 }
 
-.site-banner-link {
+.site-banner-link,
+.site-banner-link:visited,
+.site-banner-link:hover {
   display: block;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
+  color: var(--text);
   text-decoration: none;
 }
 
 .site-banner {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: contain;
+  max-width: 1400px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: var(--text);
+
+  -webkit-mask-image: url("images/cicada-banner.png");
+  mask-image: url("images/cicada-banner.png");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
-/* ---------- Links ---------- */
+.night .site-header {
+  background: transparent;
+}
+
+
+/* ==========================================================
+   Homepage introduction
+   ========================================================== */
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0 3rem;
+}
+
+.intro-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.intro-photo {
+  flex: 0 0 230px;
+}
+
+.intro-photo p {
+  margin: 0;
+}
+
+.headshot {
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+
+/* ==========================================================
+   Links
+   ========================================================== */
 
 a,
 a:visited {
@@ -101,21 +228,24 @@ a:hover {
   color: var(--text);
 }
 
-/* Prevent banner from showing an underline */
-.site-banner-link,
-.site-banner-link:visited,
-.site-banner-link:hover {
-  text-decoration: none;
-}
 
-/* ---------- Footer ---------- */
+/* ==========================================================
+   Footer
+   ========================================================== */
 
 .nav-footer {
   background: var(--background);
   border-top: 1px solid var(--rule);
 }
 
-/* ---------- Buttons ---------- */
+.night .nav-footer {
+  background: transparent;
+}
+
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
 
 .btn-primary {
   color: var(--text);
@@ -130,13 +260,19 @@ a:hover {
   border-color: var(--text);
 }
 
-/* ---------- Lists ---------- */
+
+/* ==========================================================
+   Lists
+   ========================================================== */
 
 ul li {
   margin-bottom: 0.35rem;
 }
 
-/* ---------- Project tiles ---------- */
+
+/* ==========================================================
+   Project tiles
+   ========================================================== */
 
 .project-grid {
   display: flex;
@@ -151,9 +287,8 @@ ul li {
   padding: 1.5rem;
   color: var(--text);
   background: transparent;
-  border: 1px solid var(--rule);
   text-decoration: none;
-  line-height: 1.55;
+  line-height: 1.5;
   transition:
     background-color 0.15s ease,
     color 0.15s ease,
@@ -177,7 +312,47 @@ ul li {
   transform: translateY(-2px);
 }
 
-/* ---------- Table of contents ---------- */
+.project-card:hover h3,
+.project-card:hover p {
+  color: inherit;
+}
+
+
+/* ==========================================================
+   Contact links
+   ========================================================== */
+
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  transform: translateY(-1px);
+}
+
+.contact-links i {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+
+/* ==========================================================
+   Table of contents
+   ========================================================== */
 
 #TOC {
   font-size: 0.95rem;
@@ -188,52 +363,185 @@ ul li {
   width: 240px;
 }
 
-/* ---------- Miscellaneous ---------- */
+
+/* ==========================================================
+   Miscellaneous
+   ========================================================== */
 
 .anchorjs-link {
   display: none;
 }
 
-/* ---------- Responsive ---------- */
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
 
 @media (max-width: 800px) {
-  .project-grid {
-    flex-direction: column;
+  html {
+    font-size: 19px !important;
   }
 
-  .site-banner-link {
+  body {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  main,
+  main.content,
+  .page-columns,
+  .page-layout-article,
+  .column-page,
+  .column-body {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+  }
+
+  h1,
+  .hero-name,
+  .quarto-title h1,
+  h1.title {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3,
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .intro {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .intro-photo {
+    flex: none;
+    align-self: center;
+  }
+
+  .headshot {
+    max-width: 210px;
+  }
+
+  .project-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .project-card {
     width: 100%;
+    flex: none;
+    padding: 1.4rem;
   }
 
   .site-banner {
-    width: 100%;
-    max-height: 140px;
-    object-fit: contain;
+    height: 140px;
+  }
+
+  .contact-links {
+    gap: 1rem;
+  }
+
+  .contact-links i {
+    font-size: 1.5rem;
   }
 }
 
-/* ---------- Contact links ---------- */
+/* ==========================================================
+   Library
+   ========================================================== */
 
-.contact-links {
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.library-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.library-card-link,
+.library-card-link:link,
+.library-card-link:visited {
   display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin: 1.75rem 0 2.5rem;
-}
-
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
   color: var(--text);
+  background: transparent;
   text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
 }
 
-.contact-links a:hover {
-  transform: translateY(-1px);
+.library-card-link:hover,
+.library-card-link:focus-visible {
+  color: var(--background);
+  background: var(--text);
+  transform: translateY(-2px);
 }
 
-.contact-links i {
-  font-size: 1.35rem;
+.library-card-link span {
+  display: block;
+  color: inherit;
+}
+
+.library-type {
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.library-title {
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.library-author {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.library-description {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.library-status {
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
 }

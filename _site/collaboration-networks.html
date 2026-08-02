@@ -101,11 +101,31 @@ window.Quarto = {
     
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
+
 <header class="site-header">
   <a href="index.html" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
-    <img src="images/cicada banner.png" alt="Glory Kellogg" class="site-banner">
+    <span class="site-banner" aria-hidden="true"></span>
   </a>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </header>
+
+<script>
+(() => {
+  const darkPreference = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  const hour = new Date().getHours();
+  const isNight = hour >= 19 || hour < 7;
+
+  if (darkPreference || isNight) {
+    document.documentElement.classList.add("night");
+  } else {
+    document.documentElement.classList.remove("night");
+  }
+})();
+</script>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -237,7 +257,7 @@ P(i) \propto (k_i + c)^\alpha,
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/glorykellogg\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -574,8 +594,8 @@ P(i) \propto (k_i + c)^\alpha,
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with Quarto</p>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 

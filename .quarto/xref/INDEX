@@ -1,14 +1,26 @@
 {
   "index.qmd": {
-    "index.html": "19cb4e6e"
+    "index.html": "ef03f15a"
   },
   "butterfly-wings.qmd": {
-    "butterfly-wings.html": "9c3a34ed"
+    "butterfly-wings.html": "af47194a"
   },
   "collaboration-networks.qmd": {
-    "collaboration-networks.html": "e989c94e"
+    "collaboration-networks.html": "da85df03"
   },
   "curriculum-vitae.qmd": {
-    "curriculum-vitae.html": "10a99c8e"
+    "curriculum-vitae.html": "d3d69791"
+  },
+  "library.qmd": {
+    "library.html": "aecc6c2a"
+  },
+  "library/murray-pattern-formation-1981.qmd": {
+    "murray-pattern-formation-1981.html": "3e0dc5ce"
+  },
+  "library/traore-butterfly-model-2017.qmd": {
+    "traore-butterfly-model-2017.html": "0fd1df8e"
+  },
+  "library/turing-1952.qmd": {
+    "turing-1952.html": "64228f7c"
   }
 }

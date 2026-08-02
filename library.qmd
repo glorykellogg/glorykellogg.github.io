@@ -1,0 +1,53 @@
+---
+title: "Library"
+description-meta: "Books and papers that have shaped Glory Kellogg's thinking in applied mathematics, mathematical biology, graph theory, pattern formation, and complex networks."
+toc: false
+page-layout: full
+---
+<div class="library-grid">
+
+<div class="library-card">
+<a class="library-card-link" href="library/traore-butterfly-model-2017.html">
+<span class="library-type">Project Report</span>
+<span class="library-title">A Mathematical Model for Butterfly Wing Patterns</span>
+<span class="library-author">Edwin Nongba Traore · 2017</span>
+<span class="library-description">
+Notes on a numerical implementation of Murray's butterfly wing model
+using finite differences, morphogen diffusion, and gene-product activation.
+</span>
+<span class="library-status">Finished</span>
+</a>
+</div>
+
+<div class="library-card">
+<a class="library-card-link" href="library/murray-pattern-formation-1981.html">
+<span class="library-type">Article</span>
+<span class="library-title">
+On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings
+</span>
+<span class="library-author">
+J. D. Murray · 1981
+</span>
+<span class="library-description">
+Murray's extension of Turing's ideas to butterfly wing development, introducing
+a diffusing morphogen model, threshold gene activation, and the roles of wing
+geometry and scale in biological pattern formation.
+</span>
+<span class="library-status">Reading</span>
+</a>
+</div>
+
+<div class="library-card">
+<a class="library-card-link" href="library/turing-1952.html">
+<span class="library-type">Article</span>
+<span class="library-title">The Chemical Basis of Morphogenesis</span>
+<span class="library-author">Alan M. Turing · 1952</span>
+<span class="library-description">
+Notes on morphogens, diffusion-driven instability, and the mathematical
+foundations of biological pattern formation.
+</span>
+<span class="library-status">Reading</span>
+</a>
+</div>
+
+</div>

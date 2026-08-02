@@ -1,0 +1,204 @@
+---
+title: "The Chemical Basis of Morphogenesis (1952)"
+description-meta: "Reading notes by Glory Kellogg on Alan Turing's 1952 paper, The Chemical Basis of Morphogenesis, including morphogens, reaction-diffusion systems, instability, and biological pattern formation."
+toc: true
+page-layout: full
+---
+## Citation
+
+Turing, A. M. (1952). *The Chemical Basis of Morphogenesis*. *Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences*, **237**(641), 37–72. https://doi.org/10.1098/rstb.1952.0012
+
+[Read the paper](https://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf).
+
+## Overview
+
+Turing proposes that biological patterns can emerge from a system of interacting chemical substances, which he calls morphogens. These substances react with one another and diffuse through tissue.
+
+A spatially uniform state can become unstable under the right conditions. Small differences in morphogen concentration may then grow rather than disappear, producing nonuniform patterns.
+
+## Main Ideas
+
+### Morphogens
+
+- Morphogens are chemical substances involved in the development of biological form.
+- Cells do not follow a fixed developmental blueprint.
+- Instead, cells respond to local morphogen concentrations that change over time.
+
+### Reaction and Diffusion
+
+The model combines two processes:
+
+- local chemical reactions;
+- diffusion across space.
+
+A simplified reaction–diffusion system is
+
+$$
+\frac{\partial u}{\partial t}
+=
+D_u \nabla^2 u + f(u,v),
+$$
+
+$$
+\frac{\partial v}{\partial t}
+=
+D_v \nabla^2 v + g(u,v).
+$$
+
+where
+
+- $u$ and $v$ are morphogen concentrations.
+- $D_u$ and $D_v$ are diffusion coefficients.
+- $f(u,v)$ and $g(u,v)$ describe the local reaction terms.
+- $\nabla^2$ is the Laplacian operator.
+
+### Diffusion-Driven Instability
+
+- A spatially uniform equilibrium can become unstable when diffusion is added.
+- Diffusion normally smooths differences in concentration.
+- In a coupled reaction–diffusion system, unequal diffusion rates can instead amplify small perturbations.
+- Those perturbations can develop into stable spatial patterns.
+
+### Pattern Formation
+
+Possible outcomes include
+
+- spots;
+- stripes;
+- waves;
+- repeated structures;
+- other spatial arrangements.
+
+The resulting pattern depends on
+
+- the reaction terms;
+- the diffusion coefficients;
+- the geometry of the domain;
+- the initial perturbations.
+
+## Questions
+
+- Why does diffusion stabilize some systems but destabilize others?
+- What determines whether spots or stripes emerge?
+- How does the geometry of the domain influence the final pattern?
+- How should a reaction–diffusion model be adapted to an irregular butterfly wing?
+- Can diffusion on a graph preserve meaningful geometric information?
+- Which aspects of butterfly wing development are well described by Turing models, and which require additional biological mechanisms?
+
+## Connections to My Research
+
+This paper provides the mathematical foundation for my butterfly wing project.
+
+I'm interested in
+
+- representing wing structure as a graph;
+- modeling morphogen diffusion across that graph;
+- comparing simulated patterns with real butterfly wings.
+
+### Graph-Based Diffusion
+
+A graph-based analogue replaces the continuous Laplacian with the **graph Laplacian**.
+
+The system becomes
+
+$$
+\frac{d\mathbf{u}}{dt}
+=
+-D_uL\mathbf{u}
++
+\mathbf{f}(\mathbf{u},\mathbf{v}),
+$$
+
+$$
+\frac{d\mathbf{v}}{dt}
+=
+-D_vL\mathbf{v}
++
+\mathbf{g}(\mathbf{u},\mathbf{v}).
+$$
+
+These equations combine two competing processes:
+
+- **Graph diffusion** ($-D_uL\mathbf{u}$ and $-D_vL\mathbf{v}$), which spreads morphogens across the graph.
+- **Local reactions** ($\mathbf{f}(\mathbf{u},\mathbf{v})$ and $\mathbf{g}(\mathbf{u},\mathbf{v})$), which describe chemical interactions at each node.
+
+#### Terms
+
+- $\mathbf{u}$ and $\mathbf{v}$ are vectors of morphogen concentrations, with one value assigned to each node of the graph.
+- $\frac{d\mathbf{u}}{dt}$ and $\frac{d\mathbf{v}}{dt}$ are the rates of change of those concentrations over time.
+- $t$ is time.
+- $D_u$ and $D_v$ are diffusion coefficients.
+- $L$ is the **graph Laplacian**, which describes how quantities diffuse between neighboring nodes.
+- $\mathbf{f}(\mathbf{u},\mathbf{v})$ and $\mathbf{g}(\mathbf{u},\mathbf{v})$ describe the local reaction dynamics at each node.
+
+#### Biological Interpretation
+
+Rather than allowing morphogens to diffuse across a continuous surface,
+
+- diffusion occurs along the edges of a graph;
+- each node represents a location on the butterfly wing;
+- the graph structure determines the possible diffusion pathways.
+
+This formulation naturally accommodates irregular geometries and may better capture wing veins and compartment boundaries than a regular finite-difference grid.
+
+## Notes
+
+### Homogeneous Equilibrium
+
+- Morphogen concentrations are constant throughout the domain.
+- Concentrations do not change over time.
+- The reaction system must be stable before diffusion is introduced.
+- Turing instability occurs when diffusion destabilizes this equilibrium.
+
+### Linear Stability
+
+- Small perturbations are analyzed by linearizing the reaction terms near an equilibrium.
+- The Jacobian matrix is
+
+$$
+J =
+\begin{pmatrix}
+f_u & f_v \\
+g_u & g_v
+\end{pmatrix}.
+$$
+
+- The entries of $J$ determine the local stability of the reaction system.
+- With diffusion, each spatial mode evolves independently.
+- Some modes decay while others grow into observable patterns.
+
+### Geometry
+
+- Geometry determines which spatial modes are possible.
+- Boundary conditions influence how morphogens behave near the edges of the domain.
+- Domain shape affects the resulting biological pattern.
+- Geometry is therefore a central component of models for butterfly wings, shells, and animal coat markings.
+
+## Vocabulary
+
+- **Morphogen** — A chemical signaling molecule whose concentration varies across tissue and provides positional information during development.
+
+- **Homogeneous equilibrium** — A steady state in which morphogen concentrations are the same everywhere in space and remain constant over time.
+
+- **Perturbation** — A small disturbance from an equilibrium state used to test whether the system returns to equilibrium or evolves into a new pattern.
+
+- **Linear stability** — A method of analyzing how small perturbations behave near an equilibrium by approximating the system with its linear terms.
+
+- **Diffusion coefficient** — A parameter that determines how quickly a morphogen spreads through space.
+
+- **Laplacian** — A differential operator, denoted $\nabla^2$, that measures how a quantity diffuses by comparing its value to the surrounding region.
+
+- **Eigenmode** — A spatial pattern of variation that grows or decays independently during stability analysis. The dominant growing eigenmode determines the emerging biological pattern.
+
+- **Boundary condition** — A mathematical constraint imposed at the edges of the domain that influences how diffusion and reactions behave.
+
+- **Diffusion-driven instability (Turing instability)** — A phenomenon in which diffusion, rather than smoothing differences, destabilizes an otherwise stable homogeneous equilibrium and produces spatial patterns.
+
+- **Graph Laplacian** — The graph-theoretic analogue of the continuous Laplacian. It models diffusion on discrete structures such as networks or graph representations of butterfly wings.
+
+## Related Pages
+
+- [A Mathematical Model for Butterfly Wing Patterns](traore-butterfly-model-2017.qmd)
+- [On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings](murray-pattern-formation-1981.html)
+- [Butterfly Wing Pattern Formation Project](../butterfly-wings.html)
+- [Library](../library.html)
