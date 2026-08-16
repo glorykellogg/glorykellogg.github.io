@@ -207,42 +207,42 @@
     "href": "curriculum-vitae.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Glory Kellogg\ngloryekellogg@gmail.com · Chicago, Illinois · linkedin.com/in/glorykellogg\nDownload my CV."
+    "text": "Glory Kellogg\ngloryekellogg@gmail.com · Chicago, Illinois · linkedin.com/in/glorykellogg\nDownload CV (PDF)"
   },
   {
     "objectID": "curriculum-vitae.html#education",
     "href": "curriculum-vitae.html#education",
     "title": "Curriculum Vitae",
     "section": "Education",
-    "text": "Education\nIllinois Institute of Technology, Chicago, Illinois\nB.S. in Applied Mathematics, expected December 2028\nHonors Program · Minor in Computer Science\nGPA: 4.0/4.0\nTriton College, Melrose Park, Illinois\nGPA: 4.0/4.0\nPhi Theta Kappa Honor Society"
+    "text": "Education\nIllinois Institute of Technology, Chicago, Illinois\nB.S. Applied Mathematics, expected December 2028\nHonors Program · Minor in Computer Science\nGPA: 4.0/4.0\nTriton College, River Grove, Illinois\nGPA: 4.0/4.0\nPhi Theta Kappa Honor Society"
   },
   {
     "objectID": "curriculum-vitae.html#research-interests",
     "href": "curriculum-vitae.html#research-interests",
     "title": "Curriculum Vitae",
     "section": "Research Interests",
-    "text": "Research Interests\nMathematical biology, pattern formation, differential equations, graph theory, and computational modeling."
+    "text": "Research Interests\nMathematical biology · pattern formation · differential equations · graph theory · computational modeling"
   },
   {
     "objectID": "curriculum-vitae.html#research",
     "href": "curriculum-vitae.html#research",
     "title": "Curriculum Vitae",
     "section": "Research",
-    "text": "Research\n\nGraph-Based Models of Morphogen Diffusion in Butterfly Wing Development\n\nInvestigating mathematical models of butterfly wing pattern formation through geometry, graph representations, and computational modeling.\nDeveloping computational methods to extract wing structure from photographs for comparison with mathematical models.\nRaising and documenting painted lady butterflies while studying developmental biology and pattern formation.\n\n\n\nNonlinear Preferential Attachment in Collaboration Networks\n\nDeveloping an agent-based model of collaboration networks to study the emergence of structural inequality through nonlinear preferential attachment.\nDesigned Monte Carlo experiments to investigate the effects of attachment bias on network growth and degree inequality."
+    "text": "Research\n\nGraph-Based Models of Morphogen Diffusion in Butterfly Wing Development\n\nDeveloping mathematical and computational models of butterfly wing pattern formation using graph representations and reaction–diffusion systems.\nDeveloping image-processing methods to extract wing geometry and structural features from photographs for comparison with mathematical models.\nRaising and documenting painted lady butterflies to connect computational models with observed wing development and pattern formation.\n\n\n\nNonlinear Preferential Attachment in Collaboration Networks\n\nDeveloping an agent-based model of collaboration networks to study the emergence of structural inequality under nonlinear preferential attachment.\nDesigning Monte Carlo experiments to characterize how attachment bias affects network growth, degree distributions, and concentration.\nAnalyzing simulation results across parameter sweeps to identify transitions in network structure and inequality."
   },
   {
     "objectID": "curriculum-vitae.html#technical-skills",
     "href": "curriculum-vitae.html#technical-skills",
     "title": "Curriculum Vitae",
     "section": "Technical Skills",
-    "text": "Technical Skills\nPython, C++, LaTeX, Java, and C."
+    "text": "Technical Skills\nProgramming: Python, C++, Java, C\nScientific computing: Computational modeling, simulation, data analysis\nDesign: Adobe Illustrator, Adobe Photoshop\nTools: Git, GitHub, LaTeX Web & publishing: HTML, CSS, JavaScript, Quarto, GitHub Pages\nDesigned and developed this personal academic and the SIAM @ Illinois Tech websites."
   },
   {
-    "objectID": "curriculum-vitae.html#leadership",
-    "href": "curriculum-vitae.html#leadership",
+    "objectID": "curriculum-vitae.html#academic-professional-involvement",
+    "href": "curriculum-vitae.html#academic-professional-involvement",
     "title": "Curriculum Vitae",
-    "section": "Leadership",
-    "text": "Leadership\n\nSocial Media Manager, SIAM IIT Student Chapter\nMay 2026–Present\n\nLead social media, email communications, and outreach.\nDesign promotional materials and support seminars, workshops, and chapter events.\nRepresented Illinois Tech at the 2026 SIAM Annual Meeting."
+    "section": "Academic & Professional Involvement",
+    "text": "Academic & Professional Involvement\n\nSIAM @ Illinois Tech\nSocial Media Manager · May 2026–Present\n\nManage digital communications, event promotion, and visual materials for Illinois Tech’s SIAM student chapter.\nDesign promotional materials for chapter events using Adobe Illustrator and Photoshop.\nDesigned and developed the chapter website using HTML, CSS, JavaScript, and Quarto.\n\n\n\nSociety for Industrial and Applied Mathematics\nStudent Member\n\n\nAssociation for Women in Mathematics\nMember\n\n\nWomen in STEM at Illinois Tech\nMember"
   },
   {
     "objectID": "library/murray-pattern-formation-1981.html#citation",
