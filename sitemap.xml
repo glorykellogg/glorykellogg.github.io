@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://glorykellogg.github.io/library/turing-1952.html</loc>
-    <lastmod>2026-08-01T23:09:54.019Z</lastmod>
+    <loc>https://glorykellogg.github.io/involvement.html</loc>
+    <lastmod>2026-08-16T14:20:11.470Z</lastmod>
   </url>
   <url>
-    <loc>https://glorykellogg.github.io/library/murray-pattern-formation-1981.html</loc>
-    <lastmod>2026-08-01T23:10:17.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glorykellogg.github.io/curriculum-vitae.html</loc>
-    <lastmod>2026-08-01T16:42:19.931Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glorykellogg.github.io/butterfly-wings.html</loc>
-    <lastmod>2026-08-01T23:08:29.250Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glorykellogg.github.io/index.html</loc>
-    <lastmod>2026-08-01T17:31:24.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://glorykellogg.github.io/collaboration-networks.html</loc>
-    <lastmod>2026-07-31T19:39:41.816Z</lastmod>
+    <loc>https://glorykellogg.github.io/library/traore-butterfly-model-2017.html</loc>
+    <lastmod>2026-08-01T23:09:58.955Z</lastmod>
   </url>
   <url>
     <loc>https://glorykellogg.github.io/library.html</loc>
     <lastmod>2026-08-01T23:07:08.340Z</lastmod>
   </url>
   <url>
-    <loc>https://glorykellogg.github.io/library/traore-butterfly-model-2017.html</loc>
-    <lastmod>2026-08-01T23:09:58.955Z</lastmod>
+    <loc>https://glorykellogg.github.io/collaboration-networks.html</loc>
+    <lastmod>2026-07-31T19:39:41.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glorykellogg.github.io/index.html</loc>
+    <lastmod>2026-08-16T14:43:47.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glorykellogg.github.io/butterfly-wings.html</loc>
+    <lastmod>2026-08-01T23:08:29.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glorykellogg.github.io/curriculum-vitae.html</loc>
+    <lastmod>2026-08-01T16:42:19.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glorykellogg.github.io/library/murray-pattern-formation-1981.html</loc>
+    <lastmod>2026-08-01T23:10:17.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glorykellogg.github.io/library/turing-1952.html</loc>
+    <lastmod>2026-08-01T23:09:54.019Z</lastmod>
   </url>
 </urlset>

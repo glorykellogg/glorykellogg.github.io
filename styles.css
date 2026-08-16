@@ -545,3 +545,235 @@ ul li {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ==========================================================
+   INVOLVEMENT PAGE
+   ========================================================== */
+
+/* SIAM conference photo pair */
+.siam-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.siam-photo {
+  min-width: 0;
+}
+
+.siam-photo p {
+  margin: 0;
+}
+
+.siam-photo a {
+  display: block;
+}
+
+.siam-photo img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .siam-photo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .siam-photo img {
+    height: auto;
+  }
+}
+
+.siam-live-preview {
+  margin: 1.5rem 0 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.siam-live-preview iframe {
+  display: block;
+  width: 100%;
+  height: 620px;
+  border: 0;
+}
+
+.nitmb-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.nitmb-photo {
+  min-width: 0;
+}
+
+.nitmb-photo p {
+  margin: 0;
+}
+
+.nitmb-photo img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .nitmb-photo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .nitmb-photo img {
+    height: auto;
+  }
+}
+
+/* ==========================================================
+   SITE FOOTER
+   ========================================================== */
+
+.site-footer {
+  width: 100%;
+  margin-top: .5rem;
+  padding: 0 0 2rem;
+}
+
+/* Force the actual footer content to center on the VIEWPORT */
+
+.footer-rule,
+.footer-grid,
+.footer-bottom {
+  position: relative;
+
+  width: min(92vw, 1700px);
+
+  left: 48vw;
+  transform: translateX(-67%);
+
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/* TOP RULE */
+
+.footer-rule {
+  border-top: 1px solid var(--rule);
+  margin-bottom: 1rem;
+}
+
+
+/* MAIN AREA */
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+
+/* NAV LINKS */
+
+.footer-nav-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  
+  width: 100%;
+}
+
+.footer-nav-group a {
+  margin: 0;
+  color: #6F6F6F;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footer-nav-group a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+
+/* ICONS */
+
+.footer-contact {
+  width: 100%;
+}
+
+.footer-contact .contact-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.footer-contact .contact-links a {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.footer-contact .contact-links i {
+  font-size: 1.15rem;
+}
+
+
+/* BOTTOM ROW */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--rule);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+
+.footer-bottom .contact-links {
+  margin: 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .site-footer {
+    margin-top: 4rem;
+  }
+
+  .footer-rule,
+  .footer-grid,
+  .footer-bottom {
+    width: 90vw;
+  }
+
+  .footer-nav-group {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.75rem 1.25rem;
+  }
+
+}
+
+.footer-contact .contact-links a,
+.footer-contact .contact-links a:visited,
+.footer-contact .contact-links i {
+  color: #000000;
+}
