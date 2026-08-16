@@ -10,6 +10,8 @@
   --text: #000000;
   --rule: #000000;
   --font-serif: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif;
+  --footer-muted: #6F6F6F;
+  --footer-strong: #000000;
 }
 
 
@@ -22,6 +24,9 @@
   --background: #18211d;
   --text: #f1eee3;
   --rule: rgba(241, 238, 227, 0.55);
+  --footer-muted: #b8b8b8;
+  --footer-strong: #f1eee3;
+}
 }
 
 
@@ -695,7 +700,7 @@ ul li {
 
 .footer-nav-group a {
   margin: 0;
-  color: #6F6F6F;
+  color: var(--footer-muted);
   font-size: 0.9rem;
   line-height: 1;
   text-decoration: none;
@@ -745,6 +750,14 @@ ul li {
   letter-spacing: 0.03em;
 }
 
+/* Icons + copyright */
+.footer-contact .contact-links a,
+.footer-contact .contact-links a:visited,
+.footer-contact .contact-links i,
+.footer-bottom {
+  color: var(--footer-strong);
+}
+
 .footer-bottom .contact-links {
   margin: 0;
 }
@@ -772,8 +785,3 @@ ul li {
 
 }
 
-.footer-contact .contact-links a,
-.footer-contact .contact-links a:visited,
-.footer-contact .contact-links i {
-  color: #000000;
-}
