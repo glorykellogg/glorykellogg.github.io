@@ -1,0 +1,111 @@
+---
+title: "Real Analysis"
+description-meta: "Course notes for MATH 400 Real Analysis at Illinois Institute of Technology, Fall 2026."
+toc: false
+page-layout: full
+---
+
+```{=html}
+<div class="course-home">
+
+  <!-- =====================================================
+       COURSE HEADER
+       ===================================================== -->
+
+  <header class="course-hero">
+
+    <div class="course-kicker">
+      COURSE NOTES / MATH 400
+    </div>
+
+    <h1 class="course-name">
+      Real Analysis
+    </h1>
+
+    <div class="course-meta">
+      <span>Illinois Institute of Technology</span>
+      <span>Fall 2026</span>
+      <span>Glory Kellogg</span>
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       COURSE INTRO
+       ===================================================== -->
+
+    <section class="course-intro">
+
+    <p class="course-intro-lead">
+        Real numbers, continuous functions; differentiation and Riemann integration.
+        Functions defined by series.
+    </p>
+
+    <p>
+        Notes from MATH 400 at Illinois Institute of Technology, Fall 2026,
+        organized chronologically by lecture and revised throughout the semester.
+    </p>
+
+    </section>
+
+
+  <!-- =====================================================
+       LECTURES
+       ===================================================== -->
+
+  <section class="course-section">
+
+    <div class="course-section-heading">
+      <span class="course-section-kicker">LECTURES</span>
+      <h2>Class Notes</h2>
+    </div>
+
+    <div class="lecture-list">
+
+      <a
+        class="lecture-row"
+        href="real-analysis-2026-08-17.html"
+      >
+
+        <div class="lecture-date">
+          <span class="lecture-day">17</span>
+          <span class="lecture-month">AUG 2026</span>
+        </div>
+
+        <div class="lecture-info">
+
+          <span class="lecture-number">
+            LECTURE 01
+          </span>
+
+          <span class="lecture-title">
+            Foundations of Real Analysis
+          </span>
+
+          <span class="lecture-topics">
+            Convergence · Continuity · Differentiation · Integration ·
+            Approximation · Proof Hygiene
+          </span>
+
+        </div>
+
+        <div class="lecture-arrow" aria-hidden="true">
+          →
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =====================================================
+       FOOTNOTE
+       ===================================================== -->
+
+  <div class="course-note">
+    Last updated · 17 August 2026
+  </div>
+
+</div>

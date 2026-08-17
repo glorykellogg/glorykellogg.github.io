@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Glory Kellogg is an Applied Mathematics Honors student at the Illinois Institute of Technology whose research focuses on mathematical biology, graph theory, computational modeling, reaction-diffusion systems, and complex networks.">
+<meta name="description" content="Course notes for MATH 400 Real Analysis at Illinois Institute of Technology, Fall 2026.">
 
-<title>Glory Kellogg</title>
+<title>Real Analysis – Glory Kellogg</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,19 +30,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -60,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="quarto-light">
@@ -72,10 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
 
 <header class="site-header">
-  <a href="./" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
+  <a href="../" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
     <span class="site-banner" aria-hidden="true"></span>
   </a>
 
@@ -99,37 +99,90 @@ ul.task-list li input[type="checkbox"] {
 })();
 </script>
 
-
-
-
-<p class="hero-name">
-Glory Kellogg
-</p>
-<p>I am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.</p>
-<p>I’m drawn to the hidden patterns of the natural world and to the math that helps bring them into focus. Lately, I’ve been wondering how butterfly wings form patterns and why some networks become unequal.</p>
-<p>I’ve started keeping a <a href="./library.html">library</a> of class notes, books, and papers that have shaped my thinking. Outside of research, you can see some of my academic and community <a href="./involvement.html">involvement</a>. You can also read my <a href="./curriculum-vitae.html">curriculum vitae</a> or <a href="mailto:gloryekellogg@gmail.com">send me an email</a>.</p>
-<section id="current-research" class="level2">
-<h2 class="anchored" data-anchor-id="current-research">Current Research</h2>
-<div class="project-grid">
-<a class="project-card" href="butterfly-wings.html">
-<h3 class="anchored">
-Butterfly Wing Pattern Formation
-</h3>
-<p>
-Mathematical and computational models of butterfly wing development, including image processing, graph representations, and reaction–diffusion systems.
-</p>
-</a> <a class="project-card" href="collaboration-networks.html">
-<h3 class="anchored">
-Collaboration Networks
-</h3>
-<p>
-An agent-based model examining how nonlinear preferential attachment shapes network growth, inequality, and concentration.
-</p>
-</a>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Real Analysis</h1>
 </div>
 
 
-</section>
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="course-home">
+
+  <!-- =====================================================
+       COURSE INTRO
+       ===================================================== -->
+
+    <section class="course-intro">
+    <p>
+        Notes from MATH 400 at Illinois Institute of Technology, Fall 2026,
+        organized chronologically by lecture and revised throughout the semester.
+    </p></section>
+
+  <!-- =====================================================
+       LECTURES
+       ===================================================== -->
+
+  <section class="course-section">
+
+    <div class="course-section-heading">
+      <span class="course-section-kicker">LECTURES</span>
+    </div>
+
+    <div class="lecture-list">
+
+      <a class="lecture-row" href="../Real Analysis/RA 08-17.html">
+
+        <div class="lecture-date">
+          <span class="lecture-day">17</span>
+          <span class="lecture-month">AUG 2026</span>
+        </div>
+
+        <div class="lecture-info">
+
+          <span class="lecture-number">
+            00
+          </span>
+
+          <span class="lecture-title">
+            Foundations of Real Analysis
+          </span>
+
+          <span class="lecture-topics">
+            Convergence · Continuity · Differentiation · Integration ·
+            Approximation · Proof Hygiene
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =====================================================
+       FOOTNOTE
+       ===================================================== -->
+
+  <div class="course-note">
+    Last updated · 17 August 2026
+  </div>
+
+</div>
+
+
 
 </main> <!-- /main -->
 <footer class="site-footer">
@@ -141,10 +194,10 @@ An agent-based model examining how nonlinear preferential attachment shapes netw
     <nav class="footer-nav" aria-label="Site navigation">
 
       <div class="footer-nav-group">
-        <a href="./index.html">Home | Research</a>
-        <a href="./library.html">Library</a>
-        <a href="./involvement.html">Involvement</a>
-        <a href="./curriculum-vitae.html">CV</a>
+        <a href="../index.html">Home | Research</a>
+        <a href="../library.html">Library</a>
+        <a href="../involvement.html">Involvement</a>
+        <a href="../curriculum-vitae.html">CV</a>
       </div>
 
     </nav>

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Glory Kellogg is an Applied Mathematics Honors student at the Illinois Institute of Technology whose research focuses on mathematical biology, graph theory, computational modeling, reaction-diffusion systems, and complex networks.">
+<meta name="description" content="Real Analysis course notes for MATH 400 at Illinois Institute of Technology.">
 
-<title>Glory Kellogg</title>
+<title>Real Analysis – Glory Kellogg</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,19 +30,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -59,8 +59,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="quarto-light">
@@ -70,12 +99,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
 
 <header class="site-header">
-  <a href="./" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
+  <a href="../" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
     <span class="site-banner" aria-hidden="true"></span>
   </a>
 
@@ -99,37 +130,276 @@ ul.task-list li input[type="checkbox"] {
 })();
 </script>
 
-
-
-
-<p class="hero-name">
-Glory Kellogg
-</p>
-<p>I am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.</p>
-<p>I’m drawn to the hidden patterns of the natural world and to the math that helps bring them into focus. Lately, I’ve been wondering how butterfly wings form patterns and why some networks become unequal.</p>
-<p>I’ve started keeping a <a href="./library.html">library</a> of class notes, books, and papers that have shaped my thinking. Outside of research, you can see some of my academic and community <a href="./involvement.html">involvement</a>. You can also read my <a href="./curriculum-vitae.html">curriculum vitae</a> or <a href="mailto:gloryekellogg@gmail.com">send me an email</a>.</p>
-<section id="current-research" class="level2">
-<h2 class="anchored" data-anchor-id="current-research">Current Research</h2>
-<div class="project-grid">
-<a class="project-card" href="butterfly-wings.html">
-<h3 class="anchored">
-Butterfly Wing Pattern Formation
-</h3>
-<p>
-Mathematical and computational models of butterfly wing development, including image processing, graph representations, and reaction–diffusion systems.
-</p>
-</a> <a class="project-card" href="collaboration-networks.html">
-<h3 class="anchored">
-Collaboration Networks
-</h3>
-<p>
-An agent-based model examining how nonlinear preferential attachment shapes network growth, inequality, and concentration.
-</p>
-</a>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Real Analysis</h1>
 </div>
 
 
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="notes-page">
+<div class="notes-course-header">
+<p><span class="notes-kicker">COURSE NOTES / MATH 400</span></p>
+<section id="real-analysis" class="level1 notes-course-title">
+<h1 class="notes-course-title">Real Analysis</h1>
+<div class="notes-course-meta">
+<p>Illinois Institute of Technology · Fall 2026<br> Glory Kellogg</p>
+</div>
 </section>
+</div>
+<section id="august-2026" class="level2">
+<h2 class="anchored" data-anchor-id="august-2026">17 August 2026</h2>
+<section id="major-themes-in-this-course" class="level3">
+<h3 class="anchored" data-anchor-id="major-themes-in-this-course">Major Themes in this Course</h3>
+<section id="convergence" class="level4">
+<h4 class="anchored" data-anchor-id="convergence">Convergence</h4>
+<p>A sequence <span class="math inline">\((a_n)\)</span> converges to a limit <span class="math inline">\(L\)</span> if its terms become arbitrarily close to <span class="math inline">\(L\)</span> as <span class="math inline">\(n\)</span> becomes sufficiently large.</p>
+<p>Formally,</p>
+<p><span class="math display">\[
+a_n \to L
+\quad \text{if and only if} \quad
+\forall \varepsilon &gt; 0,\
+\exists N \in \mathbb{N}
+\text{ such that }
+n \geq N
+\implies
+|a_n-L|&lt;\varepsilon.
+\]</span></p>
+<p>In other words, no matter how small a tolerance <span class="math inline">\(\varepsilon\)</span> we choose, all sufficiently late terms of the sequence lie within that tolerance of <span class="math inline">\(L\)</span>.</p>
+<p>Convergence means that a sequence settles toward a particular number. The terms do not need to ever actually equal the limit; they only need to get as close to it as we demand.</p>
+<p>For example,</p>
+<p><span class="math display">\[
+a_n = \frac{1}{n}
+\]</span></p>
+<p>gives the sequence</p>
+<p><span class="math display">\[
+1,\ \frac12,\ \frac13,\ \frac14,\ldots
+\]</span></p>
+<p>whose terms approach <span class="math inline">\(0\)</span>. Thus</p>
+<p><span class="math display">\[
+\lim_{n\to\infty}\frac{1}{n}=0.
+\]</span></p>
+<p>The formal definition turns the informal phrase “gets closer and closer” into a precise statement. We choose how close we want the terms to be using <span class="math inline">\(\varepsilon\)</span>, and then show that after some index <span class="math inline">\(N\)</span>, every remaining term stays that close.</p>
+</section>
+<section id="continuity" class="level4">
+<h4 class="anchored" data-anchor-id="continuity">Continuity</h4>
+<p>A function <span class="math inline">\(f\)</span> is continuous at a point <span class="math inline">\(a\)</span> if values of <span class="math inline">\(f(x)\)</span> can be made arbitrarily close to <span class="math inline">\(f(a)\)</span> by taking <span class="math inline">\(x\)</span> sufficiently close to <span class="math inline">\(a\)</span>. Formally,</p>
+<p><span class="math display">\[
+\forall \varepsilon &gt; 0,\
+\exists \delta &gt; 0
+\text{ such that }
+|x-a|&lt;\delta
+\implies
+|f(x)-f(a)|&lt;\varepsilon.
+\]</span></p>
+<p>Equivalently, <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span> when</p>
+<p><span class="math display">\[
+\lim_{x\to a}f(x)=f(a).
+\]</span></p>
+<p>Informally, continuity means that small changes in the input produce small changes in the output. A continuous function has no sudden jump, hole, or break at the point under consideration.</p>
+<p>In calculus, this is sometimes described by saying that we can draw the graph near the point “without lifting the pencil.” Real analysis replaces that visual intuition with a precise relationship between input error and output error.</p>
+<p>Here,</p>
+<p><span class="math display">\[
+\delta
+\]</span></p>
+<p>controls how close <span class="math inline">\(x\)</span> must be to <span class="math inline">\(a\)</span>, while</p>
+<p><span class="math display">\[
+\varepsilon
+\]</span></p>
+<p>controls how close <span class="math inline">\(f(x)\)</span> must be to <span class="math inline">\(f(a)\)</span>.</p>
+<p>Thus the definition can be read as</p>
+<p><span class="math display">\[
+\text{small change in input}
+\quad\Longrightarrow\quad
+\text{small change in output}.
+\]</span></p>
+</section>
+<section id="differentiation" class="level4">
+<h4 class="anchored" data-anchor-id="differentiation">Differentiation</h4>
+<p>A function <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span> if the limit</p>
+<p><span class="math display">\[
+f'(a)
+=
+\lim_{h\to0}
+\frac{f(a+h)-f(a)}{h}
+\]</span></p>
+<p>exists and is finite.</p>
+<p>The derivative <span class="math inline">\(f'(a)\)</span> describes the instantaneous rate of change of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span>, or equivalently the slope of the tangent line to the graph of <span class="math inline">\(f\)</span> at that point.</p>
+<p>A derivative measures how quickly a quantity is changing at a particular instant.</p>
+<p>Between two different points, we can calculate an ordinary average rate of change:</p>
+<p><span class="math display">\[
+\frac{\text{change in output}}
+     {\text{change in input}}
+=
+\frac{f(a+h)-f(a)}{h}.
+\]</span></p>
+<p>Geometrically, this is the slope of a secant line through two points on the graph.</p>
+<p>To obtain the slope at exactly one point, we let the distance <span class="math inline">\(h\)</span> between those points approach zero:</p>
+<p><span class="math display">\[
+h\to0.
+\]</span></p>
+<p>If the resulting slopes approach a single finite number, that number is the derivative.</p>
+<p>For example, if position is given by <span class="math inline">\(s(t)\)</span>, then</p>
+<p><span class="math display">\[
+s'(t)
+\]</span></p>
+<p>represents instantaneous velocity. Thus differentiation converts information about a quantity into information about how that quantity is changing.</p>
+</section>
+<section id="integration" class="level4">
+<h4 class="anchored" data-anchor-id="integration">Integration</h4>
+<p>For a bounded function <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span>, integration can be understood through increasingly fine partitions of the interval. If the corresponding Riemann sums converge to a common value <span class="math inline">\(I\)</span> as the partition becomes arbitrarily fine, then <span class="math inline">\(f\)</span> is Riemann integrable and</p>
+<p><span class="math display">\[
+I=\int_a^b f(x)\,dx.
+\]</span></p>
+<p>The integral measures accumulated quantity and, geometrically, can be interpreted as signed area under the graph of <span class="math inline">\(f\)</span>.</p>
+<p>Integration adds together infinitely many very small contributions to determine a total quantity.</p>
+<p>The basic idea is to divide an interval into small pieces and approximate the area under a function using rectangles:</p>
+<p><span class="math display">\[
+\text{area of one rectangle}
+\approx
+f(x_i)\Delta x.
+\]</span></p>
+<p>Adding the rectangles gives a Riemann sum,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n} f(x_i)\Delta x.
+\]</span></p>
+<p>As the partition becomes finer, the rectangles become narrower. If these approximations approach a single value, that value is the definite integral:</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx.
+\]</span></p>
+<p>Integration is therefore fundamentally a process of <strong>approximation followed by a limit</strong>.</p>
+</section>
+</section>
+<section id="how-the-ideas-fit-together" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-ideas-fit-together">How the Ideas Fit Together</h3>
+<p>The central unifying idea is the <strong>limit</strong>. Many concepts from calculus can be reconstructed as different applications of convergence:</p>
+<p><span class="math display">\[
+\boxed{
+\begin{array}{c}
+\text{Convergence} \\[4pt]
+\downarrow \\[4pt]
+\text{Limits}
+\end{array}}
+\]</span></p>
+<p>Limits are then used to make the other major ideas precise:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Continuity:}\qquad
+    &amp;\lim_{x\to a}f(x)=f(a), \\[6pt]
+\text{Differentiation:}\qquad
+    &amp;f'(a)
+      =\lim_{h\to0}
+      \frac{f(a+h)-f(a)}{h}, \\[6pt]
+\text{Integration:}\qquad
+    &amp;\int_a^b f(x)\,dx
+      =\lim_{n\to\infty}
+      \sum_{i=1}^{n} f(x_i)\Delta x.
+\end{aligned}
+\]</span></p>
+<p>In calculus, we learn how to <em>compute</em> many of these objects. In real analysis, the emphasis shifts toward understanding precisely <em>why</em> these definitions work, <em>when</em> the relevant limits exist, and <em>what assumptions</em> are required for the familiar theorems of calculus to be valid.</p>
+</section>
+<section id="differential-equations-and-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="differential-equations-and-approximation">Differential Equations and Approximation</h3>
+<p>Differential equations describe how physical systems evolve.</p>
+<p>Approximation often involves <strong>discretization</strong>. Important questions include:</p>
+<ul>
+<li>Does the discretization scheme converge?</li>
+<li>How fast does it converge?</li>
+</ul>
+<p>Discretization introduces error. We can minimize this error by using sufficiently high resolution, or at least a resolution that reasonably matches the system being modeled.</p>
+<p>The grid should be fine enough to capture the relevant behavior, but not so fine that computation is unnecessarily expensive.</p>
+</section>
+<section id="messy-cases" class="level3">
+<h3 class="anchored" data-anchor-id="messy-cases">Messy Cases</h3>
+<ul>
+<li><strong>Riemann Rearrangement Theorem:</strong> for example, the alternating harmonic series.</li>
+<li>The rational numbers have measure zero in <span class="math inline">\(\mathbb{R}\)</span> — in a sense, they take up “almost no room.”</li>
+<li><strong>Banach–Tarski Paradox:</strong> it is impossible to define a notion of volume for every subset of <span class="math inline">\(\mathbb{R}^3\)</span> while preserving all of the properties we would naturally want volume to have.</li>
+</ul>
+</section>
+<section id="how-relevant-are-infinities" class="level3">
+<h3 class="anchored" data-anchor-id="how-relevant-are-infinities">How Relevant Are Infinities?</h3>
+<p>Numerical computations often require replacing infinite or continuous objects with finite approximations…</p>
+</section>
+<section id="proof-hygiene" class="level3">
+<h3 class="anchored" data-anchor-id="proof-hygiene">Proof Hygiene</h3>
+<p>We handle messy cases with careful definitions and proofs.</p>
+<blockquote class="blockquote">
+<p>A proof is the report of a successful search, not the transcript of one.</p>
+</blockquote>
+<section id="precision-vs.-intuition" class="level4">
+<h4 class="anchored" data-anchor-id="precision-vs.-intuition">Precision vs.&nbsp;Intuition</h4>
+<p>A good proof should:</p>
+<ul>
+<li>be precise in scope — neither broader nor narrower than the claim requires;</li>
+<li>be logically complete and independently verifiable;</li>
+<li>contain no unnecessary steps, cases, or assumptions;</li>
+<li>make the underlying mechanism of the argument clear and generalizable;</li>
+<li>omit failed approaches and irrelevant intermediate reasoning;</li>
+<li>ensure that every statement contributes directly to the argument.</li>
+</ul>
+<p><strong>Correct <span class="math inline">\(\neq\)</span> done.</strong></p>
+</section>
+</section>
+<section id="example-proof-sqrt3-is-irrational" class="level3">
+<h3 class="anchored" data-anchor-id="example-proof-sqrt3-is-irrational">Example Proof: <span class="math inline">\(\sqrt{3}\)</span> is Irrational</h3>
+<p><strong>Claim.</strong> <span class="math inline">\(\sqrt{3}\)</span> is irrational.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose, for contradiction, that <span class="math inline">\(\sqrt{3}\)</span> is rational. Then we may write</p>
+<p><span class="math display">\[
+\sqrt{3} = \frac{p}{q},
+\]</span></p>
+<p>where <span class="math inline">\(p,q \in \mathbb{Z}\)</span>, <span class="math inline">\(q \neq 0\)</span>, and</p>
+<p><span class="math display">\[
+\gcd(p,q)=1.
+\]</span></p>
+<p>Squaring both sides gives</p>
+<p><span class="math display">\[
+3 = \frac{p^2}{q^2},
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+3q^2 = p^2.
+\]</span></p>
+<p>Thus <span class="math inline">\(3 \mid p^2\)</span>. Since <span class="math inline">\(3\)</span> is prime, it follows that <span class="math inline">\(3 \mid p\)</span>. Therefore, for some <span class="math inline">\(n \in \mathbb{Z}\)</span>,</p>
+<p><span class="math display">\[
+p=3n.
+\]</span></p>
+<p>Substituting this into <span class="math inline">\(3q^2=p^2\)</span> gives</p>
+<p><span class="math display">\[
+3q^2 = 9n^2,
+\]</span></p>
+<p>and hence</p>
+<p><span class="math display">\[
+q^2 = 3n^2.
+\]</span></p>
+<p>Therefore <span class="math inline">\(3 \mid q^2\)</span>, so <span class="math inline">\(3 \mid q\)</span>.</p>
+<p>Thus <span class="math inline">\(3\)</span> divides both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, contradicting the assumption that</p>
+<p><span class="math display">\[
+\gcd(p,q)=1.
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+\boxed{\sqrt{3}\notin\mathbb{Q}}.
+\]</span></p>
+</div>
+</section>
+</section>
+</div>
+
+
 
 </main> <!-- /main -->
 <footer class="site-footer">
@@ -141,10 +411,10 @@ An agent-based model examining how nonlinear preferential attachment shapes netw
     <nav class="footer-nav" aria-label="Site navigation">
 
       <div class="footer-nav-group">
-        <a href="./index.html">Home | Research</a>
-        <a href="./library.html">Library</a>
-        <a href="./involvement.html">Involvement</a>
-        <a href="./curriculum-vitae.html">CV</a>
+        <a href="../index.html">Home | Research</a>
+        <a href="../library.html">Library</a>
+        <a href="../involvement.html">Involvement</a>
+        <a href="../curriculum-vitae.html">CV</a>
       </div>
 
     </nav>
