@@ -805,7 +805,10 @@ ul li {
     overflow: hidden;
   }
 
-  .footer-rule,
+  .footer-rule {
+  margin-bottom: 1rem;
+}
+
   .footer-grid,
   .footer-bottom {
     position: relative;
@@ -824,7 +827,8 @@ ul li {
 
   .footer-bottom {
     box-sizing: border-box;
-  }
+    margin-top: 1rem;
+}
 }
 
 /* ==========================================================
