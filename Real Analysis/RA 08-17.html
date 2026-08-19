@@ -155,7 +155,7 @@ window.Quarto = {
 <section id="real-analysis" class="level1 notes-course-title">
 <h1 class="notes-course-title">Real Analysis</h1>
 <div class="notes-course-meta">
-<p>Illinois Institute of Technology · Fall 2026<br> Glory Kellogg</p>
+    Illinois Institute of Technology · Fall 2026<br><br>
 </div>
 </section>
 </div>
@@ -163,175 +163,238 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="august-2026">17 August 2026</h2>
 <section id="major-themes-in-this-course" class="level3">
 <h3 class="anchored" data-anchor-id="major-themes-in-this-course">Major Themes in this Course</h3>
-<section id="convergence" class="level4">
-<h4 class="anchored" data-anchor-id="convergence">Convergence</h4>
-<p>A sequence <span class="math inline">\((a_n)\)</span> converges to a limit <span class="math inline">\(L\)</span> if its terms become arbitrarily close to <span class="math inline">\(L\)</span> as <span class="math inline">\(n\)</span> becomes sufficiently large.</p>
-<p>Formally,</p>
-<p><span class="math display">\[
-a_n \to L
-\quad \text{if and only if} \quad
-\forall \varepsilon &gt; 0,\
-\exists N \in \mathbb{N}
-\text{ such that }
-n \geq N
-\implies
-|a_n-L|&lt;\varepsilon.
-\]</span></p>
-<p>In other words, no matter how small a tolerance <span class="math inline">\(\varepsilon\)</span> we choose, all sufficiently late terms of the sequence lie within that tolerance of <span class="math inline">\(L\)</span>.</p>
-<p>Convergence means that a sequence settles toward a particular number. The terms do not need to ever actually equal the limit; they only need to get as close to it as we demand.</p>
-<p>For example,</p>
-<p><span class="math display">\[
-a_n = \frac{1}{n}
-\]</span></p>
-<p>gives the sequence</p>
-<p><span class="math display">\[
-1,\ \frac12,\ \frac13,\ \frac14,\ldots
-\]</span></p>
-<p>whose terms approach <span class="math inline">\(0\)</span>. Thus</p>
-<p><span class="math display">\[
-\lim_{n\to\infty}\frac{1}{n}=0.
-\]</span></p>
-<p>The formal definition turns the informal phrase “gets closer and closer” into a precise statement. We choose how close we want the terms to be using <span class="math inline">\(\varepsilon\)</span>, and then show that after some index <span class="math inline">\(N\)</span>, every remaining term stays that close.</p>
-</section>
-<section id="continuity" class="level4">
-<h4 class="anchored" data-anchor-id="continuity">Continuity</h4>
-<p>A function <span class="math inline">\(f\)</span> is continuous at a point <span class="math inline">\(a\)</span> if values of <span class="math inline">\(f(x)\)</span> can be made arbitrarily close to <span class="math inline">\(f(a)\)</span> by taking <span class="math inline">\(x\)</span> sufficiently close to <span class="math inline">\(a\)</span>. Formally,</p>
-<p><span class="math display">\[
-\forall \varepsilon &gt; 0,\
-\exists \delta &gt; 0
-\text{ such that }
-|x-a|&lt;\delta
-\implies
-|f(x)-f(a)|&lt;\varepsilon.
-\]</span></p>
-<p>Equivalently, <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span> when</p>
-<p><span class="math display">\[
-\lim_{x\to a}f(x)=f(a).
-\]</span></p>
-<p>Informally, continuity means that small changes in the input produce small changes in the output. A continuous function has no sudden jump, hole, or break at the point under consideration.</p>
-<p>In calculus, this is sometimes described by saying that we can draw the graph near the point “without lifting the pencil.” Real analysis replaces that visual intuition with a precise relationship between input error and output error.</p>
-<p>Here,</p>
-<p><span class="math display">\[
-\delta
-\]</span></p>
-<p>controls how close <span class="math inline">\(x\)</span> must be to <span class="math inline">\(a\)</span>, while</p>
-<p><span class="math display">\[
-\varepsilon
-\]</span></p>
-<p>controls how close <span class="math inline">\(f(x)\)</span> must be to <span class="math inline">\(f(a)\)</span>.</p>
-<p>Thus the definition can be read as</p>
-<p><span class="math display">\[
-\text{small change in input}
-\quad\Longrightarrow\quad
-\text{small change in output}.
-\]</span></p>
-</section>
-<section id="differentiation" class="level4">
-<h4 class="anchored" data-anchor-id="differentiation">Differentiation</h4>
-<p>A function <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span> if the limit</p>
-<p><span class="math display">\[
-f'(a)
-=
-\lim_{h\to0}
-\frac{f(a+h)-f(a)}{h}
-\]</span></p>
-<p>exists and is finite.</p>
-<p>The derivative <span class="math inline">\(f'(a)\)</span> describes the instantaneous rate of change of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span>, or equivalently the slope of the tangent line to the graph of <span class="math inline">\(f\)</span> at that point.</p>
-<p>A derivative measures how quickly a quantity is changing at a particular instant.</p>
-<p>Between two different points, we can calculate an ordinary average rate of change:</p>
-<p><span class="math display">\[
-\frac{\text{change in output}}
-     {\text{change in input}}
-=
-\frac{f(a+h)-f(a)}{h}.
-\]</span></p>
-<p>Geometrically, this is the slope of a secant line through two points on the graph.</p>
-<p>To obtain the slope at exactly one point, we let the distance <span class="math inline">\(h\)</span> between those points approach zero:</p>
-<p><span class="math display">\[
-h\to0.
-\]</span></p>
-<p>If the resulting slopes approach a single finite number, that number is the derivative.</p>
-<p>For example, if position is given by <span class="math inline">\(s(t)\)</span>, then</p>
-<p><span class="math display">\[
-s'(t)
-\]</span></p>
-<p>represents instantaneous velocity. Thus differentiation converts information about a quantity into information about how that quantity is changing.</p>
-</section>
-<section id="integration" class="level4">
-<h4 class="anchored" data-anchor-id="integration">Integration</h4>
-<p>For a bounded function <span class="math inline">\(f:[a,b]\to\mathbb{R}\)</span>, integration can be understood through increasingly fine partitions of the interval. If the corresponding Riemann sums converge to a common value <span class="math inline">\(I\)</span> as the partition becomes arbitrarily fine, then <span class="math inline">\(f\)</span> is Riemann integrable and</p>
-<p><span class="math display">\[
-I=\int_a^b f(x)\,dx.
-\]</span></p>
-<p>The integral measures accumulated quantity and, geometrically, can be interpreted as signed area under the graph of <span class="math inline">\(f\)</span>.</p>
-<p>Integration adds together infinitely many very small contributions to determine a total quantity.</p>
-<p>The basic idea is to divide an interval into small pieces and approximate the area under a function using rectangles:</p>
-<p><span class="math display">\[
-\text{area of one rectangle}
-\approx
-f(x_i)\Delta x.
-\]</span></p>
-<p>Adding the rectangles gives a Riemann sum,</p>
-<p><span class="math display">\[
-\sum_{i=1}^{n} f(x_i)\Delta x.
-\]</span></p>
-<p>As the partition becomes finer, the rectangles become narrower. If these approximations approach a single value, that value is the definite integral:</p>
-<p><span class="math display">\[
-\int_a^b f(x)\,dx.
-\]</span></p>
-<p>Integration is therefore fundamentally a process of <strong>approximation followed by a limit</strong>.</p>
-</section>
-</section>
-<section id="how-the-ideas-fit-together" class="level3">
-<h3 class="anchored" data-anchor-id="how-the-ideas-fit-together">How the Ideas Fit Together</h3>
-<p>The central unifying idea is the <strong>limit</strong>. Many concepts from calculus can be reconstructed as different applications of convergence:</p>
-<p><span class="math display">\[
-\boxed{
-\begin{array}{c}
-\text{Convergence} \\[4pt]
-\downarrow \\[4pt]
-\text{Limits}
-\end{array}}
-\]</span></p>
-<p>Limits are then used to make the other major ideas precise:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\text{Continuity:}\qquad
-    &amp;\lim_{x\to a}f(x)=f(a), \\[6pt]
-\text{Differentiation:}\qquad
-    &amp;f'(a)
-      =\lim_{h\to0}
-      \frac{f(a+h)-f(a)}{h}, \\[6pt]
-\text{Integration:}\qquad
-    &amp;\int_a^b f(x)\,dx
-      =\lim_{n\to\infty}
-      \sum_{i=1}^{n} f(x_i)\Delta x.
-\end{aligned}
-\]</span></p>
-<p>In calculus, we learn how to <em>compute</em> many of these objects. In real analysis, the emphasis shifts toward understanding precisely <em>why</em> these definitions work, <em>when</em> the relevant limits exist, and <em>what assumptions</em> are required for the familiar theorems of calculus to be valid.</p>
 </section>
 <section id="differential-equations-and-approximation" class="level3">
 <h3 class="anchored" data-anchor-id="differential-equations-and-approximation">Differential Equations and Approximation</h3>
-<p>Differential equations describe how physical systems evolve.</p>
-<p>Approximation often involves <strong>discretization</strong>. Important questions include:</p>
-<ul>
-<li>Does the discretization scheme converge?</li>
-<li>How fast does it converge?</li>
-</ul>
-<p>Discretization introduces error. We can minimize this error by using sufficiently high resolution, or at least a resolution that reasonably matches the system being modeled.</p>
-<p>The grid should be fine enough to capture the relevant behavior, but not so fine that computation is unnecessarily expensive.</p>
+<p>Differential equations describe how physical systems evolve, but many cannot be solved exactly. Instead, we approximate their solutions numerically by <strong>discretizing</strong> (approximating) space, time, or both.</p>
+<p>For example, rather than considering every point in a continuous interval, we may replace the interval by a finite grid:</p>
+<p><img src="discretizing.png" class="notes-figure img-fluid"></p>
+<p>The differential equation is then replaced by a finite collection of computations on these grid points.</p>
+<p>This immediately raises two important questions.</p>
+<section id="does-the-approximation-converge" class="level4">
+<h4 class="anchored" data-anchor-id="does-the-approximation-converge">1. Does the approximation converge?</h4>
+<p>As the grid becomes finer, we want the numerical solution to approach the true solution.</p>
+<p>If the numerical scheme does not converge, increasing the resolution does not necessarily make the simulation more accurate. In that case, we have no guarantee that the computation represents the actual system. Back to the drawing board.</p>
+</section>
+<section id="how-fast-does-it-converge" class="level4">
+<h4 class="anchored" data-anchor-id="how-fast-does-it-converge">2. How fast does it converge?</h4>
+<p>Knowing that an approximation eventually converges is not always enough. In practice, we also need to understand its <strong>rate of convergence</strong>.</p>
+<p>A faster-converging method may achieve a desired accuracy using relatively few grid points, while a slower method may require much greater computational effort.</p>
+<p>Balance:</p>
+<p><span class="math display">\[
+\text{too coarse}
+\quad\longrightarrow\quad
+\text{insufficient accuracy}
+\]</span> <span class="math display">\[
+\text{too fine}
+\quad\longrightarrow\quad
+\text{unnecessary computation}
+\]</span></p>
+<p>Information about convergence therefore tells us both whether an approximation is trustworthy and how much computation is needed to make it useful.</p>
+<p>This same issue appears throughout applied mathematics, including statistics, probability, machine learning, and numerical modeling: whenever we approximate something that cannot be computed exactly, we need to know whether the approximation approaches the object we actually care about.</p>
+</section>
 </section>
 <section id="messy-cases" class="level3">
 <h3 class="anchored" data-anchor-id="messy-cases">Messy Cases</h3>
-<ul>
-<li><strong>Riemann Rearrangement Theorem:</strong> for example, the alternating harmonic series.</li>
-<li>The rational numbers have measure zero in <span class="math inline">\(\mathbb{R}\)</span> — in a sense, they take up “almost no room.”</li>
-<li><strong>Banach–Tarski Paradox:</strong> it is impossible to define a notion of volume for every subset of <span class="math inline">\(\mathbb{R}^3\)</span> while preserving all of the properties we would naturally want volume to have.</li>
-</ul>
+<p>Much of calculus is developed using functions and sequences that behave nicely. Real analysis asks what happens when we stop assuming that everything behaves nicely.</p>
+<p>Infinite processes in particular can violate intuitions developed from finite arithmetic and geometry.</p>
+<p>For example:</p>
+<section id="riemann-rearrangement-theorem" class="level4">
+<h4 class="anchored" data-anchor-id="riemann-rearrangement-theorem">Riemann Rearrangement Theorem</h4>
+<p>For a finite sum, changing the order of addition does not change the answer:</p>
+<p><span class="math display">\[
+a+b+c=c+a+b.
+\]</span></p>
+<p>It is therefore tempting to assume that the same must be true for an infinite series.</p>
+<p>Surprisingly, this can fail.</p>
+<p>Suppose</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty} a_n
+\]</span></p>
+<p>converges, but does <strong>not</strong> converge absolutely:</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty}|a_n|=\infty.
+\]</span></p>
+<p>Such a series is called <strong>conditionally convergent</strong>.</p>
+<p>The Riemann Rearrangement Theorem says that for any</p>
+<p><span class="math display">\[
+x\in\mathbb{R}\cup{-\infty,+\infty},
+\]</span></p>
+<p>there exists some rearrangement <span class="math inline">\((b_n)\)</span> of the terms <span class="math inline">\((a_n)\)</span> such that</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty}b_n=x.
+\]</span></p>
+<p>A standard example is the alternating harmonic series,</p>
+<p><span class="math display">\[
+1-\frac12+\frac13-\frac14+\frac15-\frac16+\cdots.
+\]</span></p>
+<p>This series converges, but</p>
+<p><span class="math display">\[
+1+\frac12+\frac13+\frac14+\cdots
+\]</span></p>
+<p>diverges, so the convergence is conditional rather than absolute.</p>
+<p>Consequently, rearranging the terms of the alternating harmonic series can change its sum. With a suitable rearrangement, we can make the series converge to a different real number or even diverge.</p>
+<p>The important lesson is that</p>
+<p><span class="math display">\[
+\boxed{\text{finite intuition does not always extend to infinite processes.}}
+\]</span></p>
+<p>Pairwise addition is commutative, but an infinite sequence of additions requires more care.</p>
+</section>
+<section id="the-rational-numbers-take-up-almost-no-room" class="level4">
+<h4 class="anchored" data-anchor-id="the-rational-numbers-take-up-almost-no-room">The Rational Numbers Take Up Almost No Room</h4>
+<p>The rational numbers <span class="math inline">\(\mathbb{Q}\)</span> are <strong>dense</strong> in <span class="math inline">\(\mathbb{R}\)</span>. Between any two distinct real numbers, there is a rational number.</p>
+<p>Equivalently, every real number is arbitrarily close to some rational number.</p>
+<p>This makes <span class="math inline">\(\mathbb{Q}\)</span> seem enormous: rational numbers occur everywhere on the real line.</p>
+<p>Nevertheless, <span class="math inline">\(\mathbb{Q}\)</span> has <strong>measure zero</strong>.</p>
+<p>Informally, this means that the rational numbers collectively take up essentially no length.</p>
+<p>More precisely, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, it is possible to find a countable collection of intervals</p>
+<p><span class="math display">\[
+(a_1,b_1),(a_2,b_2),(a_3,b_3),\ldots
+\]</span></p>
+<p>that covers every rational number,</p>
+<p><span class="math display">\[
+\mathbb{Q}
+\subseteq
+\bigcup_{n=1}^{\infty}(a_n,b_n),
+\]</span></p>
+<p>while the total length of all the intervals satisfies</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty}(b_n-a_n)&lt;\varepsilon.
+\]</span></p>
+<p>The value of <span class="math inline">\(\varepsilon\)</span> can be as small as we like.</p>
+<p>For example, we could require</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty}(b_n-a_n)
+&lt;
+\frac{1}{1{,}000{,}000},
+\]</span></p>
+<p>and still cover <strong>every rational number</strong>.</p>
+<p>This separates two ideas that initially seem related:</p>
+<p><span class="math display">\[
+\boxed{\text{dense} \neq \text{large in measure}.}
+\]</span></p>
+<p>A set can occur arbitrarily close to every point of the real line while still having total measure zero.</p>
+</section>
+<section id="banachtarski-paradox" class="level4">
+<h4 class="anchored" data-anchor-id="banachtarski-paradox">Banach–Tarski Paradox</h4>
+<p>The Banach–Tarski Paradox gives an even more dramatic example of the failure of ordinary geometric intuition.</p>
+<p>A solid ball in <span class="math inline">\(\mathbb{R}^3\)</span> can be partitioned into finitely many extremely complicated sets. Those pieces can then be moved using rigid motions and reassembled into a ball of a different size.</p>
+<p>For example, in principle one can begin with a unit ball and reassemble the pieces into a ball of radius <span class="math inline">\(1000\)</span>.</p>
+<p>The pieces involved are not ordinary physical pieces. They are highly pathological sets, and the result is not a statement about something we could perform with physical matter.</p>
+<p>Instead, the paradox exposes a limitation on the mathematical notion of volume.</p>
+<p>Suppose we tried to assign a volume to <strong>every</strong> subset of <span class="math inline">\(\mathbb{R}^3\)</span> while requiring volume to behave as expected under rigid motions and finite disjoint unions.</p>
+<p>The Banach–Tarski construction would force the same pieces to have total volume equal to both the original ball and the much larger reconstructed ball.</p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+\boxed{
+\text{not every subset of }\mathbb{R}^3
+\text{ can be assigned a sensible volume.}
+}
+\]</span></p>
+<p>This is one reason measure theory distinguishes between <strong>measurable</strong> and <strong>non-measurable</strong> sets.</p>
+</section>
 </section>
 <section id="how-relevant-are-infinities" class="level3">
 <h3 class="anchored" data-anchor-id="how-relevant-are-infinities">How Relevant Are Infinities?</h3>
-<p>Numerical computations often require replacing infinite or continuous objects with finite approximations…</p>
+<p>These examples may seem removed from applications because they involve infinite processes, pathological sets, or arbitrarily small quantities.</p>
+<p>But infinity is often useful precisely because it allows us to understand large finite systems more easily.</p>
+<p>In many applications,</p>
+<p><span class="math display">\[
+\text{infinite}
+\approx
+\text{finite but extremely large}.
+\]</span></p>
+<p>We often replace a difficult finite problem with an idealized infinite or continuous one, analyze that cleaner mathematical object, and then return to a finite approximation for computation.</p>
+<p>Numerical work can therefore involve two directions of approximation:</p>
+<p><span class="math display">\[
+\text{large finite system}
+\longrightarrow
+\text{idealized infinite/continuous model}
+\longrightarrow
+\text{finite numerical approximation}.
+\]</span></p>
+<p>The infinite model is not introduced merely to make the problem more abstract. It can make the underlying structure easier to understand.</p>
+<p>This is why limits, arbitrarily small quantities, and arbitrarily large quantities are central to analysis: they allow us to replace vague ideas such as</p>
+<blockquote class="blockquote">
+<p>“very large,” “very small,” and “very close”</p>
+</blockquote>
+<p>with mathematical statements that can be proved.</p>
+</section>
+<section id="mathematical-guarantees" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-guarantees">Mathematical Guarantees</h3>
+<p>The goal of real analysis is not simply to develop intuition about convergence, continuity, differentiation, and integration.</p>
+<p>We want <strong>guarantees</strong>.</p>
+<p>A mathematical theorem should apply to every object satisfying its hypotheses, including cases we did not think to test individually.</p>
+<p>To obtain those guarantees, we need two major tools:</p>
+<ol type="1">
+<li><strong>good definitions</strong>, and</li>
+<li><strong>proofs</strong>.</li>
+</ol>
+<p>A good definition draws the boundary around exactly the objects we intend to describe.</p>
+<p>A proof then establishes that a claim holds throughout that entire boundary.</p>
+<p>Thus,</p>
+<p><span class="math display">\[
+\text{precise definitions}
++
+\text{proofs}
+\longrightarrow
+\text{mathematical guarantees}.
+\]</span></p>
+</section>
+<section id="why-definitions-matter" class="level3">
+<h3 class="anchored" data-anchor-id="why-definitions-matter">Why Definitions Matter</h3>
+<p>Writing a good mathematical definition is surprisingly difficult because <strong>precision</strong> and <strong>intuition</strong> are not always the same thing.</p>
+<p>Consider the informal statement:</p>
+<blockquote class="blockquote">
+<p>A sequence converges to <span class="math inline">\(L\)</span> if its terms get closer and closer to <span class="math inline">\(L\)</span>.</p>
+</blockquote>
+<p>This sounds reasonable, but it does not quite capture what convergence means.</p>
+<p>For example,</p>
+<p><span class="math display">\[
+a_n=1+\frac1n
+\]</span></p>
+<p>gets progressively closer to <span class="math inline">\(0\)</span> in the sense that its distance from <span class="math inline">\(0\)</span> decreases:</p>
+<p><span class="math display">\[
+2,\frac32,\frac43,\frac54,\ldots
+\]</span></p>
+<p>Yet</p>
+<p><span class="math display">\[
+a_n\not\to0.
+\]</span></p>
+<p>Instead,</p>
+<p><span class="math display">\[
+a_n\to1.
+\]</span></p>
+<p>Conversely, the constant sequence</p>
+<p><span class="math display">\[
+0,0,0,0,\ldots
+\]</span></p>
+<p>converges to <span class="math inline">\(0\)</span>, even though its terms do not become progressively closer to <span class="math inline">\(0\)</span>: they are already there.</p>
+<p>So “gets closer and closer” is simultaneously too broad in some cases and too narrow in others.</p>
+<p>The formal definition avoids these problems:</p>
+<p><span class="math display">\[
+a_n\to L
+\]</span></p>
+<p>if and only if</p>
+<p><span class="math display">\[
+\forall\varepsilon&gt;0,\
+\exists N\in\mathbb{N}
+\text{ such that }
+n\ge N
+\implies
+|a_n-L|&lt;\varepsilon.
+\]</span></p>
+<p>Notice what the definition actually demands.</p>
+<p>It does <strong>not</strong> require the distance</p>
+<p><span class="math display">\[
+|a_n-L|
+\]</span></p>
+<p>to decrease at every step.</p>
+<p>It requires something stronger and more useful:</p>
+<blockquote class="blockquote">
+<p>No matter how small a neighborhood we place around <span class="math inline">\(L\)</span>, eventually every remaining term of the sequence stays inside it.</p>
+</blockquote>
+<p>The definition is less immediately intuitive than “gets closer and closer,” but it is precise, checkable, and robust enough to handle the messy cases that informal intuition misses.</p>
 </section>
 <section id="proof-hygiene" class="level3">
 <h3 class="anchored" data-anchor-id="proof-hygiene">Proof Hygiene</h3>
@@ -339,6 +402,64 @@ f(x_i)\Delta x.
 <blockquote class="blockquote">
 <p>A proof is the report of a successful search, not the transcript of one.</p>
 </blockquote>
+<p>A proof must first be <strong>correct</strong>, but correctness is only the minimum requirement.</p>
+<p>A strong proof should also make the mechanism of the argument visible.</p>
+<section id="every-statement-should-be-load-bearing" class="level4">
+<h4 class="anchored" data-anchor-id="every-statement-should-be-load-bearing">Every statement should be load-bearing</h4>
+<p>For each sentence or calculation in a proof, ask:</p>
+<blockquote class="blockquote">
+<p>Does anything later in the argument depend on this?</p>
+</blockquote>
+<p>If the answer is no, the statement probably does not belong in the final proof.</p>
+<p>A fact can be completely correct and still weaken a proof if it does not contribute to the conclusion.</p>
+<p>Unnecessary statements:</p>
+<ul>
+<li>increase the amount the reader must process;</li>
+<li>interrupt the logical flow;</li>
+<li>obscure which ideas actually produce the conclusion;</li>
+<li>make the argument harder to reuse in other problems.</li>
+</ul>
+<p>Proof writing is therefore not a record of everything discovered while solving the problem.</p>
+<p>Scratch work may contain false starts, unnecessary cases, calculations that ultimately went nowhere, and observations that turned out not to matter.</p>
+<p>Those may be useful during the <strong>search</strong> for a proof, but they should usually disappear from the final presentation.</p>
+</section>
+<section id="avoid-unnecessary-cases" class="level4">
+<h4 class="anchored" data-anchor-id="avoid-unnecessary-cases">Avoid unnecessary cases</h4>
+<p>Casework should be introduced only when the argument genuinely depends on the distinction between the cases.</p>
+<p>Suppose an argument divides possibilities according to whether <span class="math inline">\(q\)</span> is even or odd. If the proof inside both cases never actually uses the parity of <span class="math inline">\(q\)</span>, then that distinction was unnecessary.</p>
+<p>This gives a useful diagnostic:</p>
+<p><span class="math display">\[
+\boxed{
+\text{If a case never uses the condition defining it,
+the case probably was not needed.}
+}
+\]</span></p>
+</section>
+<section id="make-the-mechanism-visible" class="level4">
+<h4 class="anchored" data-anchor-id="make-the-mechanism-visible">Make the mechanism visible</h4>
+<p>The best proofs do more than verify that a statement is true. They show <strong>why</strong> it must be true.</p>
+<p>For example, the irrationality proof for <span class="math inline">\(\sqrt{3}\)</span> works because of an incompatibility:</p>
+<p><span class="math display">\[
+\sqrt3=\frac pq
+\quad\Longrightarrow\quad
+3\mid p
+\quad\text{and}\quad
+3\mid q,
+\]</span></p>
+<p>but the fraction was chosen so that</p>
+<p><span class="math display">\[
+\gcd(p,q)=1.
+\]</span></p>
+<p>Those two requirements cannot simultaneously hold.</p>
+<p>That is the mechanism of the proof.</p>
+<p>Once the mechanism is visible, the argument becomes reusable. We can immediately ask whether the same strategy works for</p>
+<p><span class="math display">\[
+\sqrt5,\qquad
+\sqrt7,\qquad
+\sqrt p
+\]</span></p>
+<p>for a prime <span class="math inline">\(p\)</span>, and eventually investigate the more general question of when <span class="math inline">\(\sqrt n\)</span> is irrational.</p>
+</section>
 <section id="precision-vs.-intuition" class="level4">
 <h4 class="anchored" data-anchor-id="precision-vs.-intuition">Precision vs.&nbsp;Intuition</h4>
 <p>A good proof should:</p>
@@ -350,7 +471,14 @@ f(x_i)\Delta x.
 <li>omit failed approaches and irrelevant intermediate reasoning;</li>
 <li>ensure that every statement contributes directly to the argument.</li>
 </ul>
-<p><strong>Correct <span class="math inline">\(\neq\)</span> done.</strong></p>
+<p>Thus,</p>
+<p><span class="math display">\[
+\boxed{\text{Correct} \neq \text{done}.}
+\]</span></p>
+<p>The final goal is an argument another person can</p>
+<p><span class="math display">\[
+\boxed{\text{follow} \quad+\quad \text{check} \quad+\quad \text{reuse}.}
+\]</span></p>
 </section>
 </section>
 <section id="example-proof-sqrt3-is-irrational" class="level3">
@@ -359,47 +487,51 @@ f(x_i)\Delta x.
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Suppose, for contradiction, that <span class="math inline">\(\sqrt{3}\)</span> is rational. Then we may write</p>
 <p><span class="math display">\[
-\sqrt{3} = \frac{p}{q},
+\sqrt{3}=\frac pq,
 \]</span></p>
-<p>where <span class="math inline">\(p,q \in \mathbb{Z}\)</span>, <span class="math inline">\(q \neq 0\)</span>, and</p>
+<p>where <span class="math inline">\(p,q\in\mathbb{Z}\)</span>, <span class="math inline">\(q\neq0\)</span>, and</p>
 <p><span class="math display">\[
 \gcd(p,q)=1.
 \]</span></p>
-<p>Squaring both sides gives</p>
+<p>Squaring gives</p>
 <p><span class="math display">\[
-3 = \frac{p^2}{q^2},
+3q^2=p^2.
 \]</span></p>
-<p>so</p>
+<p>Therefore,</p>
 <p><span class="math display">\[
-3q^2 = p^2.
+3\mid p^2.
 \]</span></p>
-<p>Thus <span class="math inline">\(3 \mid p^2\)</span>. Since <span class="math inline">\(3\)</span> is prime, it follows that <span class="math inline">\(3 \mid p\)</span>. Therefore, for some <span class="math inline">\(n \in \mathbb{Z}\)</span>,</p>
+<p>Since <span class="math inline">\(3\)</span> is prime, <span class="math inline">\(3\mid p\)</span>. Thus for some <span class="math inline">\(n\in\mathbb Z\)</span>,</p>
 <p><span class="math display">\[
 p=3n.
 \]</span></p>
-<p>Substituting this into <span class="math inline">\(3q^2=p^2\)</span> gives</p>
+<p>Substituting gives</p>
 <p><span class="math display">\[
-3q^2 = 9n^2,
+3q^2=9n^2,
 \]</span></p>
-<p>and hence</p>
+<p>so</p>
 <p><span class="math display">\[
-q^2 = 3n^2.
+q^2=3n^2.
 \]</span></p>
-<p>Therefore <span class="math inline">\(3 \mid q^2\)</span>, so <span class="math inline">\(3 \mid q\)</span>.</p>
-<p>Thus <span class="math inline">\(3\)</span> divides both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, contradicting the assumption that</p>
+<p>Hence</p>
+<p><span class="math display">\[
+3\mid q^2,
+\]</span></p>
+<p>and therefore <span class="math inline">\(3\mid q\)</span>.</p>
+<p>Thus <span class="math inline">\(3\)</span> divides both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, contradicting</p>
 <p><span class="math display">\[
 \gcd(p,q)=1.
 \]</span></p>
 <p>Therefore,</p>
 <p><span class="math display">\[
-\boxed{\sqrt{3}\notin\mathbb{Q}}.
+\boxed{\sqrt3\notin\mathbb Q}.
 \]</span></p>
 </div>
+
+
 </section>
 </section>
 </div>
-
-
 
 </main> <!-- /main -->
 <footer class="site-footer">

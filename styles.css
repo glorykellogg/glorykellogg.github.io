@@ -575,12 +575,11 @@ ul li {
   font-size: 0.9rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px){
   .library-grid {
     grid-template-columns: 1fr;
   }
 }
-
 
 /* ==========================================================
    INVOLVEMENT PAGE
@@ -1179,4 +1178,11 @@ ul li {
     gap: 0.5rem;
   }
 
+}
+
+.notes-figure {
+  display: block;
+  width: min(100%, 900px);
+  height: auto;
+  margin: 2rem auto;
 }
