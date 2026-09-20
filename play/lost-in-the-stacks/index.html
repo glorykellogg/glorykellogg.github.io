@@ -228,56 +228,6 @@
   </script>
   <script src="renpy-pre.js"></script>
   <script async type="text/javascript" src="renpy.js"></script>
-<!-- Website controls live outside the game canvas so they also work with touch. -->
-<style>
-#game-fullscreen { position: fixed; top: max(8px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); z-index: 1000; min-height: 44px; padding: 8px 16px; border: 1px solid #b8af98; border-radius: 4px; background: #292929; color: #fff; font: 16px Georgia, serif; cursor: pointer; touch-action: manipulation; }
-#game-fullscreen:focus-visible { outline: 3px solid #e6bf79; outline-offset: 2px; }
-#fullscreen-note { position: fixed; top: 60px; left: 50%; transform: translateX(-50%); z-index: 1001; max-width: 85vw; padding: 10px 16px; background: #292929; color: white; font: 16px Georgia, serif; }
-</style>
-<button id="game-fullscreen" type="button" aria-label="Enter full screen" aria-pressed="false">Full screen</button>
-<div id="fullscreen-note" role="status" hidden></div>
-<script>
-(() => {
-  const button = document.getElementById('game-fullscreen');
-  const note = document.getElementById('fullscreen-note');
-  const root = document.documentElement;
-  let noteTimer;
-  const active = () => Boolean(document.fullscreenElement || document.webkitFullscreenElement);
-  function sync() {
-    const on = active();
-    button.textContent = on ? 'Exit full screen' : 'Full screen';
-    button.setAttribute('aria-label', on ? 'Exit full screen' : 'Enter full screen');
-    button.setAttribute('aria-pressed', String(on));
-  }
-  function explain(text) {
-    note.textContent = text; note.hidden = false;
-    clearTimeout(noteTimer); noteTimer = setTimeout(() => { note.hidden = true; }, 6000);
-  }
-  button.addEventListener('pointerdown', event => event.stopPropagation());
-  button.addEventListener('click', async event => {
-    event.stopPropagation();
-    try {
-      if (active()) {
-        const exit = document.exitFullscreen || document.webkitExitFullscreen;
-        if (exit) await exit.call(document);
-      } else {
-        const enter = root.requestFullscreen || root.webkitRequestFullscreen;
-        if (!enter) {
-          explain('This browser does not support full screen for games. Turn your phone sideways for a larger view.');
-          return;
-        }
-        await enter.call(root);
-      }
-      sync();
-    } catch (_) {
-      explain('Full screen is unavailable here. Try opening the game directly in Safari or Chrome.');
-    }
-  });
-  document.addEventListener('fullscreenchange', sync);
-  document.addEventListener('webkitfullscreenchange', sync);
-})();
-</script>
-
 </body>
 
 </html>
