@@ -228,6 +228,78 @@
   </script>
   <script src="renpy-pre.js"></script>
   <script async type="text/javascript" src="renpy.js"></script>
+<!-- Lost in the Stacks browser settings -->
+<style>
+#ContextContainer { display:none !important; }
+#stacks-gear { position:fixed; bottom:max(12px,env(safe-area-inset-bottom)); right:max(12px,env(safe-area-inset-right)); width:44px; height:44px; z-index:10001; border:1px solid #bdb49b; border-radius:50%; background:#292929; color:white; font-size:28px; cursor:pointer; }
+#stacks-settings[hidden] { display:none; }
+#stacks-settings { position:fixed; inset:0; z-index:10002; background:#0008; display:grid; place-items:center; }
+#stacks-settings section { width:min(300px,80vw); padding:24px; background:#292929; color:white; font-family:Garamond,Georgia,serif; box-shadow:0 8px 35px #0006; }
+#stacks-settings h2 { margin:0 0 20px; font-size:28px; font-weight:normal; }
+#stacks-settings button { display:block; width:100%; min-height:48px; margin:10px 0 0; padding:10px; border:1px solid #a69b83; background:#292929; color:white; font:22px Garamond,Georgia,serif; cursor:pointer; }
+#stacks-settings button:focus-visible,#stacks-gear:focus-visible { outline:3px solid #e6bf79; outline-offset:3px; }
+#stacks-settings button[hidden] { display:none; }
+#stacks-settings button:disabled { opacity:.5; }
+#stacks-settings-status { font-size:16px; margin:12px 0 0; }
+</style>
+<button id="stacks-gear" aria-label="Settings" aria-haspopup="dialog" aria-expanded="false">⚙</button>
+<div id="stacks-settings" hidden>
+<section role="dialog" aria-modal="true" aria-labelledby="stacks-settings-title">
+<h2 id="stacks-settings-title">Settings</h2>
+<button id="stacks-music" disabled aria-pressed="true">Music: On</button>
+<button id="stacks-fullscreen" hidden>Full screen</button>
+<button id="stacks-back" disabled>Back to game</button>
+<p id="stacks-settings-status" role="status"></p>
+</section>
+</div>
+<script>
+(() => {
+ const gear=document.getElementById('stacks-gear'), panel=document.getElementById('stacks-settings'), music=document.getElementById('stacks-music'), full=document.getElementById('stacks-fullscreen'), back=document.getElementById('stacks-back'), status=document.getElementById('stacks-settings-status');
+ const root=document.documentElement;
+ const supported=!!((document.fullscreenEnabled && root.requestFullscreen) || (document.webkitFullscreenEnabled && root.webkitRequestFullscreen));
+ full.hidden=!supported;
+ const exec=code=>window.renpy_exec(code);
+ const musicState=muted=>{music.textContent=muted?'Music: Off':'Music: On';music.setAttribute('aria-pressed',String(!muted));};
+ gear.addEventListener('click',async()=>{
+  if(!panel.hidden || typeof window.renpy_exec!=='function')return;
+  panel.hidden=false;gear.setAttribute('aria-expanded','true');status.textContent='Opening settings…';
+  try {musicState(await exec('result = open_web_settings()'));music.disabled=false;back.disabled=false;status.textContent='';music.focus();}
+  catch(e){status.textContent='Settings are not ready yet. Please reload the game.';}
+ });
+ music.addEventListener('click',async()=>{
+  music.disabled=true;
+  try{musicState(await exec('result = toggle_web_music()'));status.textContent='';}
+  catch(e){status.textContent='Could not change music. Try again.';}
+  finally{music.disabled=false;}
+ });
+ back.addEventListener('click',async()=>{
+  back.disabled=true;
+  try{await exec('close_web_settings()');panel.hidden=true;gear.setAttribute('aria-expanded','false');music.disabled=true;gear.focus();}
+  catch(e){status.textContent='Could not resume. Try again.';back.disabled=false;}
+ });
+ const fullLabel=()=>full.textContent=(document.fullscreenElement||document.webkitFullscreenElement)?'Exit full screen':'Full screen';
+ full.addEventListener('click',async()=>{
+  try{
+   if(document.fullscreenElement||document.webkitFullscreenElement){await (document.exitFullscreen?document.exitFullscreen():document.webkitExitFullscreen());}
+   else {await (root.requestFullscreen?root.requestFullscreen():root.webkitRequestFullscreen());}
+   fullLabel();status.textContent='';
+  }catch(e){status.textContent='Full screen is unavailable in this browser.';full.hidden=true;}
+ });
+ document.addEventListener('fullscreenchange',fullLabel);document.addEventListener('webkitfullscreenchange',fullLabel);
+ window.addEventListener('keydown',e=>{
+  if(panel.hidden)return;
+  e.stopImmediatePropagation();
+  if(e.key==='Escape'){e.preventDefault();if(!back.disabled)back.click();}
+  if(e.key==='Tab'){
+   const buttons=[music,full,back].filter(b=>!b.hidden&&!b.disabled);
+   if(!buttons.length){e.preventDefault();return;}
+   let i=buttons.indexOf(document.activeElement);i=(i+(e.shiftKey?-1:1)+buttons.length)%buttons.length;
+   e.preventDefault();buttons[i].focus();
+  }
+ },true);
+})();
+</script>
+
 </body>
 
 </html>
