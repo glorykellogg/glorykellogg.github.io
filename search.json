@@ -172,49 +172,77 @@
     "href": "index.html",
     "title": "Glory Kellogg",
     "section": "",
-    "text": "Glory Kellogg\nI am an Applied Mathematics Honors student at the Illinois Institute of Technology pursuing a minor in Computer Science.\nI’m drawn to the hidden patterns of the natural world and to the math that helps bring them into focus. Lately, I’ve been wondering how butterfly wings form patterns and why some networks become unequal.\nI’ve started keeping a library of class notes, books, and papers that have shaped my thinking. Outside of research, you can see some of my academic and community involvement. You can also read my curriculum vitae or send me an email."
+    "text": "Glory Kellogg\nI am an Applied Mathematics Honors sophomore at the Illinois Institute of Technology, with a minor in Biology. I’m drawn to the hidden patterns of the natural world and to the mathematics that brings them into focus.\nIn my research with Megan Morrison, I’m exploring how butterfly wing patterns form. In summer 2027, I’ll join the Graf group at EMBL for an internship in theoretical biophysics, exploring how living systems adapt to change while maintaining their stability.\nMy library brings together class notes, books, and papers that have shaped my thinking. You can also explore my academic and community involvement, read my curriculum vitae, or send me an email."
   },
   {
     "objectID": "index.html#current-research",
     "href": "index.html#current-research",
     "title": "Glory Kellogg",
     "section": "Current Research",
-    "text": "Current Research\n\n\n\nButterfly Wing Pattern Formation\n\n\nMathematical and computational models of butterfly wing development, including image processing, graph representations, and reaction–diffusion systems.\n\n \n\nCollaboration Networks\n\n\nAn agent-based model examining how nonlinear preferential attachment shapes network growth, inequality, and concentration."
+    "text": "Current Research\n\n\n\nButterfly Wing Pattern Formation\n\n\nComputational models of butterfly wing development, including image processing, graph representations, and reaction–diffusion systems.\n\n \n\nCollaboration Networks\n\n\nAn agent-based model examining how nonlinear preferential attachment shapes network growth, inequality, and concentration."
   },
   {
     "objectID": "index.html#school-projects",
     "href": "index.html#school-projects",
     "title": "Glory Kellogg",
     "section": "School Projects",
-    "text": "School Projects\n\n\n  Lost in the Stacks: A Race Game\n  Follow the call number to shelve The Lives of Butterflies before the end of your shift in a library turned strange."
+    "text": "School Projects\n\n\n  Lost in the Stacks: A Race Game\n  Follow the call number to shelve The Lives of Butterflies before the end of your shift in a library turned strange.\n\n\n  Wonderland: A Puzzle Game\n  Explore two connected worlds through Alice’s eyes in this playable slice of a puzzle game inspired by Lewis Carroll."
   },
   {
     "objectID": "butterfly-wings.html",
     "href": "butterfly-wings.html",
     "title": "Butterfly Wing Pattern Formation",
     "section": "",
-    "text": "I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.\nThe project combines biological observation, image processing, graph-based representations, and mathematical models of pattern formation."
+    "text": "I study how butterfly wing patterns form and what their final appearance can tell us about how they developed. My project brings together observations of painted lady butterflies, image processing, and mathematical models.\nI started this project independently in July 2026. Since October 2026, I have been working under the guidance of Dr. Megan Morrison at Illinois Tech."
   },
   {
-    "objectID": "butterfly-wings.html#research-questions",
-    "href": "butterfly-wings.html#research-questions",
+    "objectID": "butterfly-wings.html#raising-the-butterflies",
+    "href": "butterfly-wings.html#raising-the-butterflies",
     "title": "Butterfly Wing Pattern Formation",
-    "section": "Research Questions",
-    "text": "Research Questions\n\nHow can wing geometry be represented as a graph?\nHow might signaling molecules diffuse across that structure?\nWhich simulated patterns can be meaningfully compared with observed wings?"
+    "section": "Raising the Butterflies",
+    "text": "Raising the Butterflies\nOn July 17, 2026, I received 10 painted lady caterpillars. Over the following weeks, I raised butterflies and documented their development through photographs and a diary. My observations continued through September.\n\n\n\n\n\n\nDay 0: Caterpillars.\n\n\n\n\n\n\n\nDay 10: Chrysalises.\n\n\n\n\n\n\n\nDay 46: Adult butterflies.\n\n\n\n\n\nThe butterfly-raising stage is now complete. I still need to scan their wings and prepare the images for comparison with my simulations."
   },
   {
-    "objectID": "butterfly-wings.html#current-work",
-    "href": "butterfly-wings.html#current-work",
+    "objectID": "butterfly-wings.html#a-morphogen-based-model",
+    "href": "butterfly-wings.html#a-morphogen-based-model",
     "title": "Butterfly Wing Pattern Formation",
-    "section": "Current Work",
-    "text": "Current Work\n\nRaising and documenting painted lady butterflies\nDeveloping an image-processing pipeline\nConstructing graph representations of wing structure\nStudying reaction–diffusion and morphogen-based models"
+    "section": "A Morphogen-Based Model",
+    "text": "A Morphogen-Based Model\nHow could a chemical signal help determine where a butterfly’s wing becomes pigmented?\nOne proposed explanation involves a morphogen, a chemical signal that influences how cells develop. In Murray’s model, a morphogen spreads across the developing wing and activates a local response that affects later pigmentation. A temporary chemical signal can therefore leave a lasting pattern.1\nThe equations below describe the Murray-based model implemented in Edwin Nongba Traore’s 2017 report.2\n\nA Signal Spreads and Breaks Down\nLet \\(S\\) represent the morphogen concentration at a particular location and time. Its concentration changes according to\n\\[\n\\frac{\\partial S}{\\partial t}\n=\n\\underbrace{D\\nabla^2 S}_{\\text{diffusion}}\n-\n\\underbrace{K\\gamma S}_{\\text{degradation}}.\n\\]\nThe left side describes how quickly the concentration changes over time. On the right, diffusion spreads the signal, while degradation removes it.\nThe parameter \\(D\\) controls diffusion, \\(K\\) controls degradation, and \\(\\gamma\\) is a size-scaling parameter in this model. The symbol \\(\\nabla^2\\), called the Laplacian, describes the spatial variation in concentration used to calculate diffusion.\nTogether, these processes affect how far the signal travels and how long it remains present.\n\n\nCells Respond to the Signal\nThe second equation describes a gene product, a molecule made when a gene is expressed. In this model, the gene product affects later pigmentation.\nLet \\(g\\) represent its concentration:\n\\[\n\\frac{\\partial g}{\\partial t}\n=\n\\gamma\n\\left(\nk_1 S\n+\n\\frac{k_2 g^2}{1+g^2}\n-\nk_3 g\n\\right).\n\\]\nEach term describes a different part of the response:\n\nActivation by the signal: \\(k_1 S\\) increases gene-product production in response to the morphogen.\nSelf-activation: \\(\\frac{k_2 g^2}{1+g^2}\\) allows existing gene product to encourage further production. This effect levels off as \\(g\\) increases.\nDegradation: \\(-k_3 g\\) removes gene product over time.\n\nFor suitable parameter values, self-activation can keep the gene product at a positive level even after the original signal fades. This creates a switch: a cell can change its developmental state and remain in that state after the signal is gone.3\nThe model therefore separates two things: the temporary signal moving across the wing and the lasting response it leaves behind.\n\n\nWing Shape and Boundaries\nThe shape and size of the wing affect where signals can spread. Murray’s work explores how changes in geometry and scale can produce different patterns even when the underlying mechanism remains the same.4\nThe model described in Traore’s report treats wing edges and veins as barriers to diffusion. This is expressed through a zero-flux boundary condition:\n\\[\n\\frac{\\partial S}{\\partial \\mathbf{n}}=0\n\\qquad \\text{on } \\partial\\Omega.\n\\]\nHere, \\(\\Omega\\) is the region being modeled, \\(\\partial\\Omega\\) is its boundary, and \\(\\mathbf{n}\\) points perpendicular to that boundary. The condition means that no morphogen crosses the boundary.\nThis is an assumption of the model, not a claim that every real wing vein completely blocks biological signals.\n\n\nHow This Relates to Turing’s Work\nAlan Turing’s work shows how chemical reactions and diffusion can amplify small differences in concentration into spatial patterns.5\nThe model above uses a different route: it starts with morphogen placed in particular regions, lets that signal spread, and uses a local gene switch to record its effects. It does not rely on a Turing instability to generate the initial pattern.\nThese ideas provide mathematical starting points for my project. I am investigating what they can explain, rather than assuming that one model captures every part of butterfly wing development."
   },
   {
-    "objectID": "butterfly-wings.html#project-direction",
-    "href": "butterfly-wings.html#project-direction",
+    "objectID": "butterfly-wings.html#building-the-model",
+    "href": "butterfly-wings.html#building-the-model",
     "title": "Butterfly Wing Pattern Formation",
-    "section": "Project Direction",
-    "text": "Project Direction\nThe long-term goal is to develop a computational framework for comparing mathematical pattern-formation models with observed butterfly wings."
+    "section": "Building the Model",
+    "text": "Building the Model\nI am developing a computational framework to simulate how chemical signals might spread, break down, and affect pattern formation across a developing wing.\nTo represent the wing’s shape, I use an adaptive Delaunay–Voronoi mesh. This divides the wing into small, connected regions where the signals can be simulated.\n\n\n\nThe current version of my butterfly wing simulation interface, mid-simulation."
+  },
+  {
+    "objectID": "butterfly-wings.html#working-backward-from-patterns",
+    "href": "butterfly-wings.html#working-backward-from-patterns",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Working Backward from Patterns",
+    "text": "Working Backward from Patterns\nThe project focuses on an inverse problem: starting with a wing pattern and working backward to find model settings that could produce it.\nI use CMA-ES, an optimization method, to search for model parameters and signal source locations that produce patterns similar to a target image. Once I have scanned the wings of the butterflies I raised, I will use those images as targets.\nFor now, I am testing the workflow with reference wing images from Ed Yong’s article, “Scientists Can Now Repaint Butterfly Wings”.\nMy main questions are:\n\nCan a final wing pattern tell us where developmental signals began and how they spread?\nCan different model parameters or processes produce similar patterns?\nHow does the shape of the wing affect both the simulated pattern and what we can learn from it?\n\nThese questions involve parameter identifiability: whether the available observations can distinguish one set of model parameters from another.\nA close visual match is not enough to show that the model has recovered the actual developmental process. Different explanations may fit the same pattern."
+  },
+  {
+    "objectID": "butterfly-wings.html#next-steps",
+    "href": "butterfly-wings.html#next-steps",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nScan the butterfly wings and prepare the images for analysis.\nCompare simulated patterns with the observed wing patterns.\nTest how reliably model parameters and signal source locations can be recovered, and where different explanations remain possible.\n\nThe goal is not just to reproduce a wing pattern, but to understand what that pattern can tell us about its development and what remains uncertain."
+  },
+  {
+    "objectID": "butterfly-wings.html#literature",
+    "href": "butterfly-wings.html#literature",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Literature",
+    "text": "Literature\nMy notes on Turing, Murray, and Traore are collected in my Library."
+  },
+  {
+    "objectID": "butterfly-wings.html#footnotes",
+    "href": "butterfly-wings.html#footnotes",
+    "title": "Butterfly Wing Pattern Formation",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nMurray, J. D. (1981). On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 295(1078), 473–496. Read the paper.↩︎\nTraore, E. N. (2017). A Mathematical Model for Butterfly Wing Patterns. Project report supervised by Filippo Remonato and Mats Ehrnstrøm. Read the report.↩︎\nTraore, E. N. (2017). A Mathematical Model for Butterfly Wing Patterns. Project report supervised by Filippo Remonato and Mats Ehrnstrøm. Read the report.↩︎\nMurray, J. D. (1981). On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 295(1078), 473–496. Read the paper.↩︎\nTuring, A. M. (1952). The Chemical Basis of Morphogenesis. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 237(641), 37–72. Read the paper.↩︎"
   },
   {
     "objectID": "curriculum-vitae.html",

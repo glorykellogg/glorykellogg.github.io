@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-829fa26f51d673a98a9fd19d98fc2a03.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -58,6 +61,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -69,9 +101,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#raising-the-butterflies" id="toc-raising-the-butterflies" class="nav-link active" data-scroll-target="#raising-the-butterflies">Raising the Butterflies</a></li>
+  <li><a href="#a-morphogen-based-model" id="toc-a-morphogen-based-model" class="nav-link" data-scroll-target="#a-morphogen-based-model">A Morphogen-Based Model</a>
+  <ul class="collapse">
+  <li><a href="#a-signal-spreads-and-breaks-down" id="toc-a-signal-spreads-and-breaks-down" class="nav-link" data-scroll-target="#a-signal-spreads-and-breaks-down">A Signal Spreads and Breaks Down</a></li>
+  <li><a href="#cells-respond-to-the-signal" id="toc-cells-respond-to-the-signal" class="nav-link" data-scroll-target="#cells-respond-to-the-signal">Cells Respond to the Signal</a></li>
+  <li><a href="#wing-shape-and-boundaries" id="toc-wing-shape-and-boundaries" class="nav-link" data-scroll-target="#wing-shape-and-boundaries">Wing Shape and Boundaries</a></li>
+  <li><a href="#how-this-relates-to-turings-work" id="toc-how-this-relates-to-turings-work" class="nav-link" data-scroll-target="#how-this-relates-to-turings-work">How This Relates to Turing’s Work</a></li>
+  </ul></li>
+  <li><a href="#building-the-model" id="toc-building-the-model" class="nav-link" data-scroll-target="#building-the-model">Building the Model</a></li>
+  <li><a href="#working-backward-from-patterns" id="toc-working-backward-from-patterns" class="nav-link" data-scroll-target="#working-backward-from-patterns">Working Backward from Patterns</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Literature</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header class="site-header">
   <a href="./" class="site-banner-link" aria-label="Return to the Glory Kellogg homepage">
@@ -101,12 +152,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Butterfly Wing Pattern Formation</h1>
-<p class="subtitle lead">Mathematical models of biological pattern development</p>
+<p class="subtitle lead">Studying how wing patterns form through observation and simulation</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -118,33 +169,155 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I am investigating how mathematical and computational models can be used to study the development of butterfly wing patterns.</p>
-<p>The project combines biological observation, image processing, graph-based representations, and mathematical models of pattern formation.</p>
-<section id="research-questions" class="level2">
-<h2 class="anchored" data-anchor-id="research-questions">Research Questions</h2>
+<p>I study how butterfly wing patterns form and what their final appearance can tell us about how they developed. My project brings together observations of painted lady butterflies, image processing, and mathematical models.</p>
+<p>I started this project independently in July 2026. Since October 2026, I have been working under the guidance of <a href="https://www.iit.edu/directory/people/megan-morrison">Dr.&nbsp;Megan Morrison</a> at Illinois Tech.</p>
+<section id="raising-the-butterflies" class="level2">
+<h2 class="anchored" data-anchor-id="raising-the-butterflies">Raising the Butterflies</h2>
+<p>On July 17, 2026, I received 10 painted lady caterpillars. Over the following weeks, I raised butterflies and documented their development through photographs and a diary. My observations continued through September.</p>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/caterpillars.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Day 0: Caterpillars."><img src="images/caterpillars.JPG" class="img-fluid figure-img" style="width:100.0%" alt="Painted lady caterpillars I raised for the project."></a></p>
+<figcaption>Day 0: Caterpillars.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/pupa.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Day 10: Chrysalises."><img src="images/pupa.JPG" class="img-fluid figure-img" style="width:100.0%" alt="Painted lady pupae from my research project."></a></p>
+<figcaption>Day 10: Chrysalises.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/butterflies.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Day 46: Adult butterflies."><img src="images/butterflies.png" class="img-fluid figure-img" style="width:100.0%" alt="Adult painted lady butterflies raised for my research project."></a></p>
+<figcaption>Day 46: Adult butterflies.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The butterfly-raising stage is now complete. I still need to scan their wings and prepare the images for comparison with my simulations.</p>
+</section>
+<section id="a-morphogen-based-model" class="level2">
+<h2 class="anchored" data-anchor-id="a-morphogen-based-model">A Morphogen-Based Model</h2>
+<p>How could a chemical signal help determine where a butterfly’s wing becomes pigmented?</p>
+<p>One proposed explanation involves a morphogen, a chemical signal that influences how cells develop. In Murray’s model, a morphogen spreads across the developing wing and activates a local response that affects later pigmentation. A temporary chemical signal can therefore leave a lasting pattern.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The equations below describe the Murray-based model implemented in Edwin Nongba Traore’s 2017 report.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<section id="a-signal-spreads-and-breaks-down" class="level3">
+<h3 class="anchored" data-anchor-id="a-signal-spreads-and-breaks-down">A Signal Spreads and Breaks Down</h3>
+<p>Let <span class="math inline">\(S\)</span> represent the morphogen concentration at a particular location and time. Its concentration changes according to</p>
+<p><span class="math display">\[
+\frac{\partial S}{\partial t}
+=
+\underbrace{D\nabla^2 S}_{\text{diffusion}}
+-
+\underbrace{K\gamma S}_{\text{degradation}}.
+\]</span></p>
+<p>The left side describes how quickly the concentration changes over time. On the right, diffusion spreads the signal, while degradation removes it.</p>
+<p>The parameter <span class="math inline">\(D\)</span> controls diffusion, <span class="math inline">\(K\)</span> controls degradation, and <span class="math inline">\(\gamma\)</span> is a size-scaling parameter in this model. The symbol <span class="math inline">\(\nabla^2\)</span>, called the Laplacian, describes the spatial variation in concentration used to calculate diffusion.</p>
+<p>Together, these processes affect how far the signal travels and how long it remains present.</p>
+</section>
+<section id="cells-respond-to-the-signal" class="level3">
+<h3 class="anchored" data-anchor-id="cells-respond-to-the-signal">Cells Respond to the Signal</h3>
+<p>The second equation describes a gene product, a molecule made when a gene is expressed. In this model, the gene product affects later pigmentation.</p>
+<p>Let <span class="math inline">\(g\)</span> represent its concentration:</p>
+<p><span class="math display">\[
+\frac{\partial g}{\partial t}
+=
+\gamma
+\left(
+k_1 S
++
+\frac{k_2 g^2}{1+g^2}
+-
+k_3 g
+\right).
+\]</span></p>
+<p>Each term describes a different part of the response:</p>
 <ul>
-<li>How can wing geometry be represented as a graph?</li>
-<li>How might signaling molecules diffuse across that structure?</li>
-<li>Which simulated patterns can be meaningfully compared with observed wings?</li>
+<li><strong>Activation by the signal:</strong> <span class="math inline">\(k_1 S\)</span> increases gene-product production in response to the morphogen.</li>
+<li><strong>Self-activation:</strong> <span class="math inline">\(\frac{k_2 g^2}{1+g^2}\)</span> allows existing gene product to encourage further production. This effect levels off as <span class="math inline">\(g\)</span> increases.</li>
+<li><strong>Degradation:</strong> <span class="math inline">\(-k_3 g\)</span> removes gene product over time.</li>
 </ul>
+<p>For suitable parameter values, self-activation can keep the gene product at a positive level even after the original signal fades. This creates a <strong>switch</strong>: a cell can change its developmental state and remain in that state after the signal is gone.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>The model therefore separates two things: the temporary signal moving across the wing and the lasting response it leaves behind.</p>
 </section>
-<section id="current-work" class="level2">
-<h2 class="anchored" data-anchor-id="current-work">Current Work</h2>
+<section id="wing-shape-and-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="wing-shape-and-boundaries">Wing Shape and Boundaries</h3>
+<p>The shape and size of the wing affect where signals can spread. Murray’s work explores how changes in geometry and scale can produce different patterns even when the underlying mechanism remains the same.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>The model described in Traore’s report treats wing edges and veins as barriers to diffusion. This is expressed through a <strong>zero-flux boundary condition</strong>:</p>
+<p><span class="math display">\[
+\frac{\partial S}{\partial \mathbf{n}}=0
+\qquad \text{on } \partial\Omega.
+\]</span></p>
+<p>Here, <span class="math inline">\(\Omega\)</span> is the region being modeled, <span class="math inline">\(\partial\Omega\)</span> is its boundary, and <span class="math inline">\(\mathbf{n}\)</span> points perpendicular to that boundary. The condition means that no morphogen crosses the boundary.</p>
+<p>This is an assumption of the model, not a claim that every real wing vein completely blocks biological signals.</p>
+</section>
+<section id="how-this-relates-to-turings-work" class="level3">
+<h3 class="anchored" data-anchor-id="how-this-relates-to-turings-work">How This Relates to Turing’s Work</h3>
+<p>Alan Turing’s work shows how chemical reactions and diffusion can amplify small differences in concentration into spatial patterns.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>The model above uses a different route: it starts with morphogen placed in particular regions, lets that signal spread, and uses a local gene switch to record its effects. It does not rely on a Turing instability to generate the initial pattern.</p>
+<p>These ideas provide mathematical starting points for my project. I am investigating what they can explain, rather than assuming that one model captures every part of butterfly wing development.</p>
+</section>
+</section>
+<section id="building-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-model">Building the Model</h2>
+<p>I am developing a computational framework to simulate how chemical signals might spread, break down, and affect pattern formation across a developing wing.</p>
+<p>To represent the wing’s shape, I use an adaptive Delaunay–Voronoi mesh. This divides the wing into small, connected regions where the signals can be simulated.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/screenshot-ui.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="The current version of my butterfly wing simulation interface, mid-simulation."><img src="images/screenshot-ui.png" class="img-fluid figure-img" style="width:100.0%" alt="Screenshot of the current butterfly wing simulation interface during a simulation."></a></p>
+<figcaption>The current version of my butterfly wing simulation interface, mid-simulation.</figcaption>
+</figure>
+</div>
+</section>
+<section id="working-backward-from-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="working-backward-from-patterns">Working Backward from Patterns</h2>
+<p>The project focuses on an inverse problem: starting with a wing pattern and working backward to find model settings that could produce it.</p>
+<p>I use CMA-ES, an optimization method, to search for model parameters and signal source locations that produce patterns similar to a target image. Once I have scanned the wings of the butterflies I raised, I will use those images as targets.</p>
+<p>For now, I am testing the workflow with reference wing images from <a href="https://www.biointeractive.org/sites/default/files/media/file/2020-02/Scientists%20Can%20Now%20Repaint%20Butterfly%20Wings%20-%20The%20Atlantic.pdf">Ed Yong’s article, “Scientists Can Now Repaint Butterfly Wings”</a>.</p>
+<p>My main questions are:</p>
 <ul>
-<li>Raising and documenting painted lady butterflies</li>
-<li>Developing an image-processing pipeline</li>
-<li>Constructing graph representations of wing structure</li>
-<li>Studying reaction–diffusion and morphogen-based models</li>
+<li>Can a final wing pattern tell us where developmental signals began and how they spread?</li>
+<li>Can different model parameters or processes produce similar patterns?</li>
+<li>How does the shape of the wing affect both the simulated pattern and what we can learn from it?</li>
 </ul>
+<p>These questions involve <strong>parameter identifiability</strong>: whether the available observations can distinguish one set of model parameters from another.</p>
+<p>A close visual match is not enough to show that the model has recovered the actual developmental process. Different explanations may fit the same pattern.</p>
 </section>
-<section id="project-direction" class="level2">
-<h2 class="anchored" data-anchor-id="project-direction">Project Direction</h2>
-<p>The long-term goal is to develop a computational framework for comparing mathematical pattern-formation models with observed butterfly wings.</p>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li>Scan the butterfly wings and prepare the images for analysis.</li>
+<li>Compare simulated patterns with the observed wing patterns.</li>
+<li>Test how reliably model parameters and signal source locations can be recovered, and where different explanations remain possible.</li>
+</ul>
+<p>The goal is not just to reproduce a wing pattern, but to understand what that pattern can tell us about its development and what remains uncertain.</p>
+</section>
+<section id="literature" class="level2">
+<h2 class="anchored" data-anchor-id="literature">Literature</h2>
+<p>My notes on Turing, Murray, and Traore are collected in my <a href="./library.html">Library</a>.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Murray, J. D. (1981). <em>On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings</em>. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 295(1078), 473–496. <a href="https://doi.org/10.1098/rstb.1981.0155">Read the paper</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Traore, E. N. (2017). <em>A Mathematical Model for Butterfly Wing Patterns</em>. Project report supervised by Filippo Remonato and Mats Ehrnstrøm. <a href="https://www.math.ntnu.no/studforsk/butterflyreport.pdf">Read the report</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Traore, E. N. (2017). <em>A Mathematical Model for Butterfly Wing Patterns</em>. Project report supervised by Filippo Remonato and Mats Ehrnstrøm. <a href="https://www.math.ntnu.no/studforsk/butterflyreport.pdf">Read the report</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Murray, J. D. (1981). <em>On Pattern Formation Mechanisms for Lepidopteran Wing Patterns and Mammalian Coat Markings</em>. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 295(1078), 473–496. <a href="https://doi.org/10.1098/rstb.1981.0155">Read the paper</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Turing, A. M. (1952). <em>The Chemical Basis of Morphogenesis</em>. Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences, 237(641), 37–72. <a href="https://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf">Read the paper</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <footer class="site-footer">
 
   <div class="footer-rule"></div>
@@ -589,6 +762,38 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
