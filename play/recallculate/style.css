@@ -1,0 +1,73 @@
+:root{color-scheme:light;--paper:#f8f6ef;--card:#efd16f;--face:#fff7e6;--gold:#ecd080;--rust:#a6482d;--ink:#161612;--blue:#346f86}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background-color:var(--paper);background-image:linear-gradient(#cedce2 1px,transparent 1px),linear-gradient(90deg,#cedce2 1px,transparent 1px),linear-gradient(#e3eaec 1px,transparent 1px),linear-gradient(90deg,#e3eaec 1px,transparent 1px);background-size:110px 110px,110px 110px,22px 22px,22px 22px;min-height:100svh}
+main{width:min(100%,900px);margin:auto;padding:12px 20px 22px}h1{margin:0 auto 12px;width:95%;line-height:0}h1 img{display:block;width:100%;height:auto}.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(100%,calc(100svh - 210px));margin:auto}.card{appearance:none;min-width:0;aspect-ratio:1;border:2px solid transparent;border-radius:0;background:var(--card);color:var(--blue);cursor:pointer;padding:10px;display:flex;justify-content:center;align-items:center;font-family:Georgia,serif;font-size:clamp(22px,4vw,38px);-webkit-tap-highlight-color:transparent}.card.selected{background:var(--face);border-color:var(--ink);color:var(--ink)}.card.matched{background:var(--rust);color:#fff7e6;cursor:default}.card:focus-visible{outline:3px solid var(--blue);outline-offset:3px}.card math{font-size:clamp(15px,2.8vw,28px);pointer-events:none}.card:hover:not(.selected):not(.matched){filter:brightness(1.025)}footer{text-align:center;margin-top:20px}.timer{display:inline-block;color:var(--ink);font:22px Georgia,serif;font-variant-numeric:tabular-nums;letter-spacing:.08em;padding:8px 18px;background:var(--paper)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:550px){main{padding:16px 10px}.board{gap:8px;width:100%}.card{padding:4px}.card math{font-size:clamp(13px,3.7vw,20px)}footer{margin-top:18px}}@media(prefers-reduced-motion:no-preference){.card{transition:background-color .12s}}
+
+/* Fit long equations to the inner card area without wrapping the mathematics. */
+.card{overflow:hidden}
+.card math{flex:none;white-space:nowrap;transform-origin:center center}
+
+/* A taller wordmark, retaining its existing width. */
+h1 img{aspect-ratio:1000 / 168; height:auto; object-fit:fill}
+
+/* Brighter card backs; revealed equations retain their ink color. */
+.card:not(.selected):not(.matched){color:#176b9a}
+
+/* One shared paper surface on every card, including revealed and matched faces. */
+.card,.card.selected,.card.matched{
+ background-image:url("paper-texture-soft.png");
+ background-size:var(--paper-size,140%) auto;
+ background-position:var(--paper-x,50%) var(--paper-y,50%);
+ background-repeat:no-repeat;
+ background-blend-mode:multiply;
+}
+
+/* Quiet paper grain beneath the continuous graph grid. */
+body{
+ background-image:
+ linear-gradient(#cedce2 1px,transparent 1px),
+ linear-gradient(90deg,#cedce2 1px,transparent 1px),
+ linear-gradient(#e3eaec 1px,transparent 1px),
+ linear-gradient(90deg,#e3eaec 1px,transparent 1px),
+ url("background-paper.png");
+ background-size:110px 110px,110px 110px,22px 22px,22px 22px,var(--background-paper-size,800px) auto;
+ background-position:0 0,0 0,0 0,0 0,var(--background-paper-x,0px) var(--background-paper-y,0px);
+ background-repeat:repeat;
+}
+.timer{background:transparent}
+
+/* Completed pairs use rust with warm ivory equations for contrast. */
+.card.matched{background-color:#a6482d;color:#fff7e6}
+
+/* Allocate the entire screen as one composition, including the timer. */
+main{
+ height:100svh;
+ min-height:0;
+ display:grid;
+ grid-template-rows:clamp(55px,14svh,125px) minmax(0,1fr) 34px;
+ gap:10px;
+ padding:10px 16px 16px;
+}
+h1{width:95%;height:100%;margin:0 auto;min-height:0;display:flex;align-items:center;justify-content:center}
+h1 img{width:auto;max-width:100%;height:100%;max-height:100%;object-fit:contain;aspect-ratio:1000 / 168}
+.board{
+ width:min(100%,calc(100svh - clamp(55px,14svh,125px) - 90px));
+ aspect-ratio:1;
+ height:auto;
+ min-height:0;
+ grid-template-rows:repeat(4,minmax(0,1fr));
+ gap:clamp(5px,1.2svh,12px);
+ align-self:center;
+ justify-self:center;
+ margin:0;
+}
+.card{min-height:0;aspect-ratio:auto;padding:clamp(3px,1svh,10px)}
+footer{margin:0;align-self:center;line-height:1}
+.timer{font-size:22px;padding:4px 12px}
+@media(max-width:550px){main{padding:8px 10px 12px;gap:8px}.board{width:min(100%,calc(100svh - clamp(55px,14svh,125px) - 90px))}}
+
+/* Preserve the tall logo; reserve its height before sizing the square board. */
+main{--logo-height:clamp(70px,20svh,170px);grid-template-rows:var(--logo-height) minmax(0,1fr) 34px}
+h1 img{width:100%;height:100%;object-fit:fill;aspect-ratio:auto}
+.board{width:min(100%,calc(100svh - var(--logo-height) - 90px))}
+@media(max-width:550px){.board{width:min(100%,calc(100svh - var(--logo-height) - 90px))}}

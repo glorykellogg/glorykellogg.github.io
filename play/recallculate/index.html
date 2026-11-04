@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recallculate — A Calculus Matching Game</title>
+<meta name="description" content="Match eight integrals to their antiderivatives in Recallculate, a calculus memory game.">
+<link rel="stylesheet" href="style.css?v=rust-2"><script src="game.js" defer></script>
+</head>
+<body>
+<main>
+<h1><img src="logo.png" alt="Recallculate" width="1000" height="146"></h1>
+<p class="sr-only" id="instructions">Reveal a card, then choose another. Match an integral with its antiderivative. After a mismatch, the second card stays selected. Match all eight pairs.</p>
+<div class="board" role="group" aria-label="Calculus matching board" aria-describedby="instructions"></div>
+<footer><div class="timer" role="timer" aria-label="Elapsed time" aria-live="off">00:00</div></footer>
+<p class="sr-only" role="status" aria-live="polite" id="status"></p>
+</main>
+</body></html>

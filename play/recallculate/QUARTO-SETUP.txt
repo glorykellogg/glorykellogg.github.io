@@ -1,0 +1,22 @@
+RECALLCULATE FOR QUARTO
+
+1. Copy this recallculate folder into your website's play folder:
+   glorykellogg.github.io/play/recallculate/
+
+2. Your existing _quarto.yml already includes play/** under project.resources.
+   Keep that entry so Quarto copies the game into _site during rendering.
+
+3. In index.qmd, add this card inside the School Projects project-grid:
+
+<a class="project-card" href="play/recallculate/" target="_blank" rel="noopener noreferrer" aria-label="Recallculate (opens in a new tab or window)">
+  <h3>Recallculate: A Calculus Matching Game</h3>
+  <p>Match integrals with their antiderivatives in a game of calculus and memory.</p>
+</a>
+
+4. Run quarto preview to test, or quarto render to build the site.
+   Publish using your normal GitHub Pages workflow.
+
+The game is static HTML, CSS, JavaScript, and a PNG logo.
+It does not require Python, a server backend, or external script downloads.
+No visible counters or completion messages are shown. Screen-reader status
+messages announce selection, matches, completion, and restart.
