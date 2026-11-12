@@ -172,7 +172,7 @@
     "href": "index.html",
     "title": "Glory Kellogg",
     "section": "",
-    "text": "Glory Kellogg\nI am an Applied Mathematics Honors sophomore at the Illinois Institute of Technology, with a minor in Biology. I’m drawn to the hidden patterns of the natural world and to the mathematics that brings them into focus.\nIn my research with Megan Morrison, I’m exploring how butterfly wing patterns form. In summer 2027, I’ll join the Graf group at EMBL for an internship in theoretical biophysics, exploring how living systems adapt to change while maintaining their stability.\nMy library brings together class notes, books, and papers that have shaped my thinking. You can also explore my academic and community involvement, read my curriculum vitae, or send me an email."
+    "text": "Glory Kellogg\nI am an Honors student at the Illinois Institute of Technology, persuing a B.S. in Applied Mathematics with a minor in Biology. I’m drawn to the hidden patterns of the natural world and to the mathematics that brings them into focus.\nIn my research with Megan Morrison, I’m exploring how butterfly wing patterns form. In summer 2027, I’ll join the Graf group at EMBL for an internship in theoretical biophysics, exploring how living systems adapt to change while maintaining their stability.\nMy library brings together class notes, books, and papers that have shaped my thinking. You can also explore my academic and community involvement, read my curriculum vitae, or send me an email."
   },
   {
     "objectID": "index.html#current-research",
@@ -249,42 +249,49 @@
     "href": "curriculum-vitae.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Glory Kellogg\ngloryekellogg@gmail.com · Chicago, Illinois · linkedin.com/in/glorykellogg\nDownload CV (PDF)"
+    "text": "Glory Kellogg\ngloryekellogg@gmail.com · Chicago, Illinois · LinkedIn\nDownload CV (PDF)"
   },
   {
     "objectID": "curriculum-vitae.html#education",
     "href": "curriculum-vitae.html#education",
     "title": "Curriculum Vitae",
     "section": "Education",
-    "text": "Education\nIllinois Institute of Technology, Chicago, Illinois\nB.S. Applied Mathematics, expected December 2028\nHonors Program · Minor in Computer Science\nGPA: 4.0/4.0\nTriton College, River Grove, Illinois\nGPA: 4.0/4.0\nPhi Theta Kappa Honor Society"
+    "text": "Education\nIllinois Institute of Technology, Chicago, Illinois\nB.S. in Applied Mathematics, expected December 2028\nHonors Program · Minor in Biology · GPA: 4.0/4.0  Merit Scholarships: IIT Transfer Scholarship; Phi Theta Kappa Honors Scholarship\nTriton College, River Grove, Illinois\nAugust 2024–December 2025 · GPA: 4.0/4.0"
   },
   {
     "objectID": "curriculum-vitae.html#research-interests",
     "href": "curriculum-vitae.html#research-interests",
     "title": "Curriculum Vitae",
     "section": "Research Interests",
-    "text": "Research Interests\nMathematical biology · pattern formation · differential equations · graph theory · computational modeling"
+    "text": "Research Interests\nMathematical biology · pattern formation · differential equations · graph theory · computational modeling · complex networks"
   },
   {
-    "objectID": "curriculum-vitae.html#research",
-    "href": "curriculum-vitae.html#research",
+    "objectID": "curriculum-vitae.html#research-experience",
+    "href": "curriculum-vitae.html#research-experience",
     "title": "Curriculum Vitae",
-    "section": "Research",
-    "text": "Research\n\nGraph-Based Models of Morphogen Diffusion in Butterfly Wing Development\n\nDeveloping mathematical and computational models of butterfly wing pattern formation using graph representations and reaction–diffusion systems.\nDeveloping image-processing methods to extract wing geometry and structural features from photographs for comparison with mathematical models.\nRaising and documenting painted lady butterflies to connect computational models with observed wing development and pattern formation.\n\n\n\nNonlinear Preferential Attachment in Collaboration Networks\n\nDeveloping an agent-based model of collaboration networks to study the emergence of structural inequality under nonlinear preferential attachment.\nDesigning Monte Carlo experiments to characterize how attachment bias affects network growth, degree distributions, and concentration.\nAnalyzing simulation results across parameter sweeps to identify transitions in network structure and inequality."
+    "section": "Research Experience",
+    "text": "Research Experience\n\nGraph-Based Models of Morphogen Diffusion in Butterfly Wing Development\nIllinois Institute of Technology · July 2026–Present\nAdvisor: Dr. Megan Morrison\n\nDevelop mathematical and computational models of butterfly wing pattern formation using graph representations and reaction–diffusion systems.\nBuilt a Python interface that converts wing photographs into adaptive meshes for reaction–diffusion simulations.\nApply covariance matrix adaptation evolution strategy (CMA-ES) to estimate model parameters and test candidate morphogen sources by comparing simulated and observed pigmentation patterns.\nRear and document painted lady butterflies to connect computational models with observed development and wing patterns.\nAccepted poster presentation: Nebraska Conference for Undergraduate Wisdom in Mathematics, 2027.\n\n\n\nNonlinear Preferential Attachment in Collaboration Networks\nIllinois Institute of Technology · March 2026–Present\n\nDevelop an agent-based model of collaboration networks to study the emergence of structural inequality under nonlinear preferential attachment with initial attractiveness.\nDesign Monte Carlo experiments to characterize how attachment bias affects network growth, degree distributions, and concentration.\nAnalyze simulation results across parameter sweeps to identify transitions in network structure and inequality.\nAccepted presentation: Joint Mathematics Meetings, 2027, AMS–MAA–SIAM Special Session on Research in Mathematics by Undergraduates and Students in Post-Baccalaureate Programs.\n\n\n\nIncoming Undergraduate Research Intern\nEuropean Molecular Biology Laboratory (EMBL), Heidelberg, Germany · June–August 2027\nGraf Group · Advisor: Dr. Isabella Graf\n\nWill conduct 10 weeks of research using theoretical biophysics to study biological homeostasis and adaptation."
+  },
+  {
+    "objectID": "curriculum-vitae.html#teaching-experience",
+    "href": "curriculum-vitae.html#teaching-experience",
+    "title": "Curriculum Vitae",
+    "section": "Teaching Experience",
+    "text": "Teaching Experience\n\nApplied Mathematics Grader\nIllinois Institute of Technology · November 2026–Present\n\nGrade assignments for 72 students across College Algebra and Preparation for Calculus."
   },
   {
     "objectID": "curriculum-vitae.html#technical-skills",
     "href": "curriculum-vitae.html#technical-skills",
     "title": "Curriculum Vitae",
     "section": "Technical Skills",
-    "text": "Technical Skills\nProgramming: Python, C++, Java, C\nScientific computing: Computational modeling, simulation, data analysis\nDesign: Adobe Illustrator, Adobe Photoshop\nTools: Git, GitHub, LaTeX Web & publishing: HTML, CSS, JavaScript, Quarto, GitHub Pages\nDesigned and developed this personal academic and the SIAM @ Illinois Tech websites."
+    "text": "Technical Skills\nProgramming: Python, C++, Java, C, NetLogo\nScientific Computing: NumPy, Matplotlib\nModeling & Analysis: Agent-based modeling, reaction–diffusion systems, parameter estimation, Monte Carlo simulation, data analysis\nWeb Development & Publishing: HTML, CSS, JavaScript, Quarto, GitHub Pages\nTools: Git, GitHub, LaTeX\nDesign: Adobe Illustrator, Adobe Photoshop\nDesigned and developed my personal academic website and the SIAM @ Illinois Tech chapter website."
   },
   {
     "objectID": "curriculum-vitae.html#academic-professional-involvement",
     "href": "curriculum-vitae.html#academic-professional-involvement",
     "title": "Curriculum Vitae",
     "section": "Academic & Professional Involvement",
-    "text": "Academic & Professional Involvement\n\nSIAM @ Illinois Tech\nWeb & Design Manager · May 2026–Present\n\nOversee the chapter website and digital communications for Illinois Tech’s SIAM student chapter.\nDesigned, developed, and maintain the chapter website, supporting seminars, events, and student programming.\nDesign posters and promotional materials for seminars and events using Adobe Creative Suite, maintaining a consistent visual identity across digital and print communications.\n\n\n\nSociety for Industrial and Applied Mathematics\nStudent Member\n\n\nAssociation for Women in Mathematics\nMember\n\n\nWomen in STEM at Illinois Tech\nMember"
+    "text": "Academic & Professional Involvement\n\nSIAM @ Illinois Tech\nWeb & Design Manager · May 2026–Present\n\nDesigned, developed, and maintain the chapter website to support seminars, events, and student programs.\nDesign posters and promotional materials using Adobe Creative Suite, maintaining a consistent visual identity across digital and print communications.\nRepresented Illinois Tech at the 2026 SIAM Annual Meeting in Cleveland.\n\n\n\nNSF-Simons National Institute for Theory and Mathematics in Biology\nSeminar & Workshop Participant\n\nAttend seminars, research presentations, and workshops, and meet with researchers working across mathematics and biology.\nParticipated in a workshop on cuttlefish camouflage mechanics alongside the 2026 NITMB summer undergraduate cohort."
   },
   {
     "objectID": "library/murray-pattern-formation-1981.html#citation",
