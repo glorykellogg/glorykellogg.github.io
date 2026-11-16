@@ -624,6 +624,14 @@ ul li {
   }
 }
 
+
+/* Chapter photos retain a matching portrait shape. */
+.siam-chapter-photos .siam-photo img {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
 .siam-live-preview {
   margin: 1.5rem 0 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.12);
